@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SEINE Auth",
   description: "SEINE Auth",
+  icons: "/user.jpg",
 };
 
 export default function AuthLayout({
