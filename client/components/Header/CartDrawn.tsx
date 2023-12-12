@@ -9,7 +9,7 @@ type CartDrawnProps = {
 const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
   return (
     <div className={`relative z-10 ${showCartDrawn ? "" : "hidden"}`}>
-      <div className="fixed inset-0 bg-black/80 bg-opacity-75 transition-opacity"></div>
+      <div className="fixed inset-0 bg-black/70 bg-opacity-75 transition-opacity"></div>
 
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

@@ -6,7 +6,7 @@ type ModalSearchProps = {
 const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
   return (
     <div className={`relative z-40 lg:hidden ${showModal ? "" : "hidden"}`}>
-      <div className="fixed inset-0 bg-black/80 bg-opacity-25"></div>
+      <div className="fixed inset-0 bg-black/70 bg-opacity-25"></div>
 
       <div className="fixed inset-0 z-40 flex">
         <div className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-background py-4 pb-12 shadow-xl">

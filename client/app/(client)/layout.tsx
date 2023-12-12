@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 export const metadata: Metadata = {
   title: "SEINE",
   description: "SEINE",
-  icons: "/user.jpg",
+  icons: "/logo.png",
 };
 
 export default function ClientLayout({

@@ -3,107 +3,93 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { IoCartOutline } from "react-icons/io5";
-import { BsChevronCompactUp } from "react-icons/bs";
-
-import Container from "../Container";
 import Logo from "../Logo";
 import UserMenu from "./UserMenu";
 import ChangeTheme from "./ChangeTheme";
 import CartDrawn from "./CartDrawn";
+import Navigation from "./Navigation";
+import NavDrawn from "./NavDrawn";
+import Container from "../Container";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showCartDrawn, setShowCartDrawn] = useState(false);
 
-  const nav__links = [
-    { url: "products", label: "Sản phẩm" },
-    { url: "#", label: "Bộ sưu tập" },
-    { url: "#", label: "Khuyến mãi" },
-  ];
-
   return (
-    <header className="border-b bg-background dark:border-secondary">
+    <header className="relative bg-background">
+      <NavDrawn showNav={showNav} setShowNav={() => setShowNav(!showNav)} />
+
       <CartDrawn
         showCartDrawn={showCartDrawn}
         setShowCartDrawn={() => setShowCartDrawn(!showCartDrawn)}
       />
 
       <Container>
-        <div className="flex items-center justify-between py-4 relative">
-          <div className="flex items-center md:space-x-10 lg:space-x-20">
-            <Logo />
-
-            <div className="max-md:hidden">
-              <ul className="flex items-center space-x-7 lg:space-x-10 mx-6">
-                {nav__links.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={`/${link.url}`}
-                      className="text-sm font-medium transition-colors hover:text-primary text-mutedForeground"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <input
-              className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-mutedForeground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:w-[100px] lg:w-[300px] text-mutedForeground"
-              placeholder="Tìm kiếm ..."
-              type="search"
-            />
-
-            <ChangeTheme />
-
-            <UserMenu />
-
+        <div className="border-b dark:border-secondary">
+          <div className="flex h-16 items-center">
             <button
-              onClick={() => setShowCartDrawn(!showCartDrawn)}
-              className="p-2 bg-secondary rounded-full text-mutedForeground hover:text-primary"
+              onClick={() => setShowNav(!showNav)}
+              className="relative rounded-md bg-background p-2 text-mutedForeground hover:text-primary lg:hidden"
             >
-              <IoCartOutline size={20} />
+              <span className="absolute -inset-0.5"></span>
+
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
             </button>
 
-            <span
-              onClick={() => setShowNav(!showNav)}
-              className="p-[9px] bg-gray-100 rounded-full md:hidden"
-            >
-              <BsChevronCompactUp
-                className={`transition ease-in duration-150 ${
-                  showNav ? "rotate-180" : "0"
-                }`}
-              />
-            </span>
-          </div>
-        </div>
+            <div className="ml-4 flex lg:ml-0">
+              <span className="sr-only">SEINE</span>
+              <Logo />
+            </div>
 
-        <div
-          className={`md:hidden ${
-            showNav ? "pb-4 px-5" : "h-0 invisible opacity-0"
-          }`}
-        >
-          <ul className="flex flex-col opacity-75 px-2">
-            {nav__links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={`/${link.url}`}
-                  className="text-sm font-medium transition-colors hover:text-primary text-mutedForeground w-full py-3 inline-block"
+            <div className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <Navigation />
+            </div>
+
+            <div className="ml-auto flex items-center">
+              <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <UserMenu />
+              </div>
+
+              <div className="ml-4 flow-root lg:ml-6">
+                <button
+                  onClick={() => setShowCartDrawn(!showCartDrawn)}
+                  className="group -m-2 flex items-center p-2"
                 >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <svg
+                    className="h-6 w-6 flex-shrink-0 text-mutedForeground group-hover:text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-          <input
-            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:w-[100px] lg:w-[300px] text-mutedForeground"
-            placeholder="Tìm kiếm ..."
-            type="search"
-          />
+              <div className="hidden lg:ml-6 lg:flex">
+                <ChangeTheme />
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </header>
