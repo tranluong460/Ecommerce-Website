@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CartDrawnItem from "./CartDrawnItem";
-import carts from "@/data/carts";
+import { carts } from "@/data/carts";
 
 type CartDrawnProps = {
   showCartDrawn: boolean;
