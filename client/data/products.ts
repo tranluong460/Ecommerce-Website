@@ -46,7 +46,14 @@ const products = [
     name: "Medium Stuff",
     price: 32,
     color: ["black", "red", "gray"],
-    images: [],
+    images: [
+      {
+        url: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg",
+      },
+      {
+        url: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg",
+      },
+    ],
     sizes: [
       { name: "28", quantity: 0 },
       { name: "29", quantity: 7 },

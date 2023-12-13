@@ -7,6 +7,7 @@ import FilterDrawn from "@/components/Product/FilterDrawn";
 import Top from "@/components/Product/Top";
 import Filter from "@/components/Product/Filter";
 import ListProducts from "@/components/Product/ListProducts";
+import products from "@/data/products";
 
 const ProductsPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +33,7 @@ const ProductsPage = () => {
                 <Filter />
 
                 <div className="lg:col-span-3">
-                  <ListProducts />
+                  <ListProducts products={products} />
                 </div>
               </div>
             </div>
