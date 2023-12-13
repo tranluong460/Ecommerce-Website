@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 import Logo from "../Logo";
 import UserMenu from "./UserMenu";
 import ChangeTheme from "./ChangeTheme";
 import CartDrawn from "./CartDrawn";
-import Navigation from "./Navigation";
+import Nav from "./Nav";
 import NavDrawn from "./NavDrawn";
 import Container from "../Container";
 
@@ -55,7 +54,7 @@ const Header = () => {
             </div>
 
             <div className="hidden lg:ml-8 lg:block lg:self-stretch">
-              <Navigation />
+              <Nav />
             </div>
 
             <div className="ml-auto flex items-center">

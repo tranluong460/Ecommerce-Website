@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Navigation = () => {
+const Nav = () => {
   const [activeBoy, setActiveBoy] = useState(false);
   const [activeGirl, setActiveGirl] = useState(false);
 
@@ -317,4 +317,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Nav;

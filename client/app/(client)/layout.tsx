@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import Header from "@/components/Header/Header";
+import Aside from "@/components/Footer/Aside";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "SEINE",
@@ -18,6 +20,9 @@ export default function ClientLayout({
       <Header />
 
       <main className="bg-background min-h-screen">{children}</main>
+
+      <Aside />
+      <Footer />
     </>
   );
 }
