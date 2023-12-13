@@ -92,6 +92,11 @@ const Nav = () => {
     setActiveBoy(false);
   };
 
+  const onToggle = () => {
+    setActiveBoy(false);
+    setActiveGirl(false);
+  };
+
   return (
     <div className="flex h-full space-x-8">
       <div className="flex z-10">
@@ -309,6 +314,7 @@ const Nav = () => {
 
       <Link
         href="/products"
+        onClick={onToggle}
         className="flex items-center text-sm font-medium text-mutedForeground hover:text-primary"
       >
         Sản phẩm
