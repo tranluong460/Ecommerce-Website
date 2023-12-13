@@ -16,7 +16,7 @@ const Top = ({ setShowModal }: TopProps) => {
 
   return (
     <div className="flex items-baseline justify-between border-b dark:border-secondary pb-6 pt-4">
-      <h1 className="text-4xl font-bold tracking-tight text-foreground">
+      <h1 className="text-2xl font-bold tracking-tight text-foreground">
         Danh sách sản phẩm
       </h1>
 

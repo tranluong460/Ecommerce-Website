@@ -22,8 +22,8 @@ const Header = () => {
         setShowCartDrawn={() => setShowCartDrawn(!showCartDrawn)}
       />
 
-      <Container>
-        <div className="border-b dark:border-secondary">
+      <div className="border-b dark:border-secondary">
+        <Container>
           <div className="flex h-16 items-center">
             <button
               onClick={() => setShowNav(!showNav)}
@@ -88,8 +88,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </header>
   );
 };

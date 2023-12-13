@@ -12,7 +12,7 @@ const ProductsPage = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section>
+    <section className="py-10">
       <Container>
         <div className="bg-background">
           <FilterDrawn
