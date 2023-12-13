@@ -66,9 +66,9 @@ const CartItem = ({ carts }: CartItemProps) => {
                       >
                         <path
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M1 1h16"
                         />
                       </svg>
@@ -76,7 +76,7 @@ const CartItem = ({ carts }: CartItemProps) => {
 
                     <input
                       className="bg-secondary/50 border-x-0 dark:border-secondary h-11 text-center text-mutedForeground text-sm block w-full py-2.5 outline-none"
-                      value={item.quantity}
+                      defaultValue={item.quantity}
                       required
                     />
 
@@ -90,9 +90,9 @@ const CartItem = ({ carts }: CartItemProps) => {
                       >
                         <path
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M9 1v16M1 9h16"
                         />
                       </svg>
