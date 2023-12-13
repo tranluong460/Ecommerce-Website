@@ -94,7 +94,7 @@ const Nav = () => {
 
   return (
     <div className="flex h-full space-x-8">
-      <div className="flex z-50">
+      <div className="flex z-10">
         <div className="relative flex">
           <button
             onClick={toggleActiveBoy}
@@ -110,14 +110,14 @@ const Nav = () => {
         </div>
 
         <div
-          className={`absolute inset-x-0 top-full text-sm text-mutedForeground ${
-            activeBoy ? "" : "hidden"
+          className={`absolute inset-x-0 top-full text-sm text-mutedForeground transition ease-out duration-200 ${
+            activeBoy ? "" : "invisible"
           }`}
         >
           <div
             className="absolute inset-0 top-1/2 bg-black/80 shadow"
             aria-hidden="true"
-          ></div>
+          />
 
           <div className="relative bg-secondary">
             <div className="mx-auto max-w-7xl px-8">
@@ -216,8 +216,8 @@ const Nav = () => {
         </div>
 
         <div
-          className={`absolute inset-x-0 top-full text-sm text-mutedForeground ${
-            activeGirl ? "" : "hidden"
+          className={`absolute inset-x-0 top-full text-sm text-mutedForeground transition ease-out duration-200  ${
+            activeGirl ? "" : "invisible"
           }`}
         >
           <div

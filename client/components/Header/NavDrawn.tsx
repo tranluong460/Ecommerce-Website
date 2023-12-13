@@ -98,11 +98,19 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
   ];
 
   return (
-    <div className={`relative z-40 lg:hidden ${showNav ? "" : "hidden"}`}>
-      <div className="fixed inset-0 bg-black/70 bg-opacity-25"></div>
+    <div className={`relative z-40 lg:hidden ${showNav ? "" : "invisible"}`}>
+      <div
+        className={`fixed inset-0 bg-black/70 bg-opacity-25 transition-opacity ease-linear duration-300 ${
+          showNav ? "opacity-70" : "opacity-0"
+        }`}
+      />
 
       <div className="fixed inset-0 z-40 flex">
-        <div className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-background pb-12 shadow-xl">
+        <div
+          className={`relative flex w-full max-w-xs flex-col overflow-auto bg-background pb-12 shadow-xl transition ease-in-out duration-300 transform ${
+            showNav ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
           <div className="flex px-4 pb-2 pt-5">
             <button
               onClick={setShowNav}

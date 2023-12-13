@@ -15,7 +15,7 @@ const UserMenu = () => {
         <Avatar />
       </div>
 
-      <ul
+      <div
         className={`absolute z-50 min-w-[8rem] overflow-hidden rounded-md border dark:border-secondary bg-popover p-1 text-popover-foreground shadow-md w-56 ${
           show ? "" : "hidden"
         }`}
@@ -59,7 +59,7 @@ const UserMenu = () => {
             </Link>
           </>
         )}
-      </ul>
+      </div>
     </div>
   );
 };

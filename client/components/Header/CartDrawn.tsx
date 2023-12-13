@@ -8,20 +8,25 @@ type CartDrawnProps = {
 
 const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
   return (
-    <div className={`relative z-10 ${showCartDrawn ? "" : "hidden"}`}>
-      <div className="fixed inset-0 bg-black/70 bg-opacity-75 transition-opacity"></div>
+    <div className={`relative z-10 ${showCartDrawn ? "" : "invisible"}`}>
+      <div
+        className={`fixed inset-0 bg-black/70 bg-opacity-75 ease-in-out duration-500 transition-opacity ${
+          showCartDrawn ? "opacity-70" : "opacity-0"
+        }`}
+      />
 
       <div className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-            <div className="pointer-events-auto w-screen max-w-md">
+            <div
+              className={`pointer-events-auto w-screen max-w-md transform transition ease-in-out duration-500 sm:duration-700 ${
+                showCartDrawn ? "translate-x-0" : "translate-x-full"
+              }`}
+            >
               <div className="flex h-full flex-col overflow-y-scroll bg-background shadow-xl">
                 <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <h2
-                      className="text-lg font-medium text-foreground"
-                      id="slide-over-title"
-                    >
+                    <h2 className="text-lg font-medium text-foreground">
                       Giỏ hàng
                     </h2>
 
