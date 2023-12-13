@@ -5,7 +5,7 @@ import Button from "../_components/Button";
 
 const RegisterPage = () => {
   return (
-    <div className="min-h-screen bg-background dark:bg-primaryForeground flex justify-center">
+    <div className="min-h-screen bg-background flex justify-center">
       <div className="max-w-screen-xl m-0 sm:m-3 sm:rounded-lg flex justify-center flex-1 bg-background border dark:border-secondary">
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:px-12">
           <Logo />
