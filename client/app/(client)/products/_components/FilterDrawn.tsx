@@ -5,11 +5,19 @@ type ModalSearchProps = {
 
 const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
   return (
-    <div className={`relative z-40 lg:hidden ${showModal ? "" : "hidden"}`}>
-      <div className="fixed inset-0 bg-black/70 bg-opacity-25"></div>
+    <div className={`relative z-40 lg:hidden ${showModal ? "" : "invisible"}`}>
+      <div
+        className={`fixed inset-0 bg-black/70 bg-opacity-75 ${
+          showModal ? "opacity-70" : "opacity-0"
+        }`}
+      />
 
       <div className="fixed inset-0 z-40 flex">
-        <div className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-background py-4 pb-12 shadow-xl">
+        <div
+          className={`relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-background py-4 pb-12 shadow-xl transform transition ease-in-out duration-500 sm:duration-700 ${
+            showModal ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           <div className="flex items-center justify-between px-4">
             <h2 className="text-lg font-medium text-foreground">Lọc</h2>
 
