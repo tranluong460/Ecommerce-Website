@@ -63,7 +63,7 @@ const LoginPage = () => {
                   }
                 />
 
-                <p className="mt-6 text-xs text-gray-500 text-center">
+                <p className="mt-6 text-xs text-mutedForeground text-center">
                   Tôi đồng ý tuân theo&nbsp;
                   <Link
                     href="#"

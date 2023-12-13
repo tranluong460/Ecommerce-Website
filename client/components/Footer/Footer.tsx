@@ -38,7 +38,7 @@ const Footer = () => {
                   padding: "0px",
                   maxWidth: "100%",
                 }}
-              ></span>
+              />
 
               <Logo />
             </span>

@@ -12,6 +12,7 @@ const Aside = () => {
           Bạn có muốn nhận thông báo khi có sản phẩm mới không? Đăng ký nhận
           thông tin của chúng tôi và bạn sẽ là một trong những người đầu tiên.
         </p>
+
         <div className="mb-4">
           <div className="flex max-w-xl md:mx-auto">
             <div className="w-full" data-style="clean">
@@ -34,8 +35,8 @@ const Aside = () => {
                 </div>
 
                 <input
-                  type="email"
                   id="member_email"
+                  type="email"
                   name="email_address"
                   className="block w-full px-3 py-4 pl-11 text-base text-accentForeground bg-background border dark:border-secondary rounded-l-xl focus:bg-background focus:outline-none"
                   placeholder="Nhập email của bạn"
@@ -48,7 +49,7 @@ const Aside = () => {
               <input
                 type="submit"
                 id="member_submit"
-                className="w-full px-4 py-4 text-base font-medium text-center text-background dark:text-foreground bg-primary border dark:border-secondary cursor-pointer rounded-r-xl hover:bg-primary/80 focus:outline-none"
+                className="w-full px-4 py-4 text-base font-medium text-center text-background dark:text-accentForeground bg-primary hover:bg-primary/90 border dark:border-secondary cursor-pointer rounded-r-xl focus:outline-none"
                 value="Đăng ký"
               />
             </div>
@@ -57,11 +58,17 @@ const Aside = () => {
 
         <p className="text-sm text-mutedForeground md:text-center font-normal">
           Bằng cách đăng ký, bạn đồng ý với &nbsp;
-          <Link className="text-primary hover:underline" href="#">
+          <Link
+            className="border-b border-gray-500 border-dotted hover:text-primary hover:border-primary"
+            href="#"
+          >
             Điều khoản dịch vụ
           </Link>
           &nbsp;và
-          <Link className="text-primary hover:underline" href="#">
+          <Link
+            className="border-b border-gray-500 border-dotted hover:text-primary hover:border-primary"
+            href="#"
+          >
             &nbsp;Chính sách bảo mật
           </Link>
           &nbsp;của SEINE.
