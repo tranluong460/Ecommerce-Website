@@ -27,7 +27,7 @@ const CartItem = ({ carts }: CartItemProps) => {
                   <div className="flex justify-between">
                     <h3 className="text-sm">
                       <Link
-                        href={`products/${item.product._id}`}
+                        href={`/products/${item.product._id}`}
                         className="font-medium text-foreground hover:underline hover:text-primary"
                       >
                         {item.product.name}

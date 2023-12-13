@@ -22,7 +22,7 @@ const CartDrawnItem = ({ cart }: CartDrawnItemProps) => {
         <div>
           <div className="flex justify-between text-base font-medium text-mutedForeground">
             <h3 className="hover:text-primary">
-              <Link href={`products/${cart.product._id}`}>
+              <Link href={`/products/${cart.product._id}`}>
                 {cart.product.name}
               </Link>
             </h3>
