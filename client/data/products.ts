@@ -6,16 +6,10 @@ const products = [
     color: ["black", "white", "gray"],
     images: [
       {
-        url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-nam-10f23shl090_black_1__1_jpg.webp",
+        url: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg",
       },
       {
-        url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-nam-10f23shl090_black_2__1_jpg.webp",
-      },
-      {
-        url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-nam-10f23shl090_black_3__1_jpg.webp",
-      },
-      {
-        url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-nam-10f23shl090_black_6__1_jpg.webp",
+        url: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg",
       },
     ],
     sizes: [

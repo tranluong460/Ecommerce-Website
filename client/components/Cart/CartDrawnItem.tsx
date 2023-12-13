@@ -1,15 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CartDrawnItem = () => {
+type CartDrawnItemProps = {
+  cart: any;
+};
+
+const CartDrawnItem = ({ cart }: CartDrawnItemProps) => {
   return (
     <li className="flex py-6">
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-secondary">
         <Image
           width={100}
           height={100}
-          src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-          alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+          src={cart.product.images[0].url}
+          alt={cart.product.images[0].url}
           className="h-full w-full object-cover object-center"
         />
       </div>
@@ -18,15 +22,26 @@ const CartDrawnItem = () => {
         <div>
           <div className="flex justify-between text-base font-medium text-mutedForeground">
             <h3 className="hover:text-primary">
-              <Link href="/products/1">Throwback Hip Bag</Link>
+              <Link href={`products/${cart.product._id}`}>
+                {cart.product.name}
+              </Link>
             </h3>
-            <p className="ml-4">$90.00</p>
+            <p className="ml-4">${cart.product.price}</p>
           </div>
-          <p className="mt-1 text-sm text-mutedForeground">Black</p>
+
+          <div className="flex text-sm items-center">
+            <p className="text-mutedForeground">{cart.color}</p>
+
+            {cart.size ? (
+              <p className="ml-4 border-l dark:border-secondary pl-4 text-mutedForeground">
+                {cart.size}
+              </p>
+            ) : null}
+          </div>
         </div>
 
         <div className="flex flex-1 items-end justify-between text-sm">
-          <p className="text-mutedForeground">Số lượng: 1</p>
+          <p className="text-mutedForeground">Số lượng: {cart.quantity}</p>
 
           <div className="flex">
             <button className="font-medium text-primary hover:text-primary/80">

@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-import Top from "@/components/Products/Top";
 import Container from "@/components/Container";
-import Filter from "@/components/Products/Filter";
-import FilterDrawn from "@/components/Products/FilterDrawn";
-import ListProducts from "@/components/Products/ListProducts";
+import FilterDrawn from "@/components/Product/FilterDrawn";
+import Top from "@/components/Product/Top";
+import Filter from "@/components/Product/Filter";
+import ListProducts from "@/components/Product/ListProducts";
 
 const ProductsPage = () => {
   const [showModal, setShowModal] = useState(false);
