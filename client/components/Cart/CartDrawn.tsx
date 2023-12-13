@@ -27,9 +27,11 @@ const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
               <div className="flex h-full flex-col overflow-y-scroll bg-background shadow-xl">
                 <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <h2 className="text-lg font-medium text-foreground">
-                      Giỏ hàng
-                    </h2>
+                    <Link href="/cart">
+                      <h2 className="text-lg font-medium text-foreground hover:underline hover:text-primary">
+                        Giỏ hàng
+                      </h2>
+                    </Link>
 
                     <div className="ml-3 flex h-7 items-center">
                       <button
