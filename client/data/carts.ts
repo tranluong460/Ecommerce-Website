@@ -1,4 +1,4 @@
-const carts = [
+export const carts = [
   {
     _id: "1",
     product: {
@@ -38,5 +38,3 @@ const carts = [
     quantity: 3,
   },
 ];
-
-export default carts;

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import { nav__links_boy, nav__links_girl } from "@/data/links";
 
 type NavDrawnProps = {
   showNav: boolean;
@@ -23,79 +23,6 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
     setActiveGirl(!activeGirl);
     setActiveBoy(false);
   };
-
-  const boy = [
-    {
-      name: "Clothing",
-      links: [
-        { url: "#", name: "Tops" },
-        { url: "#", name: "Pants" },
-        { url: "#", name: "Sweaters" },
-        { url: "#", name: "T-Shirts" },
-        { url: "#", name: "Jackets" },
-        { url: "#", name: "ActiveWear" },
-        { url: "#", name: "Browse All" },
-      ],
-    },
-    {
-      name: "Accessories",
-      links: [
-        { url: "#", name: "Watches" },
-        { url: "#", name: "Wallets" },
-        { url: "#", name: "Bags" },
-        { url: "#", name: "Sunglasses" },
-        { url: "#", name: "Hats" },
-        { url: "#", name: "Belts" },
-      ],
-    },
-    {
-      name: "Brands",
-      links: [
-        { url: "#", name: "Re-Arranged" },
-        { url: "#", name: "Counterfeit" },
-        { url: "#", name: "Full Nelson" },
-        { url: "#", name: "My Way" },
-      ],
-    },
-  ];
-
-  const girl = [
-    {
-      name: "Clothing",
-      links: [
-        { url: "#", name: "Tops" },
-        { url: "#", name: "Dresses" },
-        { url: "#", name: "Pants" },
-        { url: "#", name: "Denim" },
-        { url: "#", name: "Sweaters" },
-        { url: "#", name: "T-Shirts" },
-        { url: "#", name: "Jackets" },
-        { url: "#", name: "ActiveWear" },
-        { url: "#", name: "Browse All" },
-      ],
-    },
-    {
-      name: "Accessories",
-      links: [
-        { url: "#", name: "Watches" },
-        { url: "#", name: "Wallets" },
-        { url: "#", name: "Bags" },
-        { url: "#", name: "Sunglasses" },
-        { url: "#", name: "Hats" },
-        { url: "#", name: "Belts" },
-      ],
-    },
-    {
-      name: "Brands",
-      links: [
-        { url: "#", name: "Full Nelson" },
-        { url: "#", name: "My Way" },
-        { url: "#", name: "Re-Arranged" },
-        { url: "#", name: "Counterfeit" },
-        { url: "#", name: "Significant Other" },
-      ],
-    },
-  ];
 
   return (
     <div className={`relative z-40 lg:hidden ${showNav ? "" : "invisible"}`}>
@@ -222,7 +149,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
               </div>
 
               <div>
-                {boy.map((nav) => (
+                {nav__links_boy.map((nav) => (
                   <div key={nav.name} className="mt-10">
                     <span
                       id="men-clothing-heading-mobile"
@@ -308,7 +235,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
               </div>
 
               <div>
-                {girl.map((nav) => (
+                {nav__links_girl.map((nav) => (
                   <div key={nav.name} className="mt-10">
                     <span
                       id="men-clothing-heading-mobile"

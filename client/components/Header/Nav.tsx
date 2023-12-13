@@ -1,86 +1,13 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import { nav__links_boy, nav__links_girl } from "@/data/links";
 
 const Nav = () => {
   const [activeBoy, setActiveBoy] = useState(false);
   const [activeGirl, setActiveGirl] = useState(false);
-
-  const boy = [
-    {
-      name: "Clothing",
-      links: [
-        { url: "#", name: "Tops" },
-        { url: "#", name: "Pants" },
-        { url: "#", name: "Sweaters" },
-        { url: "#", name: "T-Shirts" },
-        { url: "#", name: "Jackets" },
-        { url: "#", name: "ActiveWear" },
-        { url: "#", name: "Browse All" },
-      ],
-    },
-    {
-      name: "Accessories",
-      links: [
-        { url: "#", name: "Watches" },
-        { url: "#", name: "Wallets" },
-        { url: "#", name: "Bags" },
-        { url: "#", name: "Sunglasses" },
-        { url: "#", name: "Hats" },
-        { url: "#", name: "Belts" },
-      ],
-    },
-    {
-      name: "Brands",
-      links: [
-        { url: "#", name: "Re-Arranged" },
-        { url: "#", name: "Counterfeit" },
-        { url: "#", name: "Full Nelson" },
-        { url: "#", name: "My Way" },
-      ],
-    },
-  ];
-
-  const girl = [
-    {
-      name: "Clothing",
-      links: [
-        { url: "#", name: "Tops" },
-        { url: "#", name: "Dresses" },
-        { url: "#", name: "Pants" },
-        { url: "#", name: "Denim" },
-        { url: "#", name: "Sweaters" },
-        { url: "#", name: "T-Shirts" },
-        { url: "#", name: "Jackets" },
-        { url: "#", name: "ActiveWear" },
-        { url: "#", name: "Browse All" },
-      ],
-    },
-    {
-      name: "Accessories",
-      links: [
-        { url: "#", name: "Watches" },
-        { url: "#", name: "Wallets" },
-        { url: "#", name: "Bags" },
-        { url: "#", name: "Sunglasses" },
-        { url: "#", name: "Hats" },
-        { url: "#", name: "Belts" },
-      ],
-    },
-    {
-      name: "Brands",
-      links: [
-        { url: "#", name: "Full Nelson" },
-        { url: "#", name: "My Way" },
-        { url: "#", name: "Re-Arranged" },
-        { url: "#", name: "Counterfeit" },
-        { url: "#", name: "Significant Other" },
-      ],
-    },
-  ];
 
   const toggleActiveBoy = () => {
     setActiveBoy(!activeBoy);
@@ -184,7 +111,7 @@ const Nav = () => {
                 </div>
 
                 <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                  {boy.map((nav) => (
+                  {nav__links_boy.map((nav) => (
                     <div key={nav.name}>
                       <p className="font-medium text-foreground">{nav.name}</p>
 
@@ -290,7 +217,7 @@ const Nav = () => {
                 </div>
 
                 <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                  {girl.map((nav) => (
+                  {nav__links_girl.map((nav) => (
                     <div key={nav.name}>
                       <p className="font-medium text-foreground">{nav.name}</p>
 

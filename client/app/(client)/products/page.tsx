@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-
 import Container from "@/components/Container";
-import FilterDrawn from "@/components/Product/FilterDrawn";
-import Top from "@/components/Product/Top";
-import Filter from "@/components/Product/Filter";
-import ListProducts from "@/components/Product/ListProducts";
-import products from "@/data/products";
+import FilterDrawn from "./_components/FilterDrawn";
+import ListProducts from "./_components/ListProducts";
+import Top from "./_components/Top";
+import Filter from "./_components/Filter";
+import { products } from "@/data/products";
 
 const ProductsPage = () => {
   const [showModal, setShowModal] = useState(false);

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SEINE Auth",
-  description: "SEINE Auth",
+  title: "SEINE",
+  description: "SEINE",
   icons: "/logo.png",
 };
 

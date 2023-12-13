@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
-import CartItem from "@/components/Cart/CartItem";
-import carts from "@/data/carts";
+import CartItem from "./_components/CartItem";
+import { carts } from "@/data/carts";
 
 const CartPage = () => {
   return (

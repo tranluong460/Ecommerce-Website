@@ -55,7 +55,7 @@ const Aside = () => {
           </div>
         </div>
 
-        <p className="text-sm text-gray-500 md:text-center dark:text-gray-400 font-normal">
+        <p className="text-sm text-mutedForeground md:text-center font-normal">
           Bằng cách đăng ký, bạn đồng ý với &nbsp;
           <Link className="text-primary hover:underline" href="#">
             Điều khoản dịch vụ

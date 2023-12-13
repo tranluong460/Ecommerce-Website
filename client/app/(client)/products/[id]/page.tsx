@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import Container from "@/components/Container";
-import ImageGallery from "@/components/Product/Detail/ImageGallery";
-import ProductInfoLeft from "@/components/Product/Detail/ProductInfoLeft";
-import ProductInfoRight from "@/components/Product/Detail/ProductInfoRight";
+import ImageGallery from "./_components/ImageGallery";
+import ProductInfoRight from "./_components/ProductInfoRight";
+import ProductInfoLeft from "./_components/ProductInfoLeft";
 
 const ProductDetailPage = () => {
   return (

@@ -1,46 +1,9 @@
 import Link from "next/link";
 import Logo from "../Logo";
 
-const Footer = () => {
-  const links = [
-    {
-      name: "RESOURCES",
-      nav: [
-        { url: "#", name: "Documentation" },
-        { url: "#", name: "Flow bite Blocks" },
-        { url: "#", name: "Flow bite Icons" },
-        { url: "#", name: "Flow bite Figma" },
-        { url: "#", name: "Flow bite GPT" },
-        { url: "#", name: "Pro version" },
-      ],
-    },
-    {
-      name: "HELP & SUPPORT",
-      nav: [
-        { url: "#", name: "Contact us" },
-        { url: "#", name: "Support center" },
-        { url: "#", name: "Work with us" },
-      ],
-    },
-    {
-      name: "FOLLOW US",
-      nav: [
-        { url: "#", name: "Discord" },
-        { url: "#", name: "Github" },
-        { url: "#", name: "Twitter" },
-      ],
-    },
-    {
-      name: "LEGAL",
-      nav: [
-        { url: "#", name: "License (EULA)" },
-        { url: "#", name: "Privacy policy" },
-        { url: "#", name: "Terms & conditions" },
-        { url: "#", name: "Brand guideline" },
-      ],
-    },
-  ];
+import { footer__links } from "@/data/links";
 
+const Footer = () => {
   return (
     <footer className="bg-background justify-self-end pt-16 pb-8 lg:pt-24 lg:pb-10">
       <div className="px-4 mx-auto max-w-8xl lg:px-4">
@@ -87,7 +50,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {links.map((link) => (
+          {footer__links.map((link) => (
             <div key={link.name}>
               <h3 className="mb-6 text-sm font-semibold text-foreground uppercase">
                 {link.name}
