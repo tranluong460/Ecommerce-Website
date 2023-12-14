@@ -7,9 +7,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Label } from "../ui/label";
-import { MoonIcon, SunIcon, DesktopIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { MoonIcon, SunIcon, DesktopIcon } from "@radix-ui/react-icons";
 
 const ChangeTheme = () => {
   const { setTheme } = useTheme();

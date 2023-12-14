@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import Header from "@/components/Header/Header";
-import Aside from "@/components/Footer/Aside";
-import Footer from "@/components/Footer/Footer";
+import Aside from "../_components/Aside";
+import Footer from "../_components/Footer";
 
 export const metadata: Metadata = {
   title: "SEINE",

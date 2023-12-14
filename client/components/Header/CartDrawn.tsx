@@ -7,8 +7,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "../ui/button";
-import { ScrollArea } from "../ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import CartDrawnItem from "./CartDrawnItem";
 import { carts } from "@/data/carts";
 import { calculateCartTotalPrice } from "@/libs/calculate";

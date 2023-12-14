@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { IProductCart } from "@/interface/carts";
 import { priceFormatted } from "@/libs/formatted";
 
