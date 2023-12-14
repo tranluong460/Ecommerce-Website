@@ -19,7 +19,7 @@ const CartDrawn = () => {
       <SheetTrigger asChild>
         <div className="group -m-2 flex items-center p-2 cursor-pointer">
           <svg
-            className="h-6 w-6 flex-shrink-0 text-muted-foreground group-hover:text-primary"
+            className="h-7 w-7 flex-shrink-0 text-muted-foreground group-hover:text-primary"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
