@@ -1,5 +1,5 @@
 import Container from "../Container";
-import Logo from "../Logo";
+import Logo from "../../app/_components/Logo";
 import Navigation from "./Navigation";
 import NavigationDrawn from "./NavigationDrawn";
 import UserMenu from "./UserMenu";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
+import Logo from "@/app/_components/Logo";
 import Input from "../_components/Input";
 import Button from "../_components/Button";
 
