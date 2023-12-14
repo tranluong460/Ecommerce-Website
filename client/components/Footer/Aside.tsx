@@ -15,7 +15,7 @@ const Aside = () => {
 
         <div className="mb-4">
           <div className="flex max-w-xl md:mx-auto">
-            <div className="w-full" data-style="clean">
+            <div className="w-full">
               <label htmlFor="member_email" className="hidden">
                 Địa chỉ email
               </label>

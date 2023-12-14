@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Container from "../Container";
 import Logo from "../Logo";
-import Nav from "./Nav";
+import Navigation from "./Navigation";
 import NavDrawn from "./NavDrawn";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
@@ -47,7 +47,7 @@ const Header = () => {
             </div>
 
             <div className="hidden lg:ml-8 lg:block lg:self-stretch">
-              <Nav />
+              <Navigation />
             </div>
 
             <div className="ml-auto flex items-center">

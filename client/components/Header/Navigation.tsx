@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { nav__links_boy, nav__links_girl } from "@/data/links";
 
-const Nav = () => {
+const Navigation = () => {
   const [activeBoy, setActiveBoy] = useState(false);
   const [activeGirl, setActiveGirl] = useState(false);
 
@@ -250,4 +250,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navigation;
