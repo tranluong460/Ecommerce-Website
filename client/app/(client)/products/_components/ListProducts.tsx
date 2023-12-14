@@ -1,14 +1,15 @@
 import ProductItem from "./ProductItem";
+import { IProduct } from "@/interface/products";
 
 type ListProductsProps = {
-  products: any;
+  products: IProduct[];
 };
 
 const ListProducts = ({ products }: ListProductsProps) => {
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {products && products.length > 0 ? (
-        products.map((product: any) => (
+        products.map((product) => (
           <ProductItem key={product._id} product={product} />
         ))
       ) : (

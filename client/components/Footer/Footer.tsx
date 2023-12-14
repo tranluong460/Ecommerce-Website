@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Logo from "../Logo";
-
 import { footer__links } from "@/data/links";
 
 const Footer = () => {

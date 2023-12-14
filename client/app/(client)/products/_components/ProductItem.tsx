@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IProduct } from "@/interface/products";
 
 type ProductItemProps = {
-  product: any;
+  product: IProduct;
 };
 
 const ProductItem = ({ product }: ProductItemProps) => {
@@ -12,24 +13,22 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <Image
           width={1000}
           height={100}
-          src={product.images[0].url}
-          alt={product.images[0].url}
+          src={product.images_attributes[0].color_images[0].url}
+          alt={product.images_attributes[0].color}
           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
         />
       </div>
 
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-foreground">
-            <Link href={`/products/${product._id}`}>
-              <span aria-hidden="true" className="absolute inset-0"></span>
-              {product.name}
-            </Link>
-          </h3>
-        </div>
+      <div className="mt-4 flex flex-col gap-3">
+        <h3 className="text-sm text-foreground">
+          <Link href={`/products/${product._id}`}>{product.name}</Link>
+        </h3>
 
         <p className="text-sm font-medium text-mutedForeground">
-          ${product.price}
+          {product.price.toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+          })}
         </p>
       </div>
     </div>

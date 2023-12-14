@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ICart } from "@/interface/carts";
 
 type CartItemProps = {
-  carts: any;
+  carts: ICart[];
 };
 
 const CartItem = ({ carts }: CartItemProps) => {
   return (
     <div className="divide-y divide-gray-200 border-b border-t dark:border-secondary">
       {carts && carts.length > 0 ? (
-        carts.map((item: any, index: number) => (
+        carts.map((item: ICart, index: number) => (
           <div key={item.product._id} className="flex py-6 sm:py-10">
             <div className="flex-shrink-0">
               <Image
