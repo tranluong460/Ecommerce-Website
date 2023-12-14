@@ -1,18 +1,14 @@
+import { IProduct } from "./products";
+
 export interface ICart {
   _id: string;
-  product: IProductCart;
-  color: string;
-  size: string;
-  quantity: number;
+  id_user: string;
+  products: IProductCart[];
 }
 
 export interface IProductCart {
-  _id: string;
-  name: string;
-  price: number;
-  images: IImageCart[];
-}
-
-export interface IImageCart {
-  url: string;
+  product: IProduct;
+  color: string;
+  size: string;
+  quantity: number;
 }

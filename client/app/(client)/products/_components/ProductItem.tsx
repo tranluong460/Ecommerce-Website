@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IProduct } from "@/interface/products";
+import { priceFormatted } from "@/libs/formatted";
 
 type ProductItemProps = {
   product: IProduct;
@@ -25,10 +26,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         </h3>
 
         <p className="text-sm font-medium text-mutedForeground">
-          {product.price.toLocaleString("vi-VN", {
-            style: "currency",
-            currency: "VND",
-          })}
+          {priceFormatted(product?.price)}
         </p>
       </div>
     </div>

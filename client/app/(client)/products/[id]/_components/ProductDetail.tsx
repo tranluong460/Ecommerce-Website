@@ -1,8 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
 import HeartButton from "./HeartButton";
 import Rating from "./Rating";
+import Breadcrumb from "./Breadcrumb";
+import ImageGallery from "./ImageGallery";
 import { IProduct, ISizeProduct } from "@/interface/products";
+import { priceFormatted } from "@/libs/formatted";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
@@ -20,115 +21,11 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
   return (
     <div className="pt-6">
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb">
-        <ul className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <li>
-            <div className="flex items-center">
-              <Link
-                href="/"
-                className="mr-2 text-sm font-medium text-mutedForeground hover:text-primary"
-              >
-                Trang chủ
-              </Link>
-              <svg
-                width="16"
-                height="20"
-                viewBox="0 0 16 20"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-5 w-4 text-mutedForeground"
-              >
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li>
-
-          <li>
-            <div className="flex items-center">
-              <Link
-                href="/products"
-                className="mr-2 text-sm font-medium text-mutedForeground hover:text-primary"
-              >
-                Sản phẩm
-              </Link>
-              <svg
-                width="16"
-                height="20"
-                viewBox="0 0 16 20"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-5 w-4 text-mutedForeground"
-              >
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li>
-
-          <li className="text-sm">
-            <Link
-              href={`/products/${product?._id}`}
-              aria-current="page"
-              className="font-medium text-mutedForeground hover:text-primary"
-            >
-              {product?.name}
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Breadcrumb _id={product?._id} name={product?.name} />
       {/* End Breadcrumb */}
 
       {/* Images */}
-      <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        {images?.color_images[0]?.url && (
-          <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-            <Image
-              width={1000}
-              height={100}
-              src={images?.color_images[0]?.url}
-              alt={images?.color_images[0]?.url}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-        )}
-
-        <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-          {images?.color_images[1]?.url && (
-            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <Image
-                width={1000}
-                height={100}
-                src={images?.color_images[1]?.url}
-                alt={images?.color_images[1]?.url}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          )}
-
-          {images?.color_images[2]?.url && (
-            <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <Image
-                width={1000}
-                height={100}
-                src={images?.color_images[2]?.url}
-                alt={images?.color_images[2]?.url}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          )}
-        </div>
-
-        {images?.color_images[3]?.url && (
-          <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <Image
-              width={1000}
-              height={100}
-              src={images?.color_images[3]?.url}
-              alt={images?.color_images[3]?.url}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-        )}
-      </div>
+      <ImageGallery images={images} />
       {/* End Images */}
 
       <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
@@ -142,27 +39,14 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
         <div className="mt-4 lg:row-span-3 lg:mt-0">
           <h2 className="sr-only">Thông tin sản phẩm</h2>
           <p className="text-3xl tracking-tight text-cardForeground">
-            {product?.price.toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-            })}
+            {priceFormatted(product?.price)}
           </p>
 
           <div className="mt-6">
             <h3 className="sr-only">Bình luận</h3>
-            {/* Rate */}
-            <div className="flex items-center">
-              <div className="flex items-center">
-                <Rating />
-              </div>
-
-              <p className="sr-only">Đánh giá</p>
-
-              <span className="ml-3 text-sm font-medium text-primary hover:text-primary/80">
-                {product?.comments.length} bình luận
-              </span>
-            </div>
-            {/* End Rate */}
+            {/* Rating */}
+            <Rating comments={product?.comments} />
+            {/* End Rating */}
           </div>
 
           <div className="mt-10">

@@ -14,7 +14,17 @@ const CartPage = () => {
           <div className="lg:col-span-7">
             <h2 className="sr-only">Sản phẩm trong giỏ hàng</h2>
 
-            <CartItem carts={carts} />
+            <div className="divide-y divide-gray-200 border-b border-t dark:border-secondary">
+              {carts && carts.products && carts.products.length > 0 ? (
+                <CartItem products={carts.products} />
+              ) : (
+                <div className="flex items-center justify-center">
+                  <span className="text-lg py-5 text-mutedForeground">
+                    Không có sản phẩm trong giỏ hàng
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="mt-16 rounded-lg bg-secondary px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">

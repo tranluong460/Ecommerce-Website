@@ -63,10 +63,10 @@ const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
                   <div className="mt-8">
                     <div className="flow-root">
                       <ul className="-my-6 divide-y divide-secondary">
-                        {carts && carts.length > 0 ? (
-                          carts.map((item, index) => (
-                            <CartDrawnItem key={index} cart={item} />
-                          ))
+                        {carts &&
+                        carts.products &&
+                        carts.products.length > 0 ? (
+                          <CartDrawnItem products={carts.products} />
                         ) : (
                           <div className="flex items-center justify-center">
                             <span className="text-lg py-5 text-mutedForeground">
