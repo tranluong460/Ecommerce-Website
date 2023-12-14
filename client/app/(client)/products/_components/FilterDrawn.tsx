@@ -1,219 +1,70 @@
-type ModalSearchProps = {
-  showModal: boolean;
-  setShowModal: () => void;
-};
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { filter__links } from "@/data/links";
 
-const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
+const FilterDrawn = () => {
   return (
-    <div className={`relative z-40 lg:hidden ${showModal ? "" : "invisible"}`}>
-      <div
-        className={`fixed inset-0 bg-black/70 bg-opacity-75 ${
-          showModal ? "opacity-70" : "opacity-0"
-        }`}
-      />
-
-      <div className="fixed inset-0 z-40 flex">
-        <div
-          className={`relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-background py-4 pb-12 shadow-xl transform transition ease-in-out duration-500 sm:duration-700 ${
-            showModal ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className="flex items-center justify-between px-4">
-            <h2 className="text-lg font-medium text-foreground">Lọc</h2>
-
-            <button
-              onClick={setShowModal}
-              className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-secondary p-2 text-muted-foreground hover:text-primary"
-            >
-              <span className="sr-only">Đóng</span>
-
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div className="mt-4 border-t dark:border-secondary">
-            <div className="border-t dark:border-secondary px-4 py-6">
-              <h3 className="-mx-2 -my-3 flow-root">
-                <button className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-muted-foreground hover:text-primary">
-                  <span className="font-medium text-muted-foreground group-hover:text-primary">
-                    Giới tính
-                  </span>
-
-                  <span className="ml-6 flex items-center">
-                    <svg
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </span>
-                </button>
-              </h3>
-
-              <div className="pt-6">
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-sex-0"
-                      name="sex-boy"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-sex-0"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      Nam
-                    </label>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-sex-1"
-                      name="sex-girl"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-sex-1"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      Nữ
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t dark:border-secondary px-4 py-6">
-              <h3 className="-mx-2 -my-3 flow-root">
-                <button
-                  className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-muted-foreground hover:text-primary"
-                  aria-controls="filter-section-mobile-2"
-                  aria-expanded="false"
-                >
-                  <span className="font-medium text-muted-foreground group-hover:text-primary">
-                    Kích cỡ
-                  </span>
-
-                  <span className="ml-6 flex items-center">
-                    <svg
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </span>
-                </button>
-              </h3>
-
-              <div className="pt-6" id="filter-section-mobile-2">
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-size-0"
-                      name="size-xs"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-size-0"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      XS
-                    </label>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-size-1"
-                      name="size-s"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-size-1"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      S
-                    </label>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-size-2"
-                      name="size-M"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-size-2"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      M
-                    </label>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-size-3"
-                      name="size-L"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-size-3"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      L
-                    </label>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                      id="filter-mobile-size-4"
-                      name="size-XL"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
-                    />
-
-                    <label
-                      htmlFor="filter-mobile-size-4"
-                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
-                    >
-                      XL
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <Sheet>
+      <SheetTrigger asChild>
+        <div className="-m-2 ml-4 p-2 text-muted-foreground hover:text-primary sm:ml-6 lg:hidden">
+          <span className="sr-only">Lọc</span>
+          <svg
+            className="h-5 w-5"
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
         </div>
-      </div>
-    </div>
+      </SheetTrigger>
+
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Lọc</SheetTitle>
+          <Separator className="my-4" />
+        </SheetHeader>
+
+        <Accordion type="single" collapsible className="w-full">
+          {filter__links.map((item) => (
+            <AccordionItem key={item.name} value={item.name}>
+              <AccordionTrigger>{item.label}</AccordionTrigger>
+
+              {item.children.map((children) => (
+                <AccordionContent key={children.name}>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex gap-2">
+                      <Checkbox id={`${item.name}-${children.name}`} />
+                      <Label htmlFor={`${item.name}-${children.name}`}>
+                        {children.label}
+                      </Label>
+                    </div>
+                  </div>
+                </AccordionContent>
+              ))}
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </SheetContent>
+    </Sheet>
   );
 };
 

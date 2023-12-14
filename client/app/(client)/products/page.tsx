@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Container from "@/components/Container";
 import FilterDrawn from "./_components/FilterDrawn";
 import ListProducts from "./_components/ListProducts";
@@ -9,19 +6,12 @@ import Filter from "./_components/Filter";
 import { products } from "@/data/products";
 
 const ProductsPage = () => {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <section className="py-10">
       <Container>
         <div className="bg-background">
-          <FilterDrawn
-            showModal={showModal}
-            setShowModal={() => setShowModal(!showModal)}
-          />
-
           <div className="mx-auto">
-            <Top setShowModal={() => setShowModal(!showModal)} />
+            <Top />
 
             <div aria-labelledby="products-heading" className="pb-24 pt-6">
               <h2 id="products-heading" className="sr-only">

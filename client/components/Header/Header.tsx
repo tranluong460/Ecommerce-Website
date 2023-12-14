@@ -4,7 +4,7 @@ import { useState } from "react";
 import Container from "../Container";
 import Logo from "../Logo";
 import Navigation from "./Navigation";
-import NavDrawn from "./NavDrawn";
+import NavigationDrawn from "./NavigationDrawn";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
@@ -14,7 +14,10 @@ const Header = () => {
 
   return (
     <header className="relative bg-background">
-      <NavDrawn showNav={showNav} setShowNav={() => setShowNav(!showNav)} />
+      <NavigationDrawn
+        showNav={showNav}
+        setShowNav={() => setShowNav(!showNav)}
+      />
 
       <div className="border-b dark:border-secondary">
         <Container>

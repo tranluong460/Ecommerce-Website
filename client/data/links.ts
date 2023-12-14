@@ -109,3 +109,28 @@ export const nav__links_girl = [
     ],
   },
 ];
+
+export const filter__links = [
+  {
+    label: "Giới tính",
+    name: "sex",
+    children: [
+      { url: "#", label: "Nam", name: "boy" },
+      { url: "#", label: "Nữ", name: "girl" },
+    ],
+  },
+  {
+    label: "Kích thước",
+    name: "size",
+    children: [
+      { url: "#", label: "XXS", name: "XXS" },
+      { url: "#", label: "XS", name: "XS" },
+      { url: "#", label: "S", name: "S" },
+      { url: "#", label: "M", name: "M" },
+      { url: "#", label: "L", name: "L" },
+      { url: "#", label: "XL", name: "XL" },
+      { url: "#", label: "XXL", name: "XXL" },
+      { url: "#", label: "XXXL", name: "XXXL" },
+    ],
+  },
+];

@@ -6,6 +6,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import CartDrawnItem from "./CartDrawnItem";
@@ -40,6 +41,7 @@ const CartDrawn = () => {
             <Link className="hover:text-primary hover:underline" href="/cart">
               Giỏ hàng
             </Link>
+            <Separator className="mt-2" />
           </SheetTitle>
         </SheetHeader>
 

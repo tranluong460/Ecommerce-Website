@@ -10,7 +10,7 @@ type NavDrawnProps = {
   setShowNav: () => void;
 };
 
-const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
+const NavigationDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
   const [activeBoy, setActiveBoy] = useState(true);
   const [activeGirl, setActiveGirl] = useState(false);
 
@@ -282,4 +282,4 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
   );
 };
 
-export default NavDrawn;
+export default NavigationDrawn;
