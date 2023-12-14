@@ -1,11 +1,13 @@
+import { Button } from "@/components/ui/button";
 import Size from "./Size";
 import Rating from "./Rating";
 import Breadcrumb from "./Breadcrumb";
 import HeartButton from "./HeartButton";
 import ImageGallery from "./ImageGallery";
-import { Button } from "@/components/ui/button";
+import ListProducts from "../../_components/ListProducts";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
+import { products } from "@/data/products";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
@@ -21,7 +23,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
   );
 
   return (
-    <div className="pt-6">
+    <div className="py-6">
       <Breadcrumb _id={product?._id} name={product?.name} />
 
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl">
@@ -120,6 +122,14 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-3">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          Sản phẩm cùng loại
+        </h1>
+
+        <ListProducts products={products} />
       </div>
     </div>
   );

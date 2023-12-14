@@ -21,8 +21,6 @@ const UserMenu = () => {
           <AvatarImage
             src={isLogin ? "https://github.com/shadcn.png" : "/user.jpg"}
             alt="@avatar"
-            width={10}
-            height={10}
           />
           <AvatarFallback>AV</AvatarFallback>
         </Avatar>
