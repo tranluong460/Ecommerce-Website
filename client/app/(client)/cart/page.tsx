@@ -15,8 +15,13 @@ const CartPage = () => {
             <h2 className="sr-only">Sản phẩm trong giỏ hàng</h2>
 
             <div className="divide-y divide-gray-200 border-b border-t dark:border-secondary">
-              {carts && carts.products && carts.products.length > 0 ? (
-                <CartItem products={carts.products} />
+              {carts && carts.products ? (
+                carts.products.map((product) => (
+                  <CartItem
+                    key={`${product.product._id}-${product.color}-${product.size}`}
+                    product={product}
+                  />
+                ))
               ) : (
                 <div className="flex items-center justify-center">
                   <span className="text-lg py-5 text-mutedForeground">
