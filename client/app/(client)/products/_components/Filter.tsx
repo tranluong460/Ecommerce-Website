@@ -9,7 +9,7 @@ const Filter = () => {
             aria-controls="filter-section-0"
             aria-expanded="false"
           >
-            <span className="ml-2 font-medium text-mutedForeground group-hover:text-primary">
+            <span className="ml-3 font-medium text-mutedForeground group-hover:text-primary">
               Giới tính
             </span>
 
@@ -41,7 +41,7 @@ const Filter = () => {
 
         <div className="pt-6">
           <div className="space-y-4">
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-sex-0"
                 name="sex-boy"
@@ -57,7 +57,7 @@ const Filter = () => {
               </label>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-sex-1"
                 name="sex-girl"
@@ -84,7 +84,7 @@ const Filter = () => {
             aria-controls="filter-section-0"
             aria-expanded="false"
           >
-            <span className="ml-2 font-medium text-mutedForeground group-hover:text-primary">
+            <span className="ml-3 font-medium text-mutedForeground group-hover:text-primary">
               Kích cỡ
             </span>
 
@@ -103,7 +103,7 @@ const Filter = () => {
 
         <div className="pt-6">
           <div className="space-y-4">
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-size-0"
                 name="size-xs"
@@ -119,7 +119,7 @@ const Filter = () => {
               </label>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-size-1"
                 name="size-s"
@@ -135,7 +135,7 @@ const Filter = () => {
               </label>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-size-2"
                 name="size-m"
@@ -151,7 +151,7 @@ const Filter = () => {
               </label>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-size-3"
                 name="size-l"
@@ -167,7 +167,7 @@ const Filter = () => {
               </label>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-2">
               <input
                 id="filter-size-4"
                 name="size-xl"
