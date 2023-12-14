@@ -11,7 +11,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const UserMenu = () => {
-  const isLogin = true;
+  const isLogin = false;
   const isAdmin = true;
 
   return (
