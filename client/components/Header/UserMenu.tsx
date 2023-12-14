@@ -18,7 +18,10 @@ const UserMenu = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar>
-          <AvatarImage src="/user.jpg" alt="@avatar" />
+          <AvatarImage
+            src={isLogin ? "https://github.com/shadcn.png" : "/user.jpg"}
+            alt="@avatar"
+          />
           <AvatarFallback>AV</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
