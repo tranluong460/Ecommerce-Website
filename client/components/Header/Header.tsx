@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Container from "../Container";
 import Logo from "../Logo";
 import Navigation from "./Navigation";
@@ -10,8 +7,6 @@ import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
 
 const Header = () => {
-  const [showNav, setShowNav] = useState(false);
-
   return (
     <header className="relative bg-background">
       <div className="border-b dark:border-secondary">
