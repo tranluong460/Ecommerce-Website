@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import FilterDrawn from "./_components/FilterDrawn";
 import ListProducts from "./_components/ListProducts";
 import Top from "./_components/Top";
 import Filter from "./_components/Filter";

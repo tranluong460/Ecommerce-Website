@@ -1,9 +1,9 @@
+import { Button } from "@/components/ui/button";
 import Container from "@/components/Container";
 import CartItem from "./_components/CartItem";
 import { carts } from "@/data/carts";
 import { calculateCartTotalPrice } from "@/libs/calculate";
 import { priceFormatted } from "@/libs/formatted";
-import { Button } from "@/components/ui/button";
 
 const CartPage = () => {
   return (
