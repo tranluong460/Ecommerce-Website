@@ -2,7 +2,7 @@ const HeartButton = () => {
   return (
     <div className="border rounded-full p-2">
       <svg
-        className="text-muted-foreground"
+        className="text-foreground dark:text-muted-foreground"
         width="25"
         height="25"
         viewBox="0 0 15 15"
