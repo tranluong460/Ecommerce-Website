@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Favorite from "./Favorite";
-import { calculateAverageRating } from "@/libs/calculate";
+import HeartButton from "./HeartButton";
+import Rating from "./Rating";
 import { IProduct, ISizeProduct } from "@/interface/products";
 
 type ProductDetailProps = {
@@ -138,10 +138,11 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             {/* Rate */}
             <div className="flex items-center">
               <div className="flex items-center">
-                {calculateAverageRating(product?.comments)}
+                <Rating />
               </div>
 
               <p className="sr-only">Đánh giá</p>
+
               <span className="ml-3 text-sm font-medium text-primary hover:text-primary/80">
                 {product?.comments.length} bình luận
               </span>
@@ -155,6 +156,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
               <fieldset className="mt-4">
                 <legend className="sr-only">Chọn màu</legend>
+
                 {/* Color */}
                 <div className="flex items-center space-x-3">
                   {colors?.map((color) => (
@@ -168,7 +170,8 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
                       <span
                         aria-hidden="true"
-                        className={`h-8 w-8 rounded-full border dark:border-secondary bg-[#${color.name}]`}
+                        className="h-8 w-8 rounded-full border dark:border-secondary"
+                        style={{ backgroundColor: `#${color.name}` }}
                       />
                     </label>
                   ))}
@@ -182,7 +185,8 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                 <h3 className="text-sm font-medium text-cardForeground">
                   Kích thước
                 </h3>
-                <span className="text-sm font-medium text-primary hover:text-primary/80">
+
+                <span className="text-sm font-medium text-primary hover:text-primary/90 hover:underline cursor-default">
                   Hướng dẫn chọn kích thước
                 </span>
               </div>
@@ -247,7 +251,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                 Thêm Vào giỏ hàng
               </button>
 
-              <Favorite />
+              <HeartButton />
             </div>
           </div>
         </div>
