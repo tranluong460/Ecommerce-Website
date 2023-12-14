@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CartDrawnItem from "./CartDrawnItem";
 import { carts } from "@/data/carts";
+import { calculateCartTotalPrice } from "@/libs/calculate";
 
 type CartDrawnProps = {
   showCartDrawn: boolean;
@@ -85,11 +86,11 @@ const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
                 <div className="border-t dark:border-secondary px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-foreground">
                     <p>Tổng phụ</p>
-                    <p>$262.00</p>
+                    <p>{calculateCartTotalPrice(carts)}</p>
                   </div>
 
                   <p className="mt-0.5 text-sm text-mutedForeground">
-                    Shipping and taxes calculated at checkout.
+                    Đã bao gồm phí vận chuyển và thuế
                   </p>
 
                   <div className="mt-6">

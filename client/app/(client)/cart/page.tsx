@@ -1,6 +1,8 @@
 import Container from "@/components/Container";
 import CartItem from "./_components/CartItem";
 import { carts } from "@/data/carts";
+import { calculateCartTotalPrice } from "@/libs/calculate";
+import { priceFormatted } from "@/libs/formatted";
 
 const CartPage = () => {
   return (
@@ -39,7 +41,7 @@ const CartPage = () => {
               <div className="flex items-center justify-between">
                 <div className="text-sm text-mutedForeground">Tổng phụ</div>
                 <div className="text-sm font-medium text-mutedForeground">
-                  $99.00
+                  {calculateCartTotalPrice(carts)}
                 </div>
               </div>
 
@@ -49,7 +51,7 @@ const CartPage = () => {
                 </div>
 
                 <div className="text-sm font-medium text-mutedForeground">
-                  $5.00
+                  {priceFormatted(0)}
                 </div>
               </div>
 
@@ -59,7 +61,7 @@ const CartPage = () => {
                 </div>
 
                 <div className="text-sm font-medium text-mutedForeground">
-                  $8.32
+                  {priceFormatted(0)}
                 </div>
               </div>
 
@@ -69,7 +71,7 @@ const CartPage = () => {
                 </div>
 
                 <div className="text-base font-medium text-mutedForeground">
-                  $112.32
+                  {calculateCartTotalPrice(carts)}
                 </div>
               </div>
             </div>
