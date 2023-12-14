@@ -5,11 +5,11 @@ const Filter = () => {
         <h3 className="-my-3 flow-root">
           <button
             type="button"
-            className="group flex w-full items-center justify-between bg-secondary py-3 text-sm text-mutedForeground hover:text-primary"
+            className="group flex w-full items-center justify-between bg-secondary py-3 text-sm text-muted-foreground hover:text-primary"
             aria-controls="filter-section-0"
             aria-expanded="false"
           >
-            <span className="ml-3 font-medium text-mutedForeground group-hover:text-primary">
+            <span className="ml-3 font-medium text-muted-foreground group-hover:text-primary">
               Giới tính
             </span>
 
@@ -46,12 +46,12 @@ const Filter = () => {
                 id="filter-sex-0"
                 name="sex-boy"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-sex-0"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 Nam
               </label>
@@ -62,12 +62,12 @@ const Filter = () => {
                 id="filter-sex-1"
                 name="sex-girl"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-sex-1"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 Nữ
               </label>
@@ -80,11 +80,11 @@ const Filter = () => {
         <h3 className="-my-3 flow-root">
           <button
             type="button"
-            className="group flex w-full items-center justify-between bg-secondary py-3 text-sm text-mutedForeground hover:text-primary"
+            className="group flex w-full items-center justify-between bg-secondary py-3 text-sm text-muted-foreground hover:text-primary"
             aria-controls="filter-section-0"
             aria-expanded="false"
           >
-            <span className="ml-3 font-medium text-mutedForeground group-hover:text-primary">
+            <span className="ml-3 font-medium text-muted-foreground group-hover:text-primary">
               Kích cỡ
             </span>
 
@@ -108,12 +108,12 @@ const Filter = () => {
                 id="filter-size-0"
                 name="size-xs"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-size-0"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 XS
               </label>
@@ -124,12 +124,12 @@ const Filter = () => {
                 id="filter-size-1"
                 name="size-s"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-size-1"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 S
               </label>
@@ -140,12 +140,12 @@ const Filter = () => {
                 id="filter-size-2"
                 name="size-m"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-size-2"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 M
               </label>
@@ -156,12 +156,12 @@ const Filter = () => {
                 id="filter-size-3"
                 name="size-l"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-size-3"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 L
               </label>
@@ -172,12 +172,12 @@ const Filter = () => {
                 id="filter-size-4"
                 name="size-xl"
                 type="checkbox"
-                className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
               />
 
               <label
                 htmlFor="filter-size-4"
-                className="ml-3 text-sm text-mutedForeground"
+                className="ml-3 text-sm text-muted-foreground"
               >
                 XL
               </label>

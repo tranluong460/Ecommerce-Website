@@ -23,7 +23,7 @@ const RegisterPage = () => {
                 <Button label="Đăng ký" />
 
                 <div className="flex gap-1 text-xs justify-end mt-3">
-                  <span className="text-mutedForeground">
+                  <span className="text-muted-foreground">
                     Bạn đã có tài khoản?
                   </span>
 
@@ -33,7 +33,7 @@ const RegisterPage = () => {
                 </div>
 
                 <div className="my-5 border-b dark:border-secondary text-center">
-                  <div className="leading-none px-2 inline-block text-sm text-mutedForeground tracking-wide font-medium bg-popover transform translate-y-1/2">
+                  <div className="leading-none px-2 inline-block text-sm text-muted-foreground tracking-wide font-medium bg-popover transform translate-y-1/2">
                     Hoặc đăng nhập bằng
                   </div>
                 </div>

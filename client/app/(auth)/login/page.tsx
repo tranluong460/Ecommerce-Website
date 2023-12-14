@@ -21,7 +21,7 @@ const LoginPage = () => {
                 <Button label="Đăng nhập" />
 
                 <div className="flex gap-1 text-xs justify-end">
-                  <span className="text-mutedForeground">
+                  <span className="text-muted-foreground">
                     Bạn chưa có tài khoản?
                   </span>
 
@@ -34,7 +34,7 @@ const LoginPage = () => {
                 </div>
 
                 <div className="my-5 border-b dark:border-secondary text-center">
-                  <div className="leading-none px-2 inline-block text-sm text-mutedForeground tracking-wide font-medium bg-popover transform translate-y-1/2">
+                  <div className="leading-none px-2 inline-block text-sm text-muted-foreground tracking-wide font-medium bg-popover transform translate-y-1/2">
                     Hoặc đăng nhập bằng
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const LoginPage = () => {
                   }
                 />
 
-                <p className="mt-6 text-xs text-mutedForeground text-center">
+                <p className="mt-6 text-xs text-muted-foreground text-center">
                   Tôi đồng ý tuân theo&nbsp;
                   <Link
                     href="#"

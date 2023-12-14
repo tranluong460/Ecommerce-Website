@@ -14,7 +14,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
           <div className="flex items-center">
             <Link
               href="/"
-              className="mr-2 text-sm font-medium text-mutedForeground hover:text-primary"
+              className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               Trang chủ
             </Link>
@@ -24,7 +24,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
               viewBox="0 0 16 20"
               fill="currentColor"
               aria-hidden="true"
-              className="h-5 w-4 text-mutedForeground"
+              className="h-5 w-4 text-muted-foreground"
             >
               <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
             </svg>
@@ -35,7 +35,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
           <div className="flex items-center">
             <Link
               href="/products"
-              className="mr-2 text-sm font-medium text-mutedForeground hover:text-primary"
+              className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               Sản phẩm
             </Link>
@@ -45,7 +45,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
               viewBox="0 0 16 20"
               fill="currentColor"
               aria-hidden="true"
-              className="h-5 w-4 text-mutedForeground"
+              className="h-5 w-4 text-muted-foreground"
             >
               <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
             </svg>
@@ -56,7 +56,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
           <Link
             href={`/products/${_id}`}
             aria-current="page"
-            className="font-medium text-mutedForeground hover:text-primary"
+            className="font-medium text-muted-foreground hover:text-primary"
           >
             {name}
           </Link>

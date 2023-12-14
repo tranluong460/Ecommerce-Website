@@ -23,21 +23,21 @@ const UserMenu = () => {
           <>
             <Link
               href="/information"
-              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accentForeground hover:bg-accent text-mutedForeground"
+              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accent-foreground hover:bg-accent text-muted-foreground"
             >
               Thông tin cá nhân
             </Link>
 
             <Link
               href="/order"
-              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accentForeground hover:bg-accent text-mutedForeground"
+              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accent-foreground hover:bg-accent text-muted-foreground"
             >
               Đơn hàng
             </Link>
 
             <div className="-mx-1 my-1 h-px bg-muted" />
 
-            <button className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accentForeground hover:bg-accent text-mutedForeground">
+            <button className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accent-foreground hover:bg-accent text-muted-foreground">
               Đăng xuất
             </button>
           </>
@@ -45,14 +45,14 @@ const UserMenu = () => {
           <>
             <Link
               href="/login"
-              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accentForeground hover:bg-accent text-mutedForeground"
+              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accent-foreground hover:bg-accent text-muted-foreground"
             >
               Đăng nhập
             </Link>
 
             <Link
               href="/register"
-              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accentForeground hover:bg-accent text-mutedForeground"
+              className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:text-accent-foreground hover:bg-accent text-muted-foreground"
             >
               Đăng ký
             </Link>

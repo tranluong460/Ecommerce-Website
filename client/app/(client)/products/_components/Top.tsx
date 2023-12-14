@@ -25,14 +25,14 @@ const Top = ({ setShowModal }: TopProps) => {
           <div onClick={() => setShow(!show)}>
             <button
               type="button"
-              className="group inline-flex justify-center text-sm font-medium text-mutedForeground hover:text-primary"
+              className="group inline-flex justify-center text-sm font-medium text-muted-foreground hover:text-primary"
               id="menu-button"
               aria-expanded="false"
               aria-haspopup="true"
             >
               Sắp xếp
               <svg
-                className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-mutedForeground group-hover:text-primary"
+                className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-muted-foreground group-hover:text-primary"
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 aria-hidden="true"
@@ -56,7 +56,7 @@ const Top = ({ setShowModal }: TopProps) => {
                 <Link
                   key={item.label}
                   href="#"
-                  className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent text-mutedForeground hover:text-primary"
+                  className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent text-muted-foreground hover:text-primary"
                 >
                   {item.label}
                 </Link>
@@ -67,7 +67,7 @@ const Top = ({ setShowModal }: TopProps) => {
 
         <button
           type="button"
-          className="-m-2 ml-5 p-2 text-mutedForeground hover:text-primary sm:ml-7"
+          className="-m-2 ml-5 p-2 text-muted-foreground hover:text-primary sm:ml-7"
         >
           <span className="sr-only">Xem lưới</span>
           <svg
@@ -86,7 +86,7 @@ const Top = ({ setShowModal }: TopProps) => {
 
         <button
           onClick={setShowModal}
-          className="-m-2 ml-4 p-2 text-mutedForeground hover:text-primary sm:ml-6 lg:hidden"
+          className="-m-2 ml-4 p-2 text-muted-foreground hover:text-primary sm:ml-6 lg:hidden"
         >
           <span className="sr-only">Lọc</span>
           <svg

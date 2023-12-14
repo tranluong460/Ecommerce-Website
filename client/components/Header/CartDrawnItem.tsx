@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Label } from "../ui/label";
+import { Button } from "../ui/button";
 import { IProductCart } from "@/interface/carts";
 import { priceFormatted } from "@/libs/formatted";
 
@@ -13,8 +15,8 @@ const CartDrawnItem = ({ product }: CartDrawnItemProps) => {
   );
 
   return (
-    <div className="flex py-6">
-      <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-secondary">
+    <div className="flex py-5 mr-3">
+      <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border dark:border-secondary">
         {images && (
           <Image
             width={100}
@@ -27,37 +29,42 @@ const CartDrawnItem = ({ product }: CartDrawnItemProps) => {
       </div>
 
       <div className="ml-4 flex flex-1 flex-col">
-        <div>
-          <div className="flex justify-between text-base font-medium text-mutedForeground">
-            <h3 className="hover:text-primary">
-              <Link href={`/products/${product.product._id}`}>
+        <div className="flex flex-col">
+          <div className="flex flex-col gap-1 justify-between">
+            <Link href={`/products/${product.product._id}`} className="group">
+              <Label className="group-hover:text-primary text-sm font-medium cursor-pointer">
                 {product.product.name}
-              </Link>
-            </h3>
-            <p className="ml-4">{priceFormatted(product.product.price)}</p>
+              </Label>
+            </Link>
+
+            <Label className="text-sm font-medium">
+              {priceFormatted(product.product.price)}
+            </Label>
           </div>
 
-          <div className="flex text-sm items-center">
+          <div className="flex text-sm items-center mt-1">
             <span
               aria-hidden="true"
               className="h-3 w-3 border dark:border-secondary"
               style={{ backgroundColor: `#${product.color}` }}
             />
 
-            <p className="ml-4 border-l dark:border-secondary pl-4 text-mutedForeground">
+            <p className="ml-4 border-l dark:border-secondary pl-4 text-muted-foreground">
               {product.size}
             </p>
           </div>
         </div>
 
-        <div className="flex flex-1 items-end justify-between text-sm">
-          <p className="text-mutedForeground">Số lượng: {product.quantity}</p>
+        <div className="flex flex-1 justify-between text-sm">
+          <Label className="text-muted-foreground font-normal mt-2">
+            Số lượng: {product.quantity}
+          </Label>
 
           <div className="flex">
-            <button className="font-medium text-primary hover:text-primary/80">
+            <Button variant="link">
               <svg
-                width="15"
-                height="15"
+                width="20"
+                height="20"
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +76,7 @@ const CartDrawnItem = ({ product }: CartDrawnItemProps) => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </Button>
           </div>
         </div>
       </div>

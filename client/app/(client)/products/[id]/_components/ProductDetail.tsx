@@ -38,7 +38,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
         {/* Product Right */}
         <div className="mt-4 lg:row-span-3 lg:mt-0">
           <h2 className="sr-only">Thông tin sản phẩm</h2>
-          <p className="text-3xl tracking-tight text-cardForeground">
+          <p className="text-3xl tracking-tight text-card-foreground">
             {priceFormatted(product?.price)}
           </p>
 
@@ -51,7 +51,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
           <div className="mt-10">
             <div>
-              <h3 className="text-sm font-medium text-cardForeground">Màu</h3>
+              <h3 className="text-sm font-medium text-card-foreground">Màu</h3>
 
               <fieldset className="mt-4">
                 <legend className="sr-only">Chọn màu</legend>
@@ -81,7 +81,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
             <div className="mt-10">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-medium text-cardForeground">
+                <h3 className="text-sm font-medium text-card-foreground">
                   Kích thước
                 </h3>
 
@@ -97,7 +97,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                   {product?.sizes.map((size: ISizeProduct) => (
                     <div
                       key={size.name}
-                      className={`group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase focus:outline-none sm:flex-1 sm:py-6 text-cardForeground ${
+                      className={`group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase focus:outline-none sm:flex-1 sm:py-6 text-card-foreground ${
                         size.quantity !== 0
                           ? "dark:border-secondary hover:bg-primary hover:text-white shadow-sm cursor-pointer"
                           : "cursor-not-allowed"
@@ -146,7 +146,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             </div>
 
             <div className="flex items-center mt-10 gap-3">
-              <button className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-primaryForeground hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+              <button className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-primary-foreground hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
                 Thêm Vào giỏ hàng
               </button>
 
@@ -162,7 +162,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             <h3 className="sr-only">Mô tả</h3>
 
             <div className="space-y-6">
-              <p className="text-base text-mutedForeground">
+              <p className="text-base text-muted-foreground">
                 {product?.short_description}
               </p>
             </div>
@@ -176,8 +176,8 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             <div className="mt-4">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                 {product?.highlights.map((highlight) => (
-                  <li className="text-cardForeground" key={highlight.name}>
-                    <span className="text-mutedForeground">
+                  <li className="text-card-foreground" key={highlight.name}>
+                    <span className="text-muted-foreground">
                       {highlight.name}
                     </span>
                   </li>
@@ -187,12 +187,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
           </div>
 
           <div className="mt-10">
-            <h2 className="text-sm font-medium text-cardForeground">
+            <h2 className="text-sm font-medium text-card-foreground">
               Mô tả chi tiết
             </h2>
 
             <div className="mt-4 space-y-6">
-              <p className="text-sm text-mutedForeground">
+              <p className="text-sm text-muted-foreground">
                 {product?.description}
               </p>
             </div>

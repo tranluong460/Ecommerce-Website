@@ -8,7 +8,7 @@ const Aside = () => {
           Đăng ký nhận thông tin của chúng tôi
         </h2>
 
-        <p className="mb-4 text-base text-mutedForeground md:mb-6 md:text-center md:text-md lg:px-20 xl:px-56">
+        <p className="mb-4 text-base text-muted-foreground md:mb-6 md:text-center md:text-md lg:px-20 xl:px-56">
           Bạn có muốn nhận thông báo khi có sản phẩm mới không? Đăng ký nhận
           thông tin của chúng tôi và bạn sẽ là một trong những người đầu tiên.
         </p>
@@ -23,7 +23,7 @@ const Aside = () => {
               <div className="relative h-full">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                   <svg
-                    className="w-4 h-4 text-mutedForeground"
+                    className="w-4 h-4 text-muted-foreground"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -38,7 +38,7 @@ const Aside = () => {
                   id="member_email"
                   type="email"
                   name="email_address"
-                  className="block w-full px-3 py-4 pl-11 text-base text-accentForeground bg-background border dark:border-secondary rounded-l-xl focus:bg-background focus:outline-none"
+                  className="block w-full px-3 py-4 pl-11 text-base text-accent-foreground bg-background border dark:border-secondary rounded-l-xl focus:bg-background focus:outline-none"
                   placeholder="Nhập email của bạn"
                   required
                 />
@@ -49,14 +49,14 @@ const Aside = () => {
               <input
                 type="submit"
                 id="member_submit"
-                className="w-full px-4 py-4 text-base font-medium text-center text-background dark:text-accentForeground bg-primary hover:bg-primary/90 border dark:border-secondary cursor-pointer rounded-r-xl focus:outline-none"
+                className="w-full px-4 py-4 text-base font-medium text-center text-background dark:text-accent-foreground bg-primary hover:bg-primary/90 border dark:border-secondary cursor-pointer rounded-r-xl focus:outline-none"
                 value="Đăng ký"
               />
             </div>
           </div>
         </div>
 
-        <p className="text-sm text-mutedForeground md:text-center font-normal">
+        <p className="text-sm text-muted-foreground md:text-center font-normal">
           Bằng cách đăng ký, bạn đồng ý với &nbsp;
           <Link
             className="border-b border-gray-500 border-dotted hover:text-primary hover:border-primary"

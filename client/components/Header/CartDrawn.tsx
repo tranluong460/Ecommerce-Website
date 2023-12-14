@@ -1,113 +1,87 @@
 import Link from "next/link";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "../ui/button";
+import { ScrollArea } from "../ui/scroll-area";
 import CartDrawnItem from "./CartDrawnItem";
 import { carts } from "@/data/carts";
 import { calculateCartTotalPrice } from "@/libs/calculate";
 
-type CartDrawnProps = {
-  showCartDrawn: boolean;
-  setShowCartDrawn: () => void;
-};
-
-const CartDrawn = ({ showCartDrawn, setShowCartDrawn }: CartDrawnProps) => {
+const CartDrawn = () => {
   return (
-    <div className={`relative z-10 ${showCartDrawn ? "" : "invisible"}`}>
-      <div
-        className={`fixed inset-0 bg-black/70 bg-opacity-75 ease-in-out duration-500 transition-opacity ${
-          showCartDrawn ? "opacity-70" : "opacity-0"
-        }`}
-      />
+    <Sheet>
+      <SheetTrigger asChild>
+        <div className="group -m-2 flex items-center p-2 cursor-pointer">
+          <svg
+            className="h-6 w-6 flex-shrink-0 text-muted-foreground group-hover:text-primary"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+        </div>
+      </SheetTrigger>
 
-      <div className="fixed inset-0 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-            <div
-              className={`pointer-events-auto w-screen max-w-md transform transition ease-in-out duration-500 sm:duration-700 ${
-                showCartDrawn ? "translate-x-0" : "translate-x-full"
-              }`}
-            >
-              <div className="flex h-full flex-col overflow-y-scroll bg-background shadow-xl">
-                <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-                  <div className="flex items-start justify-between">
-                    <Link href="/cart">
-                      <h2 className="text-lg font-medium text-foreground hover:underline hover:text-primary">
-                        Giỏ hàng
-                      </h2>
-                    </Link>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>
+            <Link className="hover:text-primary hover:underline" href="/cart">
+              Giỏ hàng
+            </Link>
+          </SheetTitle>
+        </SheetHeader>
 
-                    <div className="ml-3 flex h-7 items-center">
-                      <button
-                        onClick={setShowCartDrawn}
-                        className="relative -m-2 p-2 text-mutedForeground hover:text-primary"
-                      >
-                        <span className="absolute -inset-0.5"></span>
-                        <span className="sr-only">Đóng</span>
-                        <svg
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="-mx-1 my-1 mt-3 h-px bg-muted" />
-
-                  <div className="mt-8">
-                    <div className="flow-root">
-                      <ul className="-my-6 divide-y divide-secondary">
-                        {carts && carts.products ? (
-                          carts.products.map((product) => (
-                            <CartDrawnItem
-                              key={`${product.product._id}-${product.color}-${product.size}`}
-                              product={product}
-                            />
-                          ))
-                        ) : (
-                          <div className="flex items-center justify-center">
-                            <span className="text-lg py-5 text-mutedForeground">
-                              Không có sản phẩm trong giỏ hàng
-                            </span>
-                          </div>
-                        )}
-                      </ul>
-                    </div>
-                  </div>
+        <div>
+          <ScrollArea className="h-[70vh] w-full">
+            <div className="divide-y">
+              {carts && carts.products ? (
+                carts.products.map((product) => (
+                  <CartDrawnItem
+                    key={`${product.product._id}-${product.color}-${product.size}`}
+                    product={product}
+                  />
+                ))
+              ) : (
+                <div className="flex items-center justify-center">
+                  <span className="text-lg py-5 text-muted-foreground">
+                    Không có sản phẩm trong giỏ hàng
+                  </span>
                 </div>
+              )}
+            </div>
+          </ScrollArea>
 
-                <div className="border-t dark:border-secondary px-4 py-6 sm:px-6">
-                  <div className="flex justify-between text-base font-medium text-foreground">
-                    <p>Tổng phụ</p>
-                    <p>{calculateCartTotalPrice(carts)}</p>
-                  </div>
+          <div className="border-t dark:border-secondary py-6">
+            <div className="flex justify-between text-base font-medium text-foreground">
+              <p>Tổng phụ</p>
+              <p>{calculateCartTotalPrice(carts)}</p>
+            </div>
 
-                  <p className="mt-0.5 text-sm text-mutedForeground">
-                    Đã bao gồm phí vận chuyển và thuế
-                  </p>
+            <p className="mt-0.5 text-sm text-muted-foreground">
+              Đã bao gồm phí vận chuyển và thuế
+            </p>
 
-                  <div className="mt-6">
-                    <Link
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-ring px-6 py-3 text-base font-medium text-background dark:text-foreground shadow-sm hover:bg-ring/80"
-                    >
-                      Thanh toán
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-6">
+              <Button className="w-full" size="lg">
+                Thanh toán
+              </Button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 

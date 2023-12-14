@@ -3,6 +3,7 @@ import CartItem from "./_components/CartItem";
 import { carts } from "@/data/carts";
 import { calculateCartTotalPrice } from "@/libs/calculate";
 import { priceFormatted } from "@/libs/formatted";
+import { Button } from "@/components/ui/button";
 
 const CartPage = () => {
   return (
@@ -16,7 +17,7 @@ const CartPage = () => {
           <div className="lg:col-span-7">
             <h2 className="sr-only">Sản phẩm trong giỏ hàng</h2>
 
-            <div className="divide-y divide-gray-200 border-b border-t dark:border-secondary">
+            <div className="divide-y divide-secondary border-b border-t dark:border-secondary">
               {carts && carts.products ? (
                 carts.products.map((product) => (
                   <CartItem
@@ -26,7 +27,7 @@ const CartPage = () => {
                 ))
               ) : (
                 <div className="flex items-center justify-center">
-                  <span className="text-lg py-5 text-mutedForeground">
+                  <span className="text-lg py-5 text-muted-foreground">
                     Không có sản phẩm trong giỏ hàng
                   </span>
                 </div>
@@ -39,47 +40,47 @@ const CartPage = () => {
 
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
-                <div className="text-sm text-mutedForeground">Tổng phụ</div>
-                <div className="text-sm font-medium text-mutedForeground">
+                <div className="text-sm text-muted-foreground">Tổng phụ</div>
+                <div className="text-sm font-medium text-muted-foreground">
                   {calculateCartTotalPrice(carts)}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t dark:border-mutedForeground pt-4">
-                <div className="flex items-center text-sm text-mutedForeground">
+              <div className="flex items-center justify-between border-t dark:border-muted-foreground pt-4">
+                <div className="flex items-center text-sm text-muted-foreground">
                   <span>Phí vận chuyển</span>
                 </div>
 
-                <div className="text-sm font-medium text-mutedForeground">
+                <div className="text-sm font-medium text-muted-foreground">
                   {priceFormatted(0)}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t dark:border-mutedForeground pt-4">
-                <div className="flex text-sm text-mutedForeground">
+              <div className="flex items-center justify-between border-t dark:border-muted-foreground pt-4">
+                <div className="flex text-sm text-muted-foreground">
                   <span>Thuế</span>
                 </div>
 
-                <div className="text-sm font-medium text-mutedForeground">
+                <div className="text-sm font-medium text-muted-foreground">
                   {priceFormatted(0)}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t dark:border-mutedForeground pt-4">
-                <div className="text-base font-medium text-mutedForeground">
+              <div className="flex items-center justify-between border-t dark:border-muted-foreground pt-4">
+                <div className="text-base font-medium text-muted-foreground">
                   Tổng
                 </div>
 
-                <div className="text-base font-medium text-mutedForeground">
+                <div className="text-base font-medium text-muted-foreground">
                   {calculateCartTotalPrice(carts)}
                 </div>
               </div>
             </div>
 
             <div className="mt-6">
-              <button className="w-full rounded-md border border-transparent bg-primary dark:text-foreground px-4 py-3 text-base font-medium text-muted shadow-sm hover:opacity-70 focus:outline-none">
+              <Button className="w-full" size="lg">
                 Thanh toán
-              </button>
+              </Button>
             </div>
           </div>
         </div>

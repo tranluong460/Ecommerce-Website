@@ -33,7 +33,7 @@ const Nav = () => {
             className={`border-transparent relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out ${
               activeBoy
                 ? "text-primary border-b-primary"
-                : "text-mutedForeground hover:text-primary"
+                : "text-muted-foreground hover:text-primary"
             }`}
             aria-expanded="false"
           >
@@ -42,7 +42,7 @@ const Nav = () => {
         </div>
 
         <div
-          className={`absolute inset-x-0 top-full text-sm text-mutedForeground transition ease-out duration-200 ${
+          className={`absolute inset-x-0 top-full text-sm text-muted-foreground transition ease-out duration-200 ${
             activeBoy ? "" : "invisible"
           }`}
         >
@@ -140,7 +140,7 @@ const Nav = () => {
             className={`border-transparent relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out ${
               activeGirl
                 ? "text-primary border-b-primary"
-                : "text-mutedForeground hover:text-primary"
+                : "text-muted-foreground hover:text-primary"
             }`}
           >
             Nữ
@@ -148,7 +148,7 @@ const Nav = () => {
         </div>
 
         <div
-          className={`absolute inset-x-0 top-full text-sm text-mutedForeground transition ease-out duration-200  ${
+          className={`absolute inset-x-0 top-full text-sm text-muted-foreground transition ease-out duration-200  ${
             activeGirl ? "" : "invisible"
           }`}
         >
@@ -242,7 +242,7 @@ const Nav = () => {
       <Link
         href="/products"
         onClick={onToggle}
-        className="flex items-center text-sm font-medium text-mutedForeground hover:text-primary"
+        className="flex items-center text-sm font-medium text-muted-foreground hover:text-primary"
       >
         Sản phẩm
       </Link>

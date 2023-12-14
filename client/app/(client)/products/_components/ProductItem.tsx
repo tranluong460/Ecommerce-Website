@@ -25,7 +25,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           <Link href={`/products/${product._id}`}>{product.name}</Link>
         </h3>
 
-        <p className="text-sm font-medium text-mutedForeground">
+        <p className="text-sm font-medium text-muted-foreground">
           {priceFormatted(product?.price)}
         </p>
       </div>

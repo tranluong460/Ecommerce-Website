@@ -16,7 +16,7 @@ const ListProducts = ({ products }: ListProductsProps) => {
         </div>
       ) : (
         <div className="flex items-center justify-center">
-          <span className="text-lg py-5 text-mutedForeground">
+          <span className="text-lg py-5 text-muted-foreground">
             Không có sản phẩm
           </span>
         </div>

@@ -23,7 +23,7 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
 
             <button
               onClick={setShowModal}
-              className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-secondary p-2 text-mutedForeground hover:text-primary"
+              className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-secondary p-2 text-muted-foreground hover:text-primary"
             >
               <span className="sr-only">Đóng</span>
 
@@ -47,8 +47,8 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
           <div className="mt-4 border-t dark:border-secondary">
             <div className="border-t dark:border-secondary px-4 py-6">
               <h3 className="-mx-2 -my-3 flow-root">
-                <button className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-mutedForeground hover:text-primary">
-                  <span className="font-medium text-mutedForeground group-hover:text-primary">
+                <button className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-muted-foreground hover:text-primary">
+                  <span className="font-medium text-muted-foreground group-hover:text-primary">
                     Giới tính
                   </span>
 
@@ -72,12 +72,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-sex-0"
                       name="sex-boy"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-sex-0"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       Nam
                     </label>
@@ -88,12 +88,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-sex-1"
                       name="sex-girl"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-sex-1"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       Nữ
                     </label>
@@ -105,11 +105,11 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
             <div className="border-t dark:border-secondary px-4 py-6">
               <h3 className="-mx-2 -my-3 flow-root">
                 <button
-                  className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-mutedForeground hover:text-primary"
+                  className="group flex w-full items-center justify-between bg-secondary px-2 py-3 text-muted-foreground hover:text-primary"
                   aria-controls="filter-section-mobile-2"
                   aria-expanded="false"
                 >
-                  <span className="font-medium text-mutedForeground group-hover:text-primary">
+                  <span className="font-medium text-muted-foreground group-hover:text-primary">
                     Kích cỡ
                   </span>
 
@@ -133,12 +133,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-size-0"
                       name="size-xs"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-size-0"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       XS
                     </label>
@@ -149,12 +149,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-size-1"
                       name="size-s"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-size-1"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       S
                     </label>
@@ -165,12 +165,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-size-2"
                       name="size-M"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-size-2"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       M
                     </label>
@@ -181,12 +181,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-size-3"
                       name="size-L"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-size-3"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       L
                     </label>
@@ -197,12 +197,12 @@ const FilterDrawn = ({ showModal, setShowModal }: ModalSearchProps) => {
                       id="filter-mobile-size-4"
                       name="size-XL"
                       type="checkbox"
-                      className="h-4 w-4 rounded border dark:border-secondary text-mutedForeground focus:ring-ring"
+                      className="h-4 w-4 rounded border dark:border-secondary text-muted-foreground focus:ring-ring"
                     />
 
                     <label
                       htmlFor="filter-mobile-size-4"
-                      className="ml-3 min-w-0 flex-1 text-mutedForeground"
+                      className="ml-3 min-w-0 flex-1 text-muted-foreground"
                     >
                       XL
                     </label>

@@ -47,12 +47,12 @@ const CartItem = ({ product }: CartItemProps) => {
                 style={{ backgroundColor: `#${product.color}` }}
               />
 
-              <p className="ml-4 border-l dark:border-secondary pl-4 text-mutedForeground">
+              <p className="ml-4 border-l dark:border-secondary pl-4 text-muted-foreground">
                 {product.size}
               </p>
             </div>
 
-            <p className="mt-1 text-sm font-medium text-mutedForeground">
+            <p className="mt-1 text-sm font-medium text-muted-foreground">
               {priceFormatted(product.product.price)}
             </p>
           </div>
@@ -68,7 +68,7 @@ const CartItem = ({ product }: CartItemProps) => {
             <div className="relative flex items-center max-w-[8rem]">
               <button className="group bg-secondary dark:border-secondary hover:bg-opacity-80 border rounded-s-lg p-3 h-11 focus:outline-none hover:bg-primary hover:text-foreground">
                 <svg
-                  className="w-3 h-3 text-mutedForeground group-hover:text-background group-hover:dark:text-foreground"
+                  className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -85,14 +85,14 @@ const CartItem = ({ product }: CartItemProps) => {
               </button>
 
               <input
-                className="bg-secondary/50 border-x-0 dark:border-secondary h-11 text-center text-mutedForeground text-sm block w-full py-2.5 outline-none"
+                className="bg-secondary/50 border-x-0 dark:border-secondary h-11 text-center text-muted-foreground text-sm block w-full py-2.5 outline-none"
                 defaultValue={product.quantity}
                 required
               />
 
               <button className="group bg-secondary dark:border-secondary hover:bg-opacity-80 border rounded-e-lg p-3 h-11 focus:outline-none hover:bg-primary hover:text-foreground">
                 <svg
-                  className="w-3 h-3 text-mutedForeground group-hover:text-background group-hover:dark:text-foreground"
+                  className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

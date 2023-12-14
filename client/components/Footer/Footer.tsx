@@ -42,7 +42,7 @@ const Footer = () => {
               <Logo />
             </span>
 
-            <p className="text-mutedForeground">
+            <p className="text-muted-foreground">
               SEINE đang tạo ra những bộ trang phục sản xuất trong nước hoàn
               toàn có thể sánh ngang với các thương hiệu thời trang nam đến từ
               nước ngoài về kiểu dáng, chất lượng lẫn phong cách thời trang.
@@ -60,7 +60,7 @@ const Footer = () => {
                   <li className="mb-4" key={item.name}>
                     <Link
                       href={item.url}
-                      className="font-medium text-mutedForeground hover:text-primary hover:underline"
+                      className="font-medium text-muted-foreground hover:text-primary hover:underline"
                     >
                       {item.name}
                     </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
         <hr className="my-8 border dark:border-secondary lg:my-12" />
 
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-mutedForeground sm:text-center">
+          <span className="text-sm text-muted-foreground sm:text-center">
             © 2023&nbsp;
             <Link href="/" className="hover:underline">
               SEINE™
@@ -83,7 +83,7 @@ const Footer = () => {
           </span>
 
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <Link href="#" className="text-mutedForeground hover:text-primary">
+            <Link href="#" className="text-muted-foreground hover:text-primary">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -102,7 +102,7 @@ const Footer = () => {
 
             <Link
               href="#"
-              className="text-mutedForeground hover:text-primary ms-5"
+              className="text-muted-foreground hover:text-primary ms-5"
             >
               <svg
                 className="w-4 h-4"
@@ -118,7 +118,7 @@ const Footer = () => {
 
             <Link
               href="#"
-              className="text-mutedForeground hover:text-primary ms-5"
+              className="text-muted-foreground hover:text-primary ms-5"
             >
               <svg
                 className="w-4 h-4"
@@ -138,7 +138,7 @@ const Footer = () => {
 
             <Link
               href="#"
-              className="text-mutedForeground hover:text-primary ms-5"
+              className="text-muted-foreground hover:text-primary ms-5"
             >
               <svg
                 className="w-4 h-4"
@@ -158,7 +158,7 @@ const Footer = () => {
 
             <Link
               href="#"
-              className="text-mutedForeground hover:text-primary ms-5"
+              className="text-muted-foreground hover:text-primary ms-5"
             >
               <svg
                 className="w-4 h-4"

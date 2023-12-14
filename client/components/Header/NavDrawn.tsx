@@ -41,7 +41,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
           <div className="flex px-4 pb-2 pt-5">
             <button
               onClick={setShowNav}
-              className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-mutedForeground hover:text-primary"
+              className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary"
             >
               <span className="absolute -inset-0.5"></span>
 
@@ -118,7 +118,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                     New Arrivals
                   </Link>
 
-                  <p aria-hidden="true" className="mt-1 text-mutedForeground">
+                  <p aria-hidden="true" className="mt-1 text-muted-foreground">
                     Shop now
                   </p>
                 </div>
@@ -142,7 +142,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                     Artwork Tees
                   </Link>
 
-                  <p aria-hidden="true" className="mt-1 text-mutedForeground">
+                  <p aria-hidden="true" className="mt-1 text-muted-foreground">
                     Shop now
                   </p>
                 </div>
@@ -167,7 +167,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                         <div key={link.name} className="flow-root">
                           <Link
                             href={link.url}
-                            className="-m-2 block p-2 text-mutedForeground hover:text-primary"
+                            className="-m-2 block p-2 text-muted-foreground hover:text-primary"
                           >
                             {link.name}
                           </Link>
@@ -204,7 +204,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                     New Arrivals
                   </Link>
 
-                  <p aria-hidden="true" className="mt-1 text-mutedForeground">
+                  <p aria-hidden="true" className="mt-1 text-muted-foreground">
                     Shop now
                   </p>
                 </div>
@@ -228,7 +228,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                     Basic Tees
                   </Link>
 
-                  <p aria-hidden="true" className="mt-1 text-mutedForeground">
+                  <p aria-hidden="true" className="mt-1 text-muted-foreground">
                     Shop now
                   </p>
                 </div>
@@ -253,7 +253,7 @@ const NavDrawn = ({ showNav, setShowNav }: NavDrawnProps) => {
                         <div key={link.name} className="flow-root">
                           <Link
                             href={link.url}
-                            className="-m-2 block p-2 text-mutedForeground hover:text-primary"
+                            className="-m-2 block p-2 text-muted-foreground hover:text-primary"
                           >
                             {link.name}
                           </Link>
