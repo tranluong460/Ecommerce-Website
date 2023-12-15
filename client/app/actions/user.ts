@@ -10,7 +10,7 @@ export async function createUser(user: any) {
       body: JSON.stringify(user),
     });
 
-    return response.json();
+    return JSON.parse(JSON.stringify(response));
   } catch (error) {
     console.error(error);
     throw new Error(typeof error === "string" ? error : JSON.stringify(error));
