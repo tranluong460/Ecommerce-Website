@@ -29,7 +29,7 @@ export const footer__links = [
     nav: [
       { url: "#", name: "Giới thiệu" },
       { url: "#", name: "Tin tức" },
-      { url: "#", name: "Trợ giúp" },
+      { url: "/contact", name: "Trợ giúp" },
       { url: "#", name: "Hệ thống cửa hàng" },
     ],
   },

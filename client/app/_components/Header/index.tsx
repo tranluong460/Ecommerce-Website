@@ -14,17 +14,17 @@ const Header = () => {
           <div className="flex h-16 items-center">
             <NavigationDrawn />
 
-            <div className="ml-4 flex lg:ml-0">
+            <div className="ml-4 flex lg:ml-0 z-10">
               <span className="sr-only">SEINE</span>
               <Logo />
             </div>
 
-            <div className="hidden lg:ml-8 lg:block lg:self-stretch">
+            <div className="hidden lg:ml-8 lg:block lg:self-stretch z-10">
               <Navigation />
             </div>
 
-            <div className="ml-auto flex items-center">
-              <div className="lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+            <div className="ml-auto flex items-center z-10">
+              <div className="lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 cursor-pointer">
                 <UserMenu />
               </div>
 

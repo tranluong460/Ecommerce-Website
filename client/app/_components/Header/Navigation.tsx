@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <div className="flex h-full space-x-8">
       {nav__links.map((nav) => (
-        <div key={nav.name} className="flex z-10">
+        <div key={nav.name} className="flex">
           <div className="relative flex">
             <button
               onClick={() =>
@@ -25,7 +25,7 @@ const Navigation = () => {
                   ...(nav.name === "girl" && { boy: false }),
                 }))
               }
-              className={`border-transparent relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out ${
+              className={`border-transparent relative -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out ${
                 active[nav.name]
                   ? "text-primary border-b-primary"
                   : "text-muted-foreground hover:text-primary"
@@ -70,7 +70,7 @@ const Navigation = () => {
                           className="mt-6 block font-medium text-foreground"
                         >
                           <p
-                            className="absolute inset-0 z-10"
+                            className="absolute inset-0"
                             aria-hidden="true"
                           ></p>
                           {item.label}

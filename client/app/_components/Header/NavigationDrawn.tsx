@@ -77,10 +77,7 @@ const NavigationDrawn = () => {
                       href="#"
                       className="mt-6 block font-medium text-foreground"
                     >
-                      <p
-                        className="absolute inset-0 z-10"
-                        aria-hidden="true"
-                      ></p>
+                      <p className="absolute inset-0" aria-hidden="true"></p>
                       {item.label}
                     </Link>
 
