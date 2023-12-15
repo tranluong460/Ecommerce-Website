@@ -64,9 +64,7 @@ const Top = () => {
           </svg>
         </button>
 
-        <div>
-          <FilterDrawn />
-        </div>
+        <FilterDrawn />
       </div>
     </div>
   );
