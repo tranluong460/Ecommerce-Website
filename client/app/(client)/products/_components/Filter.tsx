@@ -11,7 +11,7 @@ import { filter__links } from "@/data/links";
 const Filter = () => {
   return (
     <div className="hidden lg:block">
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="multiple" className="w-full">
         {filter__links.map((item) => (
           <AccordionItem key={item.name} value={item.name}>
             <AccordionTrigger>{item.label}</AccordionTrigger>
