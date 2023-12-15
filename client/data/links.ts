@@ -37,68 +37,105 @@ export const footer__links = [
   },
 ];
 
-export const nav__links_boy = [
+export const nav__links = [
   {
-    name: "Áo nam",
-    links: [
-      { url: "#", name: "Áo tank top nam" },
-      { url: "#", name: "Áo polo nam" },
-      { url: "#", name: "Áo thun nam" },
-      { url: "#", name: "Áo sơ mi nam" },
-      { url: "#", name: "Áo khoác nam" },
-      { url: "#", name: "Áo len nam" },
-      { url: "#", name: "Áo hoodie nam" },
+    label: "Nam",
+    name: "boy",
+    best: [
+      {
+        image:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg",
+        label: "Sản phẩm mới",
+        secondary: "Mua ngay",
+      },
+      {
+        image:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg",
+        label: "Phụ kiện",
+        secondary: "Mua ngay",
+      },
+    ],
+    children: [
+      {
+        name: "Áo nam",
+        links: [
+          { url: "#", name: "Áo tank top nam" },
+          { url: "#", name: "Áo polo nam" },
+          { url: "#", name: "Áo thun nam" },
+          { url: "#", name: "Áo sơ mi nam" },
+          { url: "#", name: "Áo khoác nam" },
+          { url: "#", name: "Áo len nam" },
+          { url: "#", name: "Áo hoodie nam" },
+        ],
+      },
+      {
+        name: "Quần nam",
+        links: [
+          { url: "#", name: "Quần jean nam" },
+          { url: "#", name: "Quần kaki nam" },
+          { url: "#", name: "Quần vải nam" },
+          { url: "#", name: "Quần short nam" },
+          { url: "#", name: "Quần jogger nam" },
+        ],
+      },
+      {
+        name: "Phụ kiện",
+        links: [
+          { url: "#", name: "Nón - Băng đô" },
+          { url: "#", name: "Túi - Ví - Balo" },
+          { url: "#", name: "Thắt lưng" },
+          { url: "#", name: "Vớ - Tất" },
+        ],
+      },
     ],
   },
   {
-    name: "Quần nam",
-    links: [
-      { url: "#", name: "Quần jean nam" },
-      { url: "#", name: "Quần kaki nam" },
-      { url: "#", name: "Quần vải nam" },
-      { url: "#", name: "Quần short nam" },
-      { url: "#", name: "Quần jogger nam" },
+    label: "Nữ",
+    name: "girl",
+    best: [
+      {
+        image:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+        label: "Sản phẩm mới",
+        secondary: "Mua ngay",
+      },
+      {
+        image:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg",
+        label: "Phụ kiện",
+        secondary: "Mua ngay",
+      },
     ],
-  },
-  {
-    name: "Phụ kiện",
-    links: [
-      { url: "#", name: "Nón - Băng đô" },
-      { url: "#", name: "Túi - Ví - Balo" },
-      { url: "#", name: "Thắt lưng" },
-      { url: "#", name: "Vớ - Tất" },
-    ],
-  },
-];
-
-export const nav__links_girl = [
-  {
-    name: "Áo nữ",
-    links: [
-      { url: "#", name: "Áo tank top nữ" },
-      { url: "#", name: "Áo polo nữ" },
-      { url: "#", name: "Áo thun nữ" },
-      { url: "#", name: "Áo sơ mi nữ" },
-      { url: "#", name: "Áo khoác nữ" },
-      { url: "#", name: "Áo len nữ" },
-      { url: "#", name: "Áo hoodie nữ" },
-    ],
-  },
-  {
-    name: "Quần nữ",
-    links: [
-      { url: "#", name: "Quần jean nữ" },
-      { url: "#", name: "Quần kaki nữ" },
-      { url: "#", name: "Quần vải nữ" },
-      { url: "#", name: "Quần short nữ" },
-      { url: "#", name: "Quần jogger nữ" },
-    ],
-  },
-  {
-    name: "Khác",
-    links: [
-      { url: "#", name: "Chân váy" },
-      { url: "#", name: "Đầm" },
+    children: [
+      {
+        name: "Áo nữ",
+        links: [
+          { url: "#", name: "Áo tank top nữ" },
+          { url: "#", name: "Áo polo nữ" },
+          { url: "#", name: "Áo thun nữ" },
+          { url: "#", name: "Áo sơ mi nữ" },
+          { url: "#", name: "Áo khoác nữ" },
+          { url: "#", name: "Áo len nữ" },
+          { url: "#", name: "Áo hoodie nữ" },
+        ],
+      },
+      {
+        name: "Quần nữ",
+        links: [
+          { url: "#", name: "Quần jean nữ" },
+          { url: "#", name: "Quần kaki nữ" },
+          { url: "#", name: "Quần vải nữ" },
+          { url: "#", name: "Quần short nữ" },
+          { url: "#", name: "Quần jogger nữ" },
+        ],
+      },
+      {
+        name: "Khác",
+        links: [
+          { url: "#", name: "Chân váy" },
+          { url: "#", name: "Đầm" },
+        ],
+      },
     ],
   },
 ];
