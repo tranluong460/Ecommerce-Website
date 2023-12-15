@@ -25,11 +25,10 @@ export const footer__links = [
     ],
   },
   {
-    name: "Liên hệ",
+    name: "KHÁC",
     nav: [
-      { url: "#", name: "Giới thiệu" },
-      { url: "#", name: "Tin tức" },
       { url: "/contact", name: "Liên hệ" },
+      { url: "#", name: "Tin tức" },
       { url: "#", name: "Hệ thống cửa hàng" },
     ],
   },
