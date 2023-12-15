@@ -16,7 +16,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const UserMenu = () => {
   const { user } = useUser();
-  const isAdmin = true;
 
   return (
     <DropdownMenu>
