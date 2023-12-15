@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Cross1Icon, PlusIcon, MinusIcon } from "@radix-ui/react-icons";
 import { IProductCart } from "@/interface/carts";
 import { priceFormatted } from "@/libs/formatted";
 
@@ -67,21 +68,7 @@ const CartItem = ({ product }: CartItemProps) => {
 
             <div className="relative flex items-center max-w-[8rem]">
               <button className="group bg-secondary dark:border-secondary hover:bg-opacity-80 border rounded-s-lg p-3 h-11 focus:outline-none hover:bg-primary hover:text-foreground">
-                <svg
-                  className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 2"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 1h16"
-                  />
-                </svg>
+                <MinusIcon className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground" />
               </button>
 
               <input
@@ -91,36 +78,13 @@ const CartItem = ({ product }: CartItemProps) => {
               />
 
               <button className="group bg-secondary dark:border-secondary hover:bg-opacity-80 border rounded-e-lg p-3 h-11 focus:outline-none hover:bg-primary hover:text-foreground">
-                <svg
-                  className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 1v16M1 9h16"
-                  />
-                </svg>
+                <PlusIcon className="w-3 h-3 text-muted-foreground group-hover:text-background group-hover:dark:text-foreground" />
               </button>
             </div>
 
             <div className="absolute right-0 top-0">
               <button className="-m-2 inline-flex p-2 text-foreground hover:text-primary">
-                <span className="sr-only">Xóa</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className="h-5 w-5"
-                >
-                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
-                </svg>
+                <Cross1Icon className="h-5 w-5" />
               </button>
             </div>
           </div>

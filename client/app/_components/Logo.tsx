@@ -6,6 +6,7 @@ const Logo = () => {
     <div className="font-semibold text-2xl text-foreground">
       <Link href="/">
         <Image
+          priority
           src="/logo.png"
           width={1000}
           height={100}

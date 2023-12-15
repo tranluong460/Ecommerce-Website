@@ -1,10 +1,10 @@
-import Container from "../Container";
-import Logo from "../../app/_components/Logo";
+import Logo from "../Logo";
 import Navigation from "./Navigation";
 import NavigationDrawn from "./NavigationDrawn";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
+import Container from "@/components/Container";
 
 const Header = () => {
   return (

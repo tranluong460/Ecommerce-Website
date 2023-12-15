@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { PlusIcon, MinusIcon } from "@radix-ui/react-icons";
 import { filter__links } from "@/data/links";
 
 const Filter = () => {
@@ -31,29 +32,7 @@ const Filter = () => {
             <div className="flex items-center justify-between px-2 py-3 text-muted-foreground hover:text-primary">
               <span className="font-medium">{item.label}</span>
               <span className="ml-6 flex items-center">
-                {isOpen[item.name] ? (
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                  </svg>
-                )}
+                {isOpen[item.name] ? <MinusIcon /> : <PlusIcon />}
               </span>
             </div>
           </CollapsibleTrigger>

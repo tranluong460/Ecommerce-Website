@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { SlashIcon } from "@radix-ui/react-icons";
 
 type BreadcrumbProps = {
   _id: string | undefined;
@@ -18,16 +19,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
             >
               Trang chủ
             </Link>
-            <svg
-              width="16"
-              height="20"
-              viewBox="0 0 16 20"
-              fill="currentColor"
-              aria-hidden="true"
-              className="h-5 w-4 text-muted-foreground"
-            >
-              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-            </svg>
+            <SlashIcon className="h-5 w-4 text-muted-foreground" />
           </div>
         </li>
 
@@ -39,16 +31,7 @@ const Breadcrumb = ({ _id, name }: BreadcrumbProps) => {
             >
               Sản phẩm
             </Link>
-            <svg
-              width="16"
-              height="20"
-              viewBox="0 0 16 20"
-              fill="currentColor"
-              aria-hidden="true"
-              className="h-5 w-4 text-muted-foreground"
-            >
-              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-            </svg>
+            <SlashIcon className="h-5 w-4 text-muted-foreground" />
           </div>
         </li>
 
