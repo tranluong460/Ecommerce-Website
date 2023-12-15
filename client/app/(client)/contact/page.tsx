@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const ContactPage = () => {
   return (
-    <div className="isolate bg-background px-6 py-24 sm:py-32 lg:px-8">
+    <section className="isolate bg-background px-6 py-24 sm:py-32 lg:px-8">
       <div className="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <div
           className="relative left-1/2 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
@@ -20,7 +20,7 @@ const ContactPage = () => {
 
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Hỗ trợ
+          Liên hệ
         </h2>
         <p className="mt-2 text-lg leading-8 text-muted-foreground">
           Hãy cho chúng tôi biết một chút về bản thân bạn và chúng tôi sẽ liên
@@ -163,7 +163,7 @@ const ContactPage = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

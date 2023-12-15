@@ -2,7 +2,7 @@ export const footer__links = [
   {
     name: "CÔNG TY",
     nav: [
-      { url: "#", name: "Giới thiệu về REINE" },
+      { url: "#", name: "Giới thiệu về SEINE" },
       { url: "#", name: "Tin thời trang" },
       { url: "#", name: "Hợp tác nhưng quyền" },
     ],
@@ -19,7 +19,7 @@ export const footer__links = [
   {
     name: "HỖ TRỢ KHÁCH HÀNG",
     nav: [
-      { url: "#", name: "Câu hỏi thường gặp" },
+      { url: "/questions", name: "Câu hỏi thường gặp" },
       { url: "#", name: "Hướng dẫn mua hàng" },
       { url: "#", name: "Hướng dẫn kiểm tra hạng thẻ thành viên" },
     ],
@@ -29,7 +29,7 @@ export const footer__links = [
     nav: [
       { url: "#", name: "Giới thiệu" },
       { url: "#", name: "Tin tức" },
-      { url: "/contact", name: "Trợ giúp" },
+      { url: "/contact", name: "Liên hệ" },
       { url: "#", name: "Hệ thống cửa hàng" },
     ],
   },
