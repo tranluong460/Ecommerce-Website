@@ -1,38 +1,36 @@
 export const footer__links = [
   {
-    name: "RESOURCES",
+    name: "CÔNG TY",
     nav: [
-      { url: "#", name: "Documentation" },
-      { url: "#", name: "Flow bite Blocks" },
-      { url: "#", name: "Flow bite Icons" },
-      { url: "#", name: "Flow bite Figma" },
-      { url: "#", name: "Flow bite GPT" },
-      { url: "#", name: "Pro version" },
+      { url: "#", name: "Giới thiệu về REINE" },
+      { url: "#", name: "Tin thời trang" },
+      { url: "#", name: "Hợp tác nhưng quyền" },
     ],
   },
   {
-    name: "HELP & SUPPORT",
+    name: "CHÍNH SÁCH BẢO MẬT",
     nav: [
-      { url: "#", name: "Contact us" },
-      { url: "#", name: "Support center" },
-      { url: "#", name: "Work with us" },
+      { url: "#", name: "Chính sách bảo mật" },
+      { url: "#", name: "Chính sách bảo hành" },
+      { url: "#", name: "Chính sách giao hàng" },
+      { url: "#", name: "Chính sách đổi trả hoàn tiền" },
     ],
   },
   {
-    name: "FOLLOW US",
+    name: "HỖ TRỢ KHÁCH HÀNG",
     nav: [
-      { url: "#", name: "Discord" },
-      { url: "#", name: "Github" },
-      { url: "#", name: "Twitter" },
+      { url: "#", name: "Câu hỏi thường gặp" },
+      { url: "#", name: "Hướng dẫn mua hàng" },
+      { url: "#", name: "Hướng dẫn kiểm tra hạng thẻ thành viên" },
     ],
   },
   {
-    name: "LEGAL",
+    name: "Liên hệ",
     nav: [
-      { url: "#", name: "License (EULA)" },
-      { url: "#", name: "Privacy policy" },
-      { url: "#", name: "Terms & conditions" },
-      { url: "#", name: "Brand guideline" },
+      { url: "#", name: "Giới thiệu" },
+      { url: "#", name: "Tin tức" },
+      { url: "#", name: "Trợ giúp" },
+      { url: "#", name: "Hệ thống cửa hàng" },
     ],
   },
 ];
