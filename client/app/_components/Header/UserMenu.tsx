@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { SignOutButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +15,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const UserMenu = () => {
-  const isLogin = false;
+  const { user } = useUser();
   const isAdmin = true;
 
   return (
@@ -20,15 +23,15 @@ const UserMenu = () => {
       <DropdownMenuTrigger asChild>
         <Avatar>
           <AvatarImage
-            src={isLogin ? "https://github.com/shadcn.png" : "/user.jpg"}
-            alt="@avatar"
+            src={user?.imageUrl || "/user.jpg"}
+            alt={user?.primaryEmailAddress?.emailAddress || "User"}
           />
-          <AvatarFallback>AV</AvatarFallback>
+          <AvatarFallback>{user?.fullName || "User"}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
 
-      {isLogin ? (
-        <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56">
+        <SignedIn>
           <DropdownMenuLabel>Thông tin cá nhân</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
@@ -46,35 +49,32 @@ const UserMenu = () => {
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          {isAdmin && (
-            <>
-              <DropdownMenuItem>Admin</DropdownMenuItem>
-              <DropdownMenuSeparator />
-            </>
-          )}
-          <DropdownMenuItem>
-            Đăng xuất
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      ) : (
-        <DropdownMenuContent className="w-56">
+          <SignOutButton>
+            <DropdownMenuItem>
+              Đăng xuất
+              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          </SignOutButton>
+        </SignedIn>
+
+        <SignedOut>
           <DropdownMenuGroup>
-            <Link href="/login">
+            <Link href="/sign-in">
               <DropdownMenuItem>
                 Đăng nhập
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
             </Link>
-            <Link href="/register">
+
+            <Link href="/sign-up">
               <DropdownMenuItem>
                 Đăng ký
                 <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
               </DropdownMenuItem>
             </Link>
           </DropdownMenuGroup>
-        </DropdownMenuContent>
-      )}
+        </SignedOut>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 };
