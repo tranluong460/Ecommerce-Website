@@ -8,18 +8,21 @@ import ListProducts from "../../_components/ListProducts";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
 import { products } from "@/data/products";
+import Color from "./Color";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
+  colorParam: string;
 };
 
-const ProductDetail = ({ product }: ProductDetailProps) => {
-  const colors = product?.images_attributes.map((item) => ({
+const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
+  const colors = product?.attributes.map((item) => ({
     name: item.color,
   }));
 
-  const images = product?.images_attributes.find(
-    (item) => item.color === product?.images_attributes[0].color
+  const color_attributes = product?.attributes.find(
+    (item) =>
+      item.color === (colorParam ? colorParam : product?.attributes[0].color)
   );
 
   return (
@@ -28,7 +31,9 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-          <ImageGallery images={images} />
+          {color_attributes && (
+            <ImageGallery images={color_attributes?.color_images} />
+          )}
 
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             <h1 className="text-3xl font-bold tracking-tight text-foreground">
@@ -81,21 +86,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
                 <div className="mt-2">
                   <div className="sr-only">Chọn màu</div>
-                  <div className="flex items-center space-x-3">
-                    {colors?.map((color) => (
-                      <label
-                        key={color.name}
-                        className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none"
-                      >
-                        <span className="sr-only">{color.name}</span>
 
-                        <span
-                          className="h-8 w-8 rounded-full border dark:border-secondary"
-                          style={{ backgroundColor: `#${color.name}` }}
-                        />
-                      </label>
-                    ))}
-                  </div>
+                  <Color
+                    id={product?._id}
+                    colors={colors}
+                    colorParam={colorParam}
+                  />
                 </div>
               </div>
 
@@ -109,7 +105,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                     Hướng dẫn chọn kích thước
                   </span>
                 </div>
-                <Size sizes={product?.sizes} />
+                <Size sizes={color_attributes?.sizes} />
               </div>
 
               <div className="mt-10 flex items-center gap-2">

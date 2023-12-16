@@ -15,8 +15,8 @@ const ProductItem = ({ product }: ProductItemProps) => {
           <Image
             width={1000}
             height={100}
-            src={product.images_attributes[0].color_images[0].url}
-            alt={product.images_attributes[0].color}
+            src={product.attributes[0].color_images[0].url}
+            alt={product.attributes[0].color}
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
           />
         </div>

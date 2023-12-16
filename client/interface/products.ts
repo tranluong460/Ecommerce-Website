@@ -3,21 +3,20 @@ export interface IProduct {
   name: string;
   price: number;
   original_price: number;
-  in_stock: number;
-  images_attributes: IImageProduct[];
-  sizes: ISizeProduct[];
+  attributes: IAttributesProduct[];
   highlights: IHighlightProduct[];
   short_description: string;
   description: string;
   comments: ICommentProduct[];
 }
 
-export interface IImageProduct {
+export interface IAttributesProduct {
   color: string;
-  color_images: IColorImageProduct[];
+  sizes: ISizeProduct[];
+  color_images: IImageProduct[];
 }
 
-export interface IColorImageProduct {
+export interface IImageProduct {
   url: string;
 }
 

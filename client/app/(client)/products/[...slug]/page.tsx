@@ -7,9 +7,9 @@ import { products } from "@/data/products";
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: { slug: string[] };
 }): Promise<Metadata> {
-  const product = products.find((prod) => prod._id === params.id);
+  const product = products.find((prod) => prod._id === params.slug[0]);
 
   return {
     title: product?.name,
@@ -17,13 +17,14 @@ export async function generateMetadata({
   };
 }
 
-const ProductDetailPage = ({ params }: { params: { id: string } }) => {
-  const product = products.find((prod) => prod._id === params.id);
+const ProductDetailPage = ({ params }: { params: { slug: string[] } }) => {
+  const product = products.find((prod) => prod._id === params.slug[0]);
+  const colorParam = params.slug[1];
 
   return (
     <section className="bg-background">
       <Container>
-        <ProductDetail product={product} />
+        <ProductDetail product={product} colorParam={colorParam} />
       </Container>
     </section>
   );

@@ -4,10 +4,19 @@ export const products = [
     name: "Áo Sơ Mi Nam Tay Dài Oxford Trơn Form Fitted",
     price: 249000,
     original_price: 420000,
-    in_stock: 10,
-    images_attributes: [
+    attributes: [
       {
         color: "8a3f4d",
+        sizes: [
+          { name: "XSS", quantity: 0 },
+          { name: "XS", quantity: 0 },
+          { name: "S", quantity: 8 },
+          { name: "M", quantity: 6 },
+          { name: "L", quantity: 0 },
+          { name: "XL", quantity: 0 },
+          { name: "XXL", quantity: 0 },
+          { name: "XXXL", quantity: 0 },
+        ],
         color_images: [
           {
             url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-so-mi-nam-10f22shl002c_andorra_2__6_jpg.webp",
@@ -25,6 +34,16 @@ export const products = [
       },
       {
         color: "f5bf80",
+        sizes: [
+          { name: "XSS", quantity: 0 },
+          { name: "XS", quantity: 0 },
+          { name: "S", quantity: 8 },
+          { name: "M", quantity: 6 },
+          { name: "L", quantity: 0 },
+          { name: "XL", quantity: 4 },
+          { name: "XXL", quantity: 0 },
+          { name: "XXXL", quantity: 0 },
+        ],
         color_images: [
           {
             url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-so-mi-nam-10f22shl002c_apple_cinnamon_1__7_jpg.webp",
@@ -42,6 +61,16 @@ export const products = [
       },
       {
         color: "2c2830",
+        sizes: [
+          { name: "XSS", quantity: 0 },
+          { name: "XS", quantity: 0 },
+          { name: "S", quantity: 8 },
+          { name: "M", quantity: 6 },
+          { name: "L", quantity: 0 },
+          { name: "XL", quantity: 4 },
+          { name: "XXL", quantity: 7 },
+          { name: "XXXL", quantity: 1 },
+        ],
         color_images: [
           {
             url: "https://routine.vn/media/amasty/webp/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-so-mo-nam-10f22shl002c_black_1__6_jpg.webp",
@@ -57,16 +86,6 @@ export const products = [
           },
         ],
       },
-    ],
-    sizes: [
-      { name: "XSS", quantity: 0 },
-      { name: "XS", quantity: 0 },
-      { name: "S", quantity: 8 },
-      { name: "M", quantity: 6 },
-      { name: "L", quantity: 0 },
-      { name: "XL", quantity: 0 },
-      { name: "XXL", quantity: 0 },
-      { name: "XXXL", quantity: 0 },
     ],
     highlights: [
       {
@@ -113,9 +132,19 @@ export const products = [
     price: 395000,
     original_price: 595000,
     in_stock: 12,
-    images_attributes: [
+    attributes: [
       {
         color: "ec424d",
+        sizes: [
+          { name: "28", quantity: 0 },
+          { name: "29", quantity: 7 },
+          { name: "30", quantity: 3 },
+          { name: "31", quantity: 9 },
+          { name: "32", quantity: 4 },
+          { name: "33", quantity: 3 },
+          { name: "34", quantity: 0 },
+          { name: "35", quantity: 0 },
+        ],
         color_images: [
           {
             url: "https://product.hstatic.net/1000197303/product/pro_do_1_0d70ef020ade460db30d74c75ecf4d83_master.jpg",
@@ -127,6 +156,16 @@ export const products = [
       },
       {
         color: "939395",
+        sizes: [
+          { name: "28", quantity: 0 },
+          { name: "29", quantity: 7 },
+          { name: "30", quantity: 0 },
+          { name: "31", quantity: 9 },
+          { name: "32", quantity: 4 },
+          { name: "33", quantity: 3 },
+          { name: "34", quantity: 0 },
+          { name: "35", quantity: 0 },
+        ],
         color_images: [
           {
             url: "https://product.hstatic.net/1000197303/product/pro_den_1_b0bb9ee88d9d41679aaf665c3153d0e0_master.jpg",
@@ -142,16 +181,6 @@ export const products = [
           },
         ],
       },
-    ],
-    sizes: [
-      { name: "28", quantity: 0 },
-      { name: "29", quantity: 7 },
-      { name: "30", quantity: 3 },
-      { name: "31", quantity: 9 },
-      { name: "32", quantity: 4 },
-      { name: "33", quantity: 3 },
-      { name: "34", quantity: 0 },
-      { name: "35", quantity: 0 },
     ],
     highlights: [
       {
