@@ -54,7 +54,7 @@ export async function POST(req: Request) {
   if (eventType === "user.created") {
     const user = {
       clerkId: payload.data.id,
-      email: "admin@gmail.com",
+      email: payload.data.email_addresses[0].email_address,
       username: payload.data.username,
       photo: payload.data.image_url,
     };
