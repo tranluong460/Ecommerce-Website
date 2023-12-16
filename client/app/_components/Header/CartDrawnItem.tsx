@@ -32,7 +32,10 @@ const CartDrawnItem = ({ product }: CartDrawnItemProps) => {
       <div className="ml-4 flex flex-1 flex-col">
         <div className="flex flex-col">
           <div className="flex flex-col gap-1 justify-between">
-            <Link href={`/products/${product.product._id}`} className="group">
+            <Link
+              href={`/products/${product.product._id}/${product.color}/${product.size}`}
+              className="group"
+            >
               <Label className="group-hover:text-primary text-sm font-medium cursor-pointer">
                 {product.product.name}
               </Label>

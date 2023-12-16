@@ -15,12 +15,18 @@ import { products } from "@/data/products";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
+  colorParam: string;
+  sizeParam: string;
 };
 
-const ProductDetail = ({ product }: ProductDetailProps) => {
+const ProductDetail = ({
+  product,
+  colorParam,
+  sizeParam,
+}: ProductDetailProps) => {
   const [select, setSelect] = useState({
-    color: "",
-    size: "",
+    color: colorParam || "",
+    size: sizeParam || "",
   });
 
   const colorList = product?.attributes.map((item) => ({
