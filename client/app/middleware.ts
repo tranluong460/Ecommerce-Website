@@ -8,7 +8,7 @@ export default authMiddleware({
     "/cart",
     "/contact",
     "/questions",
-    "/api/webhooks(.*)",
+    "/api/webhooks/clerk",
   ],
   ignoredRoutes: [],
 });
