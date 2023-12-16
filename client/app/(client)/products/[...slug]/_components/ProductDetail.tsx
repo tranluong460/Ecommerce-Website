@@ -1,28 +1,36 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Size from "./Size";
 import Rating from "./Rating";
 import Breadcrumb from "./Breadcrumb";
 import HeartButton from "./HeartButton";
 import ImageGallery from "./ImageGallery";
+import Color from "./Color";
 import ListProducts from "../../_components/ListProducts";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
 import { products } from "@/data/products";
-import Color from "./Color";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
-  colorParam: string;
 };
 
-const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
+const ProductDetail = ({ product }: ProductDetailProps) => {
+  const [select, setSelect] = useState({
+    color: "",
+    size: "",
+  });
+
   const colorList = product?.attributes.map((item) => ({
     name: item.color,
   }));
 
-  const color_attributes = product?.attributes.find(
+  const attributes = product?.attributes.find(
     (item) =>
-      item.color === (colorParam ? colorParam : product?.attributes[0].color)
+      item.color ===
+      (select.color ? select.color : product?.attributes[0].color)
   );
 
   return (
@@ -31,9 +39,7 @@ const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
 
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-          {color_attributes && (
-            <ImageGallery images={color_attributes?.color_images} />
-          )}
+          {attributes && <ImageGallery images={attributes?.color_images} />}
 
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             <h1 className="text-3xl font-bold tracking-tight text-foreground">
@@ -88,10 +94,12 @@ const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
                   <div className="sr-only">Chọn màu</div>
 
                   <Color
-                    idProduct={product?._id}
                     colorList={colorList}
                     colorDefault={product?.attributes[0].color}
-                    colorParam={colorParam}
+                    colorSelect={select.color}
+                    setSelect={(value: string) =>
+                      setSelect((prev) => ({ ...prev, color: value, size: "" }))
+                    }
                   />
                 </div>
               </div>
@@ -106,7 +114,14 @@ const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
                     Hướng dẫn chọn kích thước
                   </span>
                 </div>
-                <Size sizes={color_attributes?.sizes} />
+
+                <Size
+                  sizeList={attributes?.sizes}
+                  sizeSelect={select.size}
+                  setSelect={(value: string) =>
+                    setSelect((prev) => ({ ...prev, size: value }))
+                  }
+                />
               </div>
 
               <div className="mt-10 flex items-center gap-2">

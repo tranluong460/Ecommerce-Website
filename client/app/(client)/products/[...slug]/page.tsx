@@ -19,12 +19,11 @@ export async function generateMetadata({
 
 const ProductDetailPage = ({ params }: { params: { slug: string[] } }) => {
   const product = products.find((prod) => prod._id === params.slug[0]);
-  const colorParam = params.slug[1];
 
   return (
     <section className="bg-background">
       <Container>
-        <ProductDetail product={product} colorParam={colorParam} />
+        <ProductDetail product={product} />
       </Container>
     </section>
   );

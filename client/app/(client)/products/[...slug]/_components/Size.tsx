@@ -1,23 +1,27 @@
 import { ISizeProduct } from "@/interface/products";
 
 type SizeProps = {
-  sizes: ISizeProduct[] | undefined;
+  sizeList: ISizeProduct[] | undefined;
+  sizeSelect: string;
+  setSelect: (value: string) => void;
 };
 
-const Size = ({ sizes }: SizeProps) => {
+const Size = ({ sizeList, sizeSelect, setSelect }: SizeProps) => {
   return (
     <div className="mt-4">
       <span className="sr-only">Chọn kích cỡ</span>
 
       <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-        {sizes?.map((size: ISizeProduct) => (
-          <div
+        {sizeList?.map((size: ISizeProduct) => (
+          <button
             key={size.name}
+            disabled={size.quantity === 0}
+            onClick={() => setSelect(size.name)}
             className={`group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase focus:outline-none sm:flex-1 sm:py-6 text-card-foreground ${
               size.quantity !== 0
-                ? "dark:border-secondary hover:bg-primary hover:text-white shadow-sm cursor-pointer"
+                ? "dark:border-secondary hover:bg-primary hover:text-white shadow-sm"
                 : "cursor-not-allowed"
-            }`}
+            } ${size.name === sizeSelect ? "ring ring-primary" : ""}`}
           >
             <input
               type="radio"
@@ -54,7 +58,7 @@ const Size = ({ sizes }: SizeProps) => {
                 </svg>
               </span>
             )}
-          </div>
+          </button>
         ))}
       </div>
     </div>

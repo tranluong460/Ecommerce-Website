@@ -1,35 +1,25 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-
 type ColorProps = {
-  idProduct: string | undefined;
   colorList: { name: string }[] | undefined;
   colorDefault: string | undefined;
-  colorParam: string;
+  colorSelect: string;
+  setSelect: (value: string) => void;
 };
 
 const Color = ({
-  idProduct,
   colorDefault,
   colorList,
-  colorParam,
+  colorSelect,
+  setSelect,
 }: ColorProps) => {
-  const router = useRouter();
-
   return (
     <div className="flex items-center space-x-3">
       {colorList?.map((color) => (
-        <label
+        <button
           key={color.name}
-          onClick={() =>
-            router.push(`/products/${idProduct}/${color.name}`, {
-              scroll: false,
-            })
-          }
-          className={`relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ${
-            colorParam
-              ? color.name === colorParam
+          onClick={() => setSelect(color.name)}
+          className={`relative -m-0.5 flex items-center justify-center rounded-full p-0.5 focus:outline-none ${
+            colorSelect
+              ? color.name === colorSelect
                 ? "ring ring-primary"
                 : ""
               : color.name === colorDefault
@@ -43,7 +33,7 @@ const Color = ({
             className="h-8 w-8 rounded-full border dark:border-secondary"
             style={{ backgroundColor: `#${color.name}` }}
           />
-        </label>
+        </button>
       ))}
     </div>
   );
