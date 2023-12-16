@@ -30,7 +30,6 @@ const Navigation = () => {
                   ? "text-primary border-b-primary"
                   : "text-muted-foreground hover:text-primary"
               }`}
-              aria-expanded="false"
             >
               {nav.label}
             </button>
@@ -41,10 +40,7 @@ const Navigation = () => {
               active[nav.name] ? "" : "invisible"
             }`}
           >
-            <div
-              className="absolute inset-0 top-1/2 bg-black/80 shadow"
-              aria-hidden="true"
-            />
+            <div className="absolute inset-0 top-1/2 bg-black/80 shadow" />
 
             <div className="relative bg-secondary">
               <div className="mx-auto max-w-7xl px-8">
@@ -69,16 +65,11 @@ const Navigation = () => {
                           href="#"
                           className="mt-6 block font-medium text-foreground"
                         >
-                          <p
-                            className="absolute inset-0"
-                            aria-hidden="true"
-                          ></p>
+                          <p className="absolute inset-0" />
                           {item.label}
                         </Link>
 
-                        <p aria-hidden="true" className="mt-1">
-                          {item.secondary}
-                        </p>
+                        <p className="mt-1">{item.secondary}</p>
                       </div>
                     ))}
                   </div>

@@ -18,7 +18,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               <span className="absolute inset-0 overflow-hidden rounded-md">
                 <Image
                   width={1000}
-                  height={100}
+                  height={1000}
                   src={image.url}
                   alt={image.url}
                   className="h-full w-full object-cover object-center"
@@ -32,7 +32,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
       <div className="aspect-h-1 aspect-w-1 w-full">
         <Image
           width={1000}
-          height={100}
+          height={1000}
           src={images[0].url || ""}
           alt={images[0].url || ""}
           className="h-full w-full object-cover object-center sm:rounded-lg"

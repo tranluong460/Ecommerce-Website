@@ -1,8 +1,8 @@
 "use client";
 
+import { SignUp } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { useTheme } from "next-themes";
-import { SignUp } from "@clerk/nextjs";
 import Logo from "@/app/_components/Logo";
 
 const RegisterPage = () => {

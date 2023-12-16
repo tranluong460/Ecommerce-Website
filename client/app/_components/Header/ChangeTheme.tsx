@@ -31,6 +31,7 @@ const ChangeTheme = () => {
           <SunIcon />
           <Label className="font-normal">Sáng</Label>
         </DropdownMenuItem>
+
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
           className="flex items-center gap-3"
@@ -38,6 +39,7 @@ const ChangeTheme = () => {
           <MoonIcon />
           <Label className="font-normal">Tối</Label>
         </DropdownMenuItem>
+
         <DropdownMenuItem
           onClick={() => setTheme("system")}
           className="flex items-center gap-3"

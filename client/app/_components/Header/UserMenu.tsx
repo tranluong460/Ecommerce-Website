@@ -13,6 +13,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  PersonIcon,
+  EnterIcon,
+  ExitIcon,
+  GearIcon,
+} from "@radix-ui/react-icons";
 
 const UserMenu = () => {
   const { user } = useUser();
@@ -33,25 +39,30 @@ const UserMenu = () => {
         <SignedIn>
           <DropdownMenuLabel>Thông tin cá nhân</DropdownMenuLabel>
           <DropdownMenuSeparator />
+
           <DropdownMenuGroup>
             <DropdownMenuItem>
               Hồ sơ
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              <DropdownMenuShortcut>
+                <PersonIcon />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              Thanh toán
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
+
             <DropdownMenuItem>
               Cài đặt
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              <DropdownMenuShortcut>
+                <GearIcon />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
+
           <SignOutButton>
             <DropdownMenuItem>
               Đăng xuất
-              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+              <DropdownMenuShortcut>
+                <ExitIcon />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </SignOutButton>
         </SignedIn>
@@ -61,7 +72,9 @@ const UserMenu = () => {
             <Link href="/sign-in">
               <DropdownMenuItem>
                 Đăng nhập
-                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                <DropdownMenuShortcut>
+                  <EnterIcon />
+                </DropdownMenuShortcut>
               </DropdownMenuItem>
             </Link>
 

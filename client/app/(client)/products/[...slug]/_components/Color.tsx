@@ -27,8 +27,6 @@ const Color = ({
               : ""
           }`}
         >
-          <span className="sr-only">{color.name}</span>
-
           <span
             className="h-8 w-8 rounded-full border dark:border-secondary"
             style={{ backgroundColor: `#${color.name}` }}

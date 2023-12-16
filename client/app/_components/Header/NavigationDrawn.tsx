@@ -77,14 +77,11 @@ const NavigationDrawn = () => {
                       href="#"
                       className="mt-6 block font-medium text-foreground"
                     >
-                      <p className="absolute inset-0" aria-hidden="true"></p>
+                      <p className="absolute inset-0" />
                       {item.label}
                     </Link>
 
-                    <p
-                      aria-hidden="true"
-                      className="mt-1 text-muted-foreground"
-                    >
+                    <p className="mt-1 text-muted-foreground">
                       {item.secondary}
                     </p>
                   </div>
@@ -94,18 +91,11 @@ const NavigationDrawn = () => {
               <div>
                 {nav.children.map((item) => (
                   <div key={item.name} className="mt-10">
-                    <span
-                      id="men-clothing-heading-mobile"
-                      className="font-medium text-foreground"
-                    >
+                    <span className="font-medium text-foreground">
                       {item.name}
                     </span>
 
-                    <div
-                      role="list"
-                      aria-labelledby="men-clothing-heading-mobile"
-                      className="mt-6 flex flex-col space-y-6"
-                    >
+                    <div className="mt-6 flex flex-col space-y-6">
                       {item.links.map((link) => (
                         <div key={link.name} className="flow-root">
                           <Link

@@ -35,10 +35,7 @@ const Top = () => {
           </DropdownMenu>
         </div>
 
-        <button
-          type="button"
-          className="-m-2 ml-5 p-2 text-muted-foreground hover:text-primary sm:ml-7"
-        >
+        <button className="-m-2 ml-5 p-2 text-muted-foreground hover:text-primary sm:ml-7">
           <span className="sr-only">Xem lưới</span>
           <DashboardIcon className="h-5 w-5" />
         </button>

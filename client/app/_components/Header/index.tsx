@@ -15,7 +15,6 @@ const Header = () => {
             <NavigationDrawn />
 
             <div className="ml-4 flex lg:ml-0 z-10">
-              <span className="sr-only">SEINE</span>
               <Logo />
             </div>
 
