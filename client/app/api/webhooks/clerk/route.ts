@@ -57,12 +57,12 @@ export async function POST(req: Request) {
       evt.data;
 
     const user = {
-      clerkId: "1",
-      email: "admin@gmail.com",
-      username: "hotboyson",
-      firstName: "Tran",
-      lastName: "Luong",
-      photo: "img1",
+      clerkId: id,
+      email: email_addresses[0].email_address,
+      firstName: first_name,
+      lastName: last_name,
+      username: username,
+      photo: image_url,
     };
 
     await fetch("https://seine-server.vercel.app/users", {
