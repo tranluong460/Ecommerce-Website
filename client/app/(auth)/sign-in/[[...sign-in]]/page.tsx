@@ -15,7 +15,9 @@ const LoginPage = () => {
 
         <div className="flex items-center pt-3">
           <SignIn
-            appearance={{ baseTheme: theme === "dark" ? dark : undefined }}
+            appearance={{
+              baseTheme: theme === "dark" ? dark : undefined,
+            }}
           />
         </div>
       </div>
