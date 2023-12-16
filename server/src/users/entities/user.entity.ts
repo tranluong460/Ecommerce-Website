@@ -8,19 +8,19 @@ export class User {
   @Prop({ required: true, unique: true })
   clerkId: string;
 
-  @Prop({ required: true })
-  firstName: string;
-
-  @Prop({ required: true })
-  lastName: string;
-
   @Prop({ required: true, unique: true })
   email: string;
+
+  @Prop({ required: false })
+  firstName: string;
+
+  @Prop({ required: false })
+  lastName: string;
 
   @Prop({ required: false, unique: true })
   username: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   photo: string;
 }
 
