@@ -11,7 +11,7 @@ type CartDrawnItemProps = {
 };
 
 const CartDrawnItem = ({ product }: CartDrawnItemProps) => {
-  const images = product.product.images_attributes.find(
+  const images = product.product.attributes.find(
     (item) => item.color === product.color
   );
 

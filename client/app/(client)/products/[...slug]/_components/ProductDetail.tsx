@@ -16,7 +16,7 @@ type ProductDetailProps = {
 };
 
 const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
-  const colors = product?.attributes.map((item) => ({
+  const colorList = product?.attributes.map((item) => ({
     name: item.color,
   }));
 
@@ -88,8 +88,9 @@ const ProductDetail = ({ product, colorParam }: ProductDetailProps) => {
                   <div className="sr-only">Chọn màu</div>
 
                   <Color
-                    id={product?._id}
-                    colors={colors}
+                    idProduct={product?._id}
+                    colorList={colorList}
+                    colorDefault={product?.attributes[0].color}
                     colorParam={colorParam}
                   />
                 </div>
