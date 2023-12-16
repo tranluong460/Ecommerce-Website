@@ -65,7 +65,7 @@ export async function POST(req: Request) {
       photo: "img1",
     };
 
-    await fetch("http://localhost:8080/users", {
+    await fetch("https://seine-server.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
