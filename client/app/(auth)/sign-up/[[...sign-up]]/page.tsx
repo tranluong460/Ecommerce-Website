@@ -1,14 +1,22 @@
+"use client";
+
+import { dark } from "@clerk/themes";
+import { useTheme } from "next-themes";
 import { SignUp } from "@clerk/nextjs";
 import Logo from "@/app/_components/Logo";
 
 const RegisterPage = () => {
+  const { theme } = useTheme();
+
   return (
     <div className="max-w-screen-xl m-0 sm:m-3 sm:rounded-lg flex justify-center flex-1 bg-background border dark:border-secondary">
       <div className="lg:w-1/2 xl:w-5/12 p-6 sm:px-12">
         <Logo />
 
         <div className="flex items-center pt-3">
-          <SignUp />
+          <SignUp
+            appearance={{ baseTheme: theme === "dark" ? dark : undefined }}
+          />
         </div>
       </div>
 
