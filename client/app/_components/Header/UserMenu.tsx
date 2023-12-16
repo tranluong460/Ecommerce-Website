@@ -41,12 +41,14 @@ const UserMenu = () => {
           <DropdownMenuSeparator />
 
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              Hồ sơ
-              <DropdownMenuShortcut>
-                <PersonIcon />
-              </DropdownMenuShortcut>
-            </DropdownMenuItem>
+            <Link href="/profile">
+              <DropdownMenuItem>
+                Hồ sơ
+                <DropdownMenuShortcut>
+                  <PersonIcon />
+                </DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </Link>
 
             <DropdownMenuItem>
               Cài đặt
