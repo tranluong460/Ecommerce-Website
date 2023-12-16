@@ -263,7 +263,7 @@ export const carts = {
         ],
       },
       color: "2c2830",
-      size: "L",
+      size: "M",
       quantity: 5,
     },
   ],
