@@ -8,8 +8,7 @@ export default authMiddleware({
   },
   publicRoutes: [
     "/",
-    "/products",
-    "/products/:id",
+    "/products(.*)",
     "/cart",
     "/contact",
     "/questions",
