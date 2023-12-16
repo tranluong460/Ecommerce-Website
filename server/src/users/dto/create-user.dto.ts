@@ -18,9 +18,7 @@ export class CreateUserDto {
   @IsString({ message: 'Email phải là chuỗi!' })
   email: string;
 
-  @IsNotEmpty({ message: 'Tên người dùng không được để trống!' })
-  @IsString({ message: 'Tên người dùng phải là chuỗi!' })
-  username: string;
+  username?: string;
 
   @IsNotEmpty({ message: 'Hình ảnh không được để trống!' })
   @IsString({ message: 'Hình ảnh phải là chuỗi!' })
