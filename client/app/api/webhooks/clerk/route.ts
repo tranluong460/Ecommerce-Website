@@ -65,17 +65,13 @@ export async function POST(req: Request) {
       photo: image_url,
     };
 
-    const res = await fetch("http://localhost:8080/users", {
+    await fetch("http://localhost:8080/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
-
-    const data = await res.json();
-
-    return Response.json(data);
   }
 
   return new Response("", { status: 200 });
