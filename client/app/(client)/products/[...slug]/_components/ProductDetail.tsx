@@ -83,14 +83,16 @@ const ProductDetail = ({
               <div className="mt-2">
                 <div className="sr-only">Chọn màu</div>
 
-                <Color
-                  colorList={colorList}
-                  colorDefault={product?.attributes[0].color}
-                  colorSelect={select.color}
-                  setSelect={(value: string) =>
-                    setSelect((prev) => ({ ...prev, color: value, size: "" }))
-                  }
-                />
+                {colorList && (
+                  <Color
+                    colorList={colorList}
+                    colorDefault={product?.attributes[0].color}
+                    colorSelect={select.color}
+                    setSelect={(value: string) =>
+                      setSelect((prev) => ({ ...prev, color: value, size: "" }))
+                    }
+                  />
+                )}
               </div>
             </div>
 
@@ -105,13 +107,15 @@ const ProductDetail = ({
                 </span>
               </div>
 
-              <Size
-                sizeList={attributes?.sizes}
-                sizeSelect={select.size}
-                setSelect={(value: string) =>
-                  setSelect((prev) => ({ ...prev, size: value }))
-                }
-              />
+              {attributes && (
+                <Size
+                  sizeList={attributes.sizes}
+                  sizeSelect={select.size}
+                  setSelect={(value: string) =>
+                    setSelect((prev) => ({ ...prev, size: value }))
+                  }
+                />
+              )}
             </div>
 
             <div className="mt-10 flex items-center gap-2">

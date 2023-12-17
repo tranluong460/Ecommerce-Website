@@ -1,5 +1,5 @@
 type ColorProps = {
-  colorList: { name: string }[] | undefined;
+  colorList: { name: string }[];
   colorDefault: string | undefined;
   colorSelect: string;
   setSelect: (value: string) => void;
@@ -13,7 +13,7 @@ const Color = ({
 }: ColorProps) => {
   return (
     <div className="flex items-center space-x-3">
-      {colorList?.map((color) => (
+      {colorList.map((color) => (
         <button
           key={color.name}
           onClick={() => setSelect(color.name)}

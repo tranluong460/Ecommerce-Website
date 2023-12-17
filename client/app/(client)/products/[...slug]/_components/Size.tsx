@@ -1,7 +1,7 @@
 import { ISizeProduct } from "@/interface/products";
 
 type SizeProps = {
-  sizeList: ISizeProduct[] | undefined;
+  sizeList: ISizeProduct[];
   sizeSelect: string;
   setSelect: (value: string) => void;
 };
@@ -9,7 +9,7 @@ type SizeProps = {
 const Size = ({ sizeList, sizeSelect, setSelect }: SizeProps) => {
   return (
     <div className="mt-4 grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-      {sizeList?.map((size: ISizeProduct) => (
+      {sizeList.map((size: ISizeProduct) => (
         <button
           key={size.name}
           disabled={size.quantity === 0}
@@ -20,18 +20,12 @@ const Size = ({ sizeList, sizeSelect, setSelect }: SizeProps) => {
               : "cursor-not-allowed"
           } ${size.name === sizeSelect ? "ring ring-primary" : ""}`}
         >
-          <span id="size-choice-1-label">{size.name}</span>
+          <span>{size.name}</span>
 
           {size.quantity !== 0 ? (
-            <span
-              className="pointer-events-none absolute -inset-px rounded-md"
-              aria-hidden="true"
-            />
+            <span className="pointer-events-none absolute -inset-px rounded-md" />
           ) : (
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200 dark:border-gray-600"
-            >
+            <span className="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200 dark:border-gray-600">
               <svg
                 className="absolute inset-0 h-full w-full stroke-2 text-gray-200 dark:text-gray-600"
                 viewBox="0 0 100 100"
