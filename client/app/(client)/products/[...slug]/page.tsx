@@ -31,28 +31,24 @@ const ProductDetailPage = ({ params }: { params: { slug: string[] } }) => {
         <div className="py-6">
           <nav aria-label="Breadcrumb">
             <ul className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-              <li>
-                <div className="flex items-center">
-                  <Link
-                    href="/"
-                    className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
-                  >
-                    Trang chủ
-                  </Link>
-                  <SlashIcon className="h-5 w-4 text-muted-foreground" />
-                </div>
+              <li className="flex items-center">
+                <Link
+                  href="/"
+                  className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                >
+                  Trang chủ
+                </Link>
+                <SlashIcon className="h-5 w-4 text-muted-foreground" />
               </li>
 
-              <li>
-                <div className="flex items-center">
-                  <Link
-                    href="/products"
-                    className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
-                  >
-                    Sản phẩm
-                  </Link>
-                  <SlashIcon className="h-5 w-4 text-muted-foreground" />
-                </div>
+              <li className="flex items-center">
+                <Link
+                  href="/products"
+                  className="mr-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                >
+                  Sản phẩm
+                </Link>
+                <SlashIcon className="h-5 w-4 text-muted-foreground" />
               </li>
 
               <li className="text-sm">

@@ -51,7 +51,7 @@ const ProductDetail = ({
           </div>
 
           <div className="mt-3 flex items-center">
-            <Rating comments={product?.comments} />
+            {product?.comments && <Rating comments={product.comments} />}
           </div>
 
           <div className="mt-6 space-y-6 text-base text-muted-foreground">

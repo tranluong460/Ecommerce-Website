@@ -16,15 +16,13 @@ const CartItem = ({ product }: CartItemProps) => {
   return (
     <div className="flex py-6 sm:py-10">
       <div className="flex-shrink-0">
-        {images && (
-          <Image
-            width={1000}
-            height={100}
-            src={images.color_images[0].url}
-            alt={images.color_images[0].url}
-            className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
-          />
-        )}
+        <Image
+          width={1000}
+          height={100}
+          src={images?.color_images[0].url || ""}
+          alt={images?.color_images[0].url || ""}
+          className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
+        />
       </div>
 
       <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">

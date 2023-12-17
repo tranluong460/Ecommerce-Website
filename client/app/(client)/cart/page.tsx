@@ -16,7 +16,7 @@ const CartPage = () => {
             <h2 className="sr-only">Sản phẩm trong giỏ hàng</h2>
 
             <div className="divide-y divide-secondary border-b border-t dark:border-secondary">
-              {carts && carts.products ? (
+              {carts && carts.products.length > 0 ? (
                 carts.products.map((product) => (
                   <CartItem
                     key={`${product.product._id}-${product.color}-${product.size}`}
