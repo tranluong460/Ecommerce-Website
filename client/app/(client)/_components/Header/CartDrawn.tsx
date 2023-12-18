@@ -77,7 +77,7 @@ const CartDrawn = () => {
                       <div className="flex flex-col">
                         <div className="flex flex-col gap-1 justify-between">
                           <Link
-                            href={`/products/${product.product._id}/${product.color}/${product.size}`}
+                            href={`/products/${product.product._id}`}
                             className="group"
                           >
                             <Label className="group-hover:text-primary text-sm font-medium cursor-pointer">

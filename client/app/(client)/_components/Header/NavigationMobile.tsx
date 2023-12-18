@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { nav__links } from "@/data/links";
 
-const NavigationDrawn = () => {
+const NavigationMobile = () => {
   const [active, setActive] = useState<{ [key: string]: boolean }>({
     boy: true,
     girl: false,
@@ -129,4 +129,4 @@ const NavigationDrawn = () => {
   );
 };
 
-export default NavigationDrawn;
+export default NavigationMobile;

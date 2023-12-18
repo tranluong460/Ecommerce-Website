@@ -21,7 +21,7 @@ const LoginPage = () => {
           style={{
             backgroundImage: "url('/background.svg')",
           }}
-        ></div>
+        />
       </div>
     </div>
   );

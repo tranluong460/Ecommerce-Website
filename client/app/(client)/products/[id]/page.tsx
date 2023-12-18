@@ -3,16 +3,16 @@ import React from "react";
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ProductDetail from "./_components/ProductDetail";
-import ListProducts from "../_components/ListProducts";
+import ProductsList from "../_components/ProductsList";
 import { SlashIcon } from "@radix-ui/react-icons";
 import { products } from "@/data/products";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string[] };
+  params: { id: string };
 }): Promise<Metadata> {
-  const product = products.find((prod) => prod._id === params.slug[0]);
+  const product = products.find((prod) => prod._id === params.id);
 
   return {
     title: product?.name,
@@ -20,10 +20,8 @@ export async function generateMetadata({
   };
 }
 
-const ProductDetailPage = ({ params }: { params: { slug: string[] } }) => {
-  const product = products.find((prod) => prod._id === params.slug[0]);
-  const colorParam = params.slug[1];
-  const sizeParam = params.slug[2];
+const ProductDetailPage = ({ params }: { params: { id: string } }) => {
+  const product = products.find((prod) => prod._id === params.id);
 
   return (
     <section className="bg-background">
@@ -63,18 +61,14 @@ const ProductDetailPage = ({ params }: { params: { slug: string[] } }) => {
             </ul>
           </nav>
 
-          <ProductDetail
-            product={product}
-            colorParam={colorParam}
-            sizeParam={sizeParam}
-          />
+          <ProductDetail product={product} />
 
           <div className="grid grid-cols-1 gap-3">
             <h1 className="text-2xl font-bold tracking-tight text-foreground">
               Sản phẩm cùng loại
             </h1>
 
-            <ListProducts products={products} />
+            <ProductsList products={products} />
           </div>
         </div>
       </Container>

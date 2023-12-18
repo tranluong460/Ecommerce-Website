@@ -5,7 +5,7 @@ type ColorProps = {
   setSelect: (value: string) => void;
 };
 
-const Color = ({
+const ProductColor = ({
   colorDefault,
   colorList,
   colorSelect,
@@ -37,4 +37,4 @@ const Color = ({
   );
 };
 
-export default Color;
+export default ProductColor;

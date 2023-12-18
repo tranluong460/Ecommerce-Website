@@ -19,7 +19,7 @@ import { Label } from "@/components/ui/label";
 import { PlusIcon, MinusIcon } from "@radix-ui/react-icons";
 import { filter__links } from "@/data/links";
 
-const FilterDrawn = () => {
+const ProductsFilterMobile = () => {
   const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({
     sex: true,
     size: true,
@@ -92,4 +92,4 @@ const FilterDrawn = () => {
   );
 };
 
-export default FilterDrawn;
+export default ProductsFilterMobile;

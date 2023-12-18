@@ -2,28 +2,22 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Size from "./Size";
-import Color from "./Color";
-import Rating from "./Rating";
-import HeartButton from "./HeartButton";
-import ImageGallery from "./ImageGallery";
+import ProductSize from "./ProductSize";
+import ProductColor from "./ProductColor";
+import ProductRating from "./ProductRating";
+import ProductHeartButton from "./ProductHeartButton";
+import ProductImageGallery from "./ProductImageGallery";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
-  colorParam: string;
-  sizeParam: string;
 };
 
-const ProductDetail = ({
-  product,
-  colorParam,
-  sizeParam,
-}: ProductDetailProps) => {
+const ProductDetail = ({ product }: ProductDetailProps) => {
   const [select, setSelect] = useState({
-    color: colorParam || "",
-    size: sizeParam || "",
+    color: "",
+    size: "",
   });
 
   const colorList = product?.attributes.map((item) => ({
@@ -39,7 +33,9 @@ const ProductDetail = ({
   return (
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl">
       <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-        {attributes && <ImageGallery images={attributes?.color_images} />}
+        {attributes && (
+          <ProductImageGallery images={attributes?.color_images} />
+        )}
 
         <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
@@ -51,7 +47,7 @@ const ProductDetail = ({
           </div>
 
           <div className="mt-3 flex items-center">
-            {product?.comments && <Rating comments={product.comments} />}
+            {product?.comments && <ProductRating comments={product.comments} />}
           </div>
 
           <div className="mt-6 space-y-6 text-base text-muted-foreground">
@@ -84,7 +80,7 @@ const ProductDetail = ({
                 <div className="sr-only">Chọn màu</div>
 
                 {colorList && (
-                  <Color
+                  <ProductColor
                     colorList={colorList}
                     colorDefault={product?.attributes[0].color}
                     colorSelect={select.color}
@@ -108,7 +104,7 @@ const ProductDetail = ({
               </div>
 
               {attributes && (
-                <Size
+                <ProductSize
                   sizeList={attributes.sizes}
                   sizeSelect={select.size}
                   setSelect={(value: string) =>
@@ -123,7 +119,7 @@ const ProductDetail = ({
                 Thêm vào giỏ hàng
               </Button>
 
-              <HeartButton />
+              <ProductHeartButton />
             </div>
           </div>
         </div>

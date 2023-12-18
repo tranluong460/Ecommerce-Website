@@ -16,13 +16,13 @@ export interface IAttributesProduct {
   color_images: IImageProduct[];
 }
 
-export interface IImageProduct {
-  url: string;
-}
-
 export interface ISizeProduct {
   name: string;
   quantity: number;
+}
+
+export interface IImageProduct {
+  url: string;
 }
 
 export interface IHighlightProduct {

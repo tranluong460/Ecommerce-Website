@@ -21,7 +21,7 @@ const RegisterPage = () => {
           style={{
             backgroundImage: "url('/background.svg')",
           }}
-        ></div>
+        />
       </div>
     </div>
   );

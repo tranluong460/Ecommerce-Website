@@ -1,12 +1,12 @@
 import { ISizeProduct } from "@/interface/products";
 
-type SizeProps = {
+type ProductSizeProps = {
   sizeList: ISizeProduct[];
   sizeSelect: string;
   setSelect: (value: string) => void;
 };
 
-const Size = ({ sizeList, sizeSelect, setSelect }: SizeProps) => {
+const ProductSize = ({ sizeList, sizeSelect, setSelect }: ProductSizeProps) => {
   return (
     <div className="mt-4 grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
       {sizeList.map((size: ISizeProduct) => (
@@ -48,4 +48,4 @@ const Size = ({ sizeList, sizeSelect, setSelect }: SizeProps) => {
   );
 };
 
-export default Size;
+export default ProductSize;

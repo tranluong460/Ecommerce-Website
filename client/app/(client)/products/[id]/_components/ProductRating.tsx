@@ -6,7 +6,7 @@ type RatingProps = {
   comments: ICommentProduct[];
 };
 
-const Rating = ({ comments }: RatingProps) => {
+const ProductRating = ({ comments }: RatingProps) => {
   const renderStars = () => {
     const averageRating = calculateAverageRating(comments);
     const stars = [];
@@ -40,4 +40,4 @@ const Rating = ({ comments }: RatingProps) => {
   );
 };
 
-export default Rating;
+export default ProductRating;

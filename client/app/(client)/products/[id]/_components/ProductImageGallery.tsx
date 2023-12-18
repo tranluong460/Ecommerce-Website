@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { IImageProduct } from "@/interface/products";
 
-type ImageGalleryProps = {
+type ProductImageGalleryProps = {
   images: IImageProduct[];
 };
 
-const ImageGallery = ({ images }: ImageGalleryProps) => {
+const ProductImageGallery = ({ images }: ProductImageGalleryProps) => {
   const [selectImage, setSelectImage] = useState("");
 
   return (
@@ -48,4 +48,4 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
   );
 };
 
-export default ImageGallery;
+export default ProductImageGallery;

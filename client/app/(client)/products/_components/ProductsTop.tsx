@@ -6,9 +6,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { DashboardIcon, ChevronDownIcon } from "@radix-ui/react-icons";
-import FilterDrawn from "./FilterDrawn";
+import ProductsFilterMobile from "./ProductsFilterMobile";
 
-const Top = () => {
+const ProductsTop = () => {
   return (
     <div className="flex items-baseline justify-between border-b dark:border-secondary pb-6 pt-4">
       <h1 className="text-2xl font-bold tracking-tight text-foreground">
@@ -40,10 +40,10 @@ const Top = () => {
           <DashboardIcon className="h-5 w-5" />
         </button>
 
-        <FilterDrawn />
+        <ProductsFilterMobile />
       </div>
     </div>
   );
 };
 
-export default Top;
+export default ProductsTop;

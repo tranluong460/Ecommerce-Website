@@ -1,6 +1,6 @@
 import Logo from "../Logo";
 import Navigation from "./Navigation";
-import NavigationDrawn from "./NavigationDrawn";
+import NavigationMobile from "./NavigationMobile";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
@@ -12,7 +12,7 @@ const Header = () => {
       <div className="border-b dark:border-secondary">
         <Container>
           <div className="flex h-16 items-center">
-            <NavigationDrawn />
+            <NavigationMobile />
 
             <div className="ml-4 flex lg:ml-0 z-10">
               <Logo />
