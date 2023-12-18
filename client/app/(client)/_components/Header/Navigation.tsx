@@ -12,7 +12,7 @@ const Navigation = () => {
   });
 
   return (
-    <div className="flex h-full space-x-8">
+    <div className="flex h-full items-center space-x-8">
       {nav__links.map((nav) => (
         <div key={nav.name} className="flex">
           <div className="relative flex">
@@ -100,12 +100,14 @@ const Navigation = () => {
         </div>
       ))}
 
-      <Link
-        href="/products"
-        className="flex items-center text-sm font-medium text-muted-foreground hover:text-primary"
-      >
-        Sản phẩm
-      </Link>
+      <div onClick={() => setActive({ boy: false, girl: false })}>
+        <Link
+          href="/products"
+          className="flex items-center text-sm font-medium text-muted-foreground hover:text-primary"
+        >
+          Sản phẩm
+        </Link>
+      </div>
     </div>
   );
 };
