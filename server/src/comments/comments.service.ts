@@ -16,7 +16,18 @@ export class CommentsService {
   ) {}
 
   async create(createCommentDto: CreateCommentDto): Promise<Comment> {
-    const createComment = new this.commentModel(createCommentDto);
+    const user = await this.userModel.findOne({
+      clerkId: createCommentDto.clerkId,
+    });
+
+    if (!user) {
+      throw new NotFoundException('Không tìm thấy người dùng!');
+    }
+
+    const createComment = new this.commentModel({
+      ...createCommentDto,
+      id_user: user._id,
+    });
 
     if (!createComment) {
       throw new NotFoundException('Thêm mới bình luận thất bại!');
@@ -30,7 +41,7 @@ export class CommentsService {
       .exec();
 
     await this.userModel.updateMany(
-      { _id: createComment.id_user },
+      { _id: user._id },
       { $push: { id_comments: createComment._id } },
     );
 

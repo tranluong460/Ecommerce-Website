@@ -8,9 +8,11 @@ import {
 } from 'class-validator';
 
 export class CreateCommentDto {
-  @IsNotEmpty({ message: 'ID người dùng không được để trống!' })
-  @IsMongoId({ message: 'ID người dùng không hợp lệ!' })
-  id_user: string;
+  @IsNotEmpty({ message: 'Clerk Id không được để trống!' })
+  @IsString({ message: 'Clerk Id phải là chuỗi!' })
+  clerkId: string;
+
+  id_user?: string;
 
   @IsNotEmpty({ message: 'ID sản phẩm không được để trống!' })
   @IsMongoId({ message: 'ID sản phẩm không hợp lệ!' })

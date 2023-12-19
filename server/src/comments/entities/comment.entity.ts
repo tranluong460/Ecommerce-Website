@@ -7,7 +7,10 @@ export type ProductDocument = HydratedDocument<Comment>;
 
 @Schema({ timestamps: true, versionKey: false })
 export class Comment {
-  @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+  @Prop({ required: true })
+  clerkId: string;
+
+  @Prop({ required: false, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   id_user: User;
 
   @Prop({
