@@ -5,14 +5,14 @@ import Container from "@/components/Container";
 import ProductDetail from "./_components/ProductDetail";
 import ProductsList from "../_components/ProductsList";
 import { SlashIcon } from "@radix-ui/react-icons";
-import { products } from "@/data/products";
+import { getAllProducts, getOneProduct } from "@/actions/products";
 
 export async function generateMetadata({
   params,
 }: {
   params: { id: string };
 }): Promise<Metadata> {
-  const product = products.find((prod) => prod._id === params.id);
+  const product = await getOneProduct(params.id);
 
   return {
     title: product?.name,
@@ -20,8 +20,9 @@ export async function generateMetadata({
   };
 }
 
-const ProductDetailPage = ({ params }: { params: { id: string } }) => {
-  const product = products.find((prod) => prod._id === params.id);
+const ProductDetailPage = async ({ params }: { params: { id: string } }) => {
+  const products = await getAllProducts();
+  const product = await getOneProduct(params.id);
 
   return (
     <section className="bg-background">
