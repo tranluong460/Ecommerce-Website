@@ -40,16 +40,16 @@ const ProductQuantity = ({
       <button
         onClick={() => handleQuantityChange("decrease")}
         disabled={sizeSelect === ""}
-        className="border dark:border-secondary p-1 focus:border-primary disabled:cursor-not-allowed"
+        className="border dark:border-secondary p-1 focus:border-primary disabled:cursor-not-allowed peer"
       >
-        <MinusIcon className="w-6 h-6" />
+        <MinusIcon className="w-6 h-6 peer-disabled:text-muted-foreground" />
       </button>
 
       <input
         type="text"
         disabled={sizeSelect === ""}
         className="border-t border-b p-1 outline-none text-center w-16 bg-background disabled:cursor-not-allowed"
-        defaultValue={sizeSelect ? quantitySelect : 0}
+        value={sizeSelect ? quantitySelect : 0}
         readOnly
       />
 
