@@ -2,9 +2,11 @@ import Container from "@/components/Container";
 import ProductsTop from "./_components/ProductsTop";
 import ProductsFilter from "./_components/ProductsFilter";
 import ProductsList from "./_components/ProductsList";
-import { products } from "@/data/products";
+import { getAllProducts } from "@/actions/products";
 
-const ProductsPage = () => {
+const ProductsPage = async () => {
+  const data = await getAllProducts();
+
   return (
     <section className="py-10">
       <Container>
@@ -16,7 +18,7 @@ const ProductsPage = () => {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             <ProductsFilter />
 
-            <ProductsList products={products} />
+            <ProductsList products={data} />
           </div>
         </div>
       </Container>
