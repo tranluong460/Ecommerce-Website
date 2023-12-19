@@ -59,13 +59,18 @@ export async function POST(req: Request) {
       photo: payload.data.image_url,
     };
 
-    await fetch("https://seine-server.vercel.app/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
+    await fetch(
+      process.env.NEXT_ENV === "production"
+        ? "https://seine-server.vercel.app/users"
+        : "http://localhost:8080/users",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    );
   }
 
   return new Response("", { status: 200 });
