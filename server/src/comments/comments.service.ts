@@ -24,6 +24,14 @@ export class CommentsService {
       throw new NotFoundException('Không tìm thấy người dùng!');
     }
 
+    const product = await this.productModel.findOne({
+      _id: createCommentDto.id_product,
+    });
+
+    if (!product) {
+      throw new NotFoundException('Không tìm thấy sản phẩm!');
+    }
+
     const createComment = new this.commentModel({
       ...createCommentDto,
       id_user: user._id,
@@ -35,7 +43,7 @@ export class CommentsService {
 
     await this.productModel
       .updateMany(
-        { _id: createComment.id_product },
+        { _id: product._id },
         { $push: { id_comments: createComment._id } },
       )
       .exec();
