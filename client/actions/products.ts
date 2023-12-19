@@ -1,7 +1,7 @@
 "use server";
 
 export const getAllProducts = async () => {
-  const response = await fetch("http://localhost:8080/products", {
+  const response = await fetch("https://seines.vercel.app/products", {
     cache: "force-cache",
   });
 
@@ -9,7 +9,7 @@ export const getAllProducts = async () => {
 };
 
 export const getOneProduct = async (id: string) => {
-  const response = await fetch(`http://localhost:8080/products/${id}`, {
+  const response = await fetch(`https://seines.vercel.app/products/${id}`, {
     cache: "force-cache",
   });
 
