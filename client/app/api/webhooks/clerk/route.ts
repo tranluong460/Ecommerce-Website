@@ -61,7 +61,7 @@ export async function POST(req: Request) {
 
     await fetch(
       process.env.NEXT_ENV === "production"
-        ? "https://seine-server.vercel.app/users"
+        ? "https://seines.vercel.app/users"
         : "http://localhost:8080/users",
       {
         method: "POST",
