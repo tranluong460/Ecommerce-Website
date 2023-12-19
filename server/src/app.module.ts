@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ProductsModule } from './products/products.module';
 import { CommentsModule } from './comments/comments.module';
 import { UsersModule } from './users/users.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -11,9 +12,9 @@ import { UsersModule } from './users/users.module';
       envFilePath: '.env.local',
     }),
     MongooseModule.forRoot(process.env.DB_URL),
-    UsersModule,
     ProductsModule,
     CommentsModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],
