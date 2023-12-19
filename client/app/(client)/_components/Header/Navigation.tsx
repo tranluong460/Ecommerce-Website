@@ -54,7 +54,7 @@ const Navigation = () => {
                         <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-secondary group-hover:opacity-75">
                           <Image
                             width={1000}
-                            height={100}
+                            height={1000}
                             src={item.image}
                             alt={item.image}
                             className="object-cover object-center"

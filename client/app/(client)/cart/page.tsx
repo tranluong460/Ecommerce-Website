@@ -35,7 +35,7 @@ const CartPage = () => {
                       <div className="flex-shrink-0">
                         <Image
                           width={1000}
-                          height={100}
+                          height={1000}
                           src={images?.color_images[0].url || ""}
                           alt={images?.color_images[0].url || ""}
                           className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"

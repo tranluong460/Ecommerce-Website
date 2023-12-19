@@ -18,7 +18,7 @@ const ProductsList = ({ products }: ProductsListProps) => {
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-secondary lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <Image
                     width={1000}
-                    height={100}
+                    height={1000}
                     src={product.attributes[0].color_images[0].url}
                     alt={product.attributes[0].color}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
