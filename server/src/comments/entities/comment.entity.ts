@@ -1,6 +1,7 @@
 import mongoose, { HydratedDocument } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { User } from 'src/users/entities/user.entity';
+import { Product } from 'src/products/entities/product.entity';
 
 export type ProductDocument = HydratedDocument<Comment>;
 
@@ -8,6 +9,13 @@ export type ProductDocument = HydratedDocument<Comment>;
 export class Comment {
   @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   id_user: User;
+
+  @Prop({
+    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Product',
+  })
+  id_product: Product;
 
   @Prop({ required: true })
   comment: string;

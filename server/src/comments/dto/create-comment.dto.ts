@@ -12,6 +12,10 @@ export class CreateCommentDto {
   @IsMongoId({ message: 'ID người dùng không hợp lệ!' })
   id_user: string;
 
+  @IsNotEmpty({ message: 'ID sản phẩm không được để trống!' })
+  @IsMongoId({ message: 'ID sản phẩm không hợp lệ!' })
+  id_product: string;
+
   @IsNotEmpty({ message: 'Bình luận không được để trống!' })
   @IsString({ message: 'Bình luận phải là chuỗi!' })
   comment: string;

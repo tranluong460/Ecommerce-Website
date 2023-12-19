@@ -114,12 +114,14 @@ export const products = [
     comments: [
       {
         id_user: "65789877e235ad72bf2a3a72",
+        id_product: "6572af6c16271e7b685bb37c",
         comment:
           "Ngày nay, chúng ta không chỉ bắt gặp những chiếc áo sơ mi tay dài trong môi trường công sở như trước đây mà còn có thể thường xuyên nhìn thấy những bộ outfit có sự kết hợp với áo sơ mi trong đời sống thường ngày, các buổi tiệc sang trọng, …",
         rate: 2,
       },
       {
         id_user: "65789886e235ad72bf2a3a78",
+        id_product: "6572af6c16271e7b685bb37c",
         comment:
           "Áo Sơ Mi Nam tay Dài Oxford Trơn Form Fitted - 10F22SHL002C là item vô cùng quen thuộc, gần gũi với chất liệu tự nhiên thoáng mát, thấm hút mồ hôi tốt.",
         rate: 2,
