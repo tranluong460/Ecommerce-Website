@@ -5,12 +5,14 @@ import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
 import { Comment } from './entities/comment.entity';
 import { Product } from 'src/products/entities/product.entity';
+import { User } from 'src/users/entities/user.entity';
 
 @Injectable()
 export class CommentsService {
   constructor(
     @InjectModel(Comment.name) private commentModel: Model<Comment>,
     @InjectModel(Product.name) private productModel: Model<Product>,
+    @InjectModel(User.name) private userModel: Model<User>,
   ) {}
 
   async create(createCommentDto: CreateCommentDto): Promise<Comment> {
@@ -26,6 +28,11 @@ export class CommentsService {
         { $push: { id_comments: createComment._id } },
       )
       .exec();
+
+    await this.userModel.updateMany(
+      { _id: createComment.id_user },
+      { $push: { id_comments: createComment._id } },
+    );
 
     return createComment.save();
   }
@@ -73,6 +80,10 @@ export class CommentsService {
     }
 
     await this.productModel
+      .updateMany({ id_comments: id }, { $pull: { id_comments: id } })
+      .exec();
+
+    await this.userModel
       .updateMany({ id_comments: id }, { $pull: { id_comments: id } })
       .exec();
 
