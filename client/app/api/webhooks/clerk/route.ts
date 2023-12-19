@@ -59,13 +59,17 @@ export async function POST(req: Request) {
       photo: payload.data.image_url,
     };
 
-    await fetch("https://seines.vercel.app/users", {
+    const response = await fetch("https://seines.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
+
+    if (!response.ok) {
+      return new Response("", { status: 404 });
+    }
   }
 
   return new Response("", { status: 200 });
