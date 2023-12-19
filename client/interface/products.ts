@@ -7,7 +7,7 @@ export interface IProduct {
   highlights: IHighlightProduct[];
   short_description: string;
   description: string;
-  comments: ICommentProduct[];
+  id_comments: ICommentProduct[];
 }
 
 export interface IAttributesProduct {
@@ -30,6 +30,7 @@ export interface IHighlightProduct {
 }
 
 export interface ICommentProduct {
+  clerkId: string;
   id_user: string;
   comment: string;
   rate: number;

@@ -56,7 +56,9 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
           </div>
 
           <div className="mt-3 flex items-center">
-            {product?.comments && <ProductRating comments={product.comments} />}
+            {product?.id_comments && (
+              <ProductRating comments={product.id_comments} />
+            )}
           </div>
 
           <div className="mt-6 space-y-6 text-base text-muted-foreground">

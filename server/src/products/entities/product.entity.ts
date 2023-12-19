@@ -4,7 +4,32 @@ import { Comment } from 'src/comments/entities/comment.entity';
 
 export type ProductDocument = HydratedDocument<Product>;
 
-interface IHighlights {
+class Size {
+  @Prop({ required: true })
+  name: string;
+
+  @Prop({ required: true })
+  quantity: number;
+}
+
+class ColorImage {
+  @Prop({ required: true })
+  url: string;
+}
+
+class Attribute {
+  @Prop({ required: true })
+  color: string;
+
+  @Prop({ required: true, type: [Size] })
+  sizes: Size[];
+
+  @Prop({ required: true, type: [ColorImage] })
+  color_images: ColorImage[];
+}
+
+class Highlight {
+  @Prop({ required: true })
   name: string;
 }
 
@@ -19,11 +44,14 @@ export class Product {
   @Prop({ required: true })
   original_price: number;
 
+  @Prop({ type: [Attribute] })
+  attributes: Attribute[];
+
   @Prop({
     required: true,
-    type: [{ _id: false, name: { type: String, required: true } }],
+    type: [Highlight],
   })
-  highlights: IHighlights[];
+  highlights: Highlight[];
 
   @Prop({ required: true })
   short_description: string;
