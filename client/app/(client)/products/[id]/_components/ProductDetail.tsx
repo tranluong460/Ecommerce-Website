@@ -9,6 +9,7 @@ import ProductHeartButton from "./ProductHeartButton";
 import ProductImageGallery from "./ProductImageGallery";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
+import ProductQuantity from "./ProductQuantity";
 
 type ProductDetailProps = {
   product: IProduct | undefined;
@@ -19,6 +20,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
     color: "",
     size: "",
     image: "",
+    quantity: 1,
   });
 
   const colorList = product?.attributes.map((item) => ({
@@ -80,12 +82,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
           </div>
 
           <div className="mt-6">
-            <div>
-              <h3 className="text-sm text-foreground">Màu</h3>
+            <div className="mt-10">
+              <h3 className="text-sm font-medium text-card-foreground">
+                Chọn màu
+              </h3>
 
               <div className="mt-2">
-                <div className="sr-only">Chọn màu</div>
-
                 {colorList && (
                   <ProductColor
                     colorList={colorList}
@@ -97,11 +99,37 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                         color: value,
                         size: "",
                         image: "",
+                        quantity: 1,
                       }))
                     }
                   />
                 )}
               </div>
+            </div>
+
+            <div className="mt-10">
+              <h3 className="text-sm font-medium text-card-foreground">
+                Số lượng
+              </h3>
+
+              {attributes && (
+                <ProductQuantity
+                  quantitySelect={select.quantity}
+                  sizeList={attributes.sizes}
+                  sizeSelect={select.size}
+                  setSelect={(value: string) =>
+                    setSelect((prev) => ({
+                      ...prev,
+                      ...(value === "increase" && {
+                        quantity: prev.quantity + 1,
+                      }),
+                      ...(value === "decrease" && {
+                        quantity: prev.quantity - 1,
+                      }),
+                    }))
+                  }
+                />
+              )}
             </div>
 
             <div className="mt-10">
@@ -120,7 +148,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                   sizeList={attributes.sizes}
                   sizeSelect={select.size}
                   setSelect={(value: string) =>
-                    setSelect((prev) => ({ ...prev, size: value }))
+                    setSelect((prev) => ({ ...prev, size: value, quantity: 1 }))
                   }
                 />
               )}

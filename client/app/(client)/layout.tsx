@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { Toaster } from "@/components/ui/toaster";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
@@ -16,6 +16,7 @@ export default function ClientLayout({
 }) {
   return (
     <>
+      <Toaster />
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />
