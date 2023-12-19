@@ -44,5 +44,5 @@ export class CreateProductDto {
   @IsString({ message: 'Mô tả phải là chuỗi!' })
   description: string;
 
-  comments?: string[];
+  id_comments?: string[];
 }

@@ -35,7 +35,7 @@ export class Product {
     required: false,
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   })
-  comments: Comment[];
+  id_comments: Comment[];
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

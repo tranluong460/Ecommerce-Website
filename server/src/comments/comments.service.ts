@@ -23,7 +23,7 @@ export class CommentsService {
     await this.productModel
       .updateMany(
         { _id: createComment.id_product },
-        { $push: { comments: createComment._id } },
+        { $push: { id_comments: createComment._id } },
       )
       .exec();
 
@@ -73,7 +73,7 @@ export class CommentsService {
     }
 
     await this.productModel
-      .updateMany({ comments: id }, { $pull: { comments: id } })
+      .updateMany({ id_comments: id }, { $pull: { id_comments: id } })
       .exec();
 
     return removeComment;
