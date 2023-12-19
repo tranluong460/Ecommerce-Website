@@ -18,6 +18,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
   const [select, setSelect] = useState({
     color: "",
     size: "",
+    image: "",
   });
 
   const colorList = product?.attributes.map((item) => ({
@@ -34,7 +35,13 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl">
       <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
         {attributes && (
-          <ProductImageGallery images={attributes?.color_images} />
+          <ProductImageGallery
+            imageList={attributes?.color_images}
+            imageSelect={select.image}
+            setSelect={(value: string) =>
+              setSelect((prev) => ({ ...prev, image: value }))
+            }
+          />
         )}
 
         <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
@@ -85,7 +92,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                     colorDefault={product?.attributes[0].color}
                     colorSelect={select.color}
                     setSelect={(value: string) =>
-                      setSelect((prev) => ({ ...prev, color: value, size: "" }))
+                      setSelect((prev) => ({
+                        ...prev,
+                        color: value,
+                        size: "",
+                        image: "",
+                      }))
                     }
                   />
                 )}
