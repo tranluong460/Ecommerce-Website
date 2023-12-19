@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
-import { getAllProducts } from "@/actions/products";
 
-const ProductsList = async () => {
-  const products: IProduct[] = await getAllProducts();
+type ProductsListProps = {
+  products: IProduct[];
+};
 
+const ProductsList = ({ products }: ProductsListProps) => {
   return (
     <div className="lg:col-span-3">
       {products && products.length > 0 ? (
