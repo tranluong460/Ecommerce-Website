@@ -33,10 +33,9 @@ export class Product {
 
   @Prop({
     required: false,
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Comment',
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   })
-  comments: Comment;
+  comments: Comment[];
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

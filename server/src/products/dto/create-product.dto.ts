@@ -35,4 +35,14 @@ export class CreateProductDto {
   @ValidateNested({ each: true })
   @Type(() => Highlight)
   highlights: Highlight[];
+
+  @IsNotEmpty({ message: 'Mô tả ngắn không được để trống!' })
+  @IsString({ message: 'Mô tả ngắn phải là chuỗi!' })
+  short_description: string;
+
+  @IsNotEmpty({ message: 'Mô tả không được để trống!' })
+  @IsString({ message: 'Mô tả phải là chuỗi!' })
+  description: string;
+
+  comments?: string[];
 }

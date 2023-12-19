@@ -23,6 +23,11 @@ export class ProductsService {
 
   async findAll(): Promise<Product[]> {
     const allProducts = await this.productModel.find().exec();
+
+    if (allProducts.length === 0) {
+      throw new NotFoundException('Không có danh sách sản phẩm!');
+    }
+
     return allProducts;
   }
 

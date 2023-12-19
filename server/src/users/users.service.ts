@@ -21,6 +21,11 @@ export class UsersService {
 
   async findAll(): Promise<User[]> {
     const allUsers = await this.userModel.find().exec();
+
+    if (allUsers.length === 0) {
+      throw new NotFoundException('Không có danh sách người dùng!');
+    }
+
     return allUsers;
   }
 
