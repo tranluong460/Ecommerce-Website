@@ -1,0 +1,15 @@
+.qs-section {
+  @apply py-8 px-4 mx-auto sm:py-16 lg:px-6;
+}
+
+.qs-h2 {
+  @apply mb-8 text-4xl tracking-tight font-extrabold text-foreground;
+}
+
+.qs-at {
+  @apply text-muted-foreground;
+}
+
+.qs-ac {
+  @apply text-muted-foreground;
+}

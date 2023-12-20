@@ -4,13 +4,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import "@/styles/client/contact.css";
 
 const ContactPage = () => {
   return (
-    <section className="isolate px-6 py-24 sm:py-32 lg:px-8">
-      <div className="absolute inset-x-0 top-[-10rem] transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+    <section className="ct-section">
+      <div className="ct-div-1">
         <div
-          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
+          className="ct-div-2"
           style={{
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
@@ -18,139 +19,115 @@ const ContactPage = () => {
         />
       </div>
 
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Liên hệ
-        </h2>
-        <p className="mt-2 text-lg leading-8 text-muted-foreground">
+      <div className="ct-div-3">
+        <h2 className="ct-h2">Liên hệ</h2>
+        <p className="ct-p">
           Hãy cho chúng tôi biết một chút về bản thân bạn và chúng tôi sẽ liên
           lạc lại ngay khi có thể.
         </p>
       </div>
 
       {/* Contact Form */}
-      <div className="mx-auto max-w-xl mt-5">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      <div className="ct-div-4">
+        <div className="ct-div-5">
           <div>
-            <Label
-              htmlFor="first-name"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
+            <Label htmlFor="first-name" className="ct-label-1">
               Họ
             </Label>
 
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Input
                 type="text"
                 id="first-name"
                 name="first-name"
                 autoComplete="off"
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
 
           <div>
-            <Label
-              htmlFor="last-name"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
-              Họ
+            <Label htmlFor="last-name" className="ct-label-1">
+              Tên
             </Label>
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Input
                 type="text"
                 id="last-name"
                 name="last-name"
                 autoComplete="off"
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
 
-          <div className="sm:col-span-2">
-            <Label
-              htmlFor="email"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
+          <div className="ct-div-7">
+            <Label htmlFor="email" className="ct-label-1">
               Email
             </Label>
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Input
                 type="text"
                 id="email"
                 name="email"
                 autoComplete="off"
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
 
-          <div className="sm:col-span-2">
-            <Label
-              htmlFor="address"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
+          <div className="ct-div-7">
+            <Label htmlFor="address" className="ct-label-1">
               Địa chỉ
             </Label>
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Input
                 type="text"
                 id="address"
                 name="address"
                 autoComplete="off"
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
 
-          <div className="sm:col-span-2">
-            <Label
-              htmlFor="phone"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
+          <div className="ct-div-7">
+            <Label htmlFor="phone" className="ct-label-1">
               Số điện thoại
             </Label>
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Input
                 type="text"
                 id="phone"
                 name="phone"
                 autoComplete="off"
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
 
-          <div className="sm:col-span-2">
-            <Label
-              htmlFor="message"
-              className="block text-sm font-semibold leading-6 text-foreground"
-            >
+          <div className="ct-div-7">
+            <Label htmlFor="message" className="ct-label-1">
               Tin nhắn
             </Label>
-            <div className="mt-2.5">
+            <div className="ct-div-6">
               <Textarea
                 id="message"
                 name="message"
                 rows={4}
-                className="block w-full rounded-md border dark:border-secondary px-3.5 py-2 text-muted-foreground shadow-sm placeholder:text-muted-foreground focus:ring-primary sm:text-sm sm:leading-6"
+                className="ct-input"
               />
             </div>
           </div>
-          <div className="flex gap-x-2 sm:col-span-2">
-            <div className="flex h-6 items-center">
+
+          <div className="ct-div-8">
+            <div className="ct-div-9">
               <Checkbox id="terms" />
             </div>
-            <Label
-              htmlFor="terms"
-              className="text-sm leading-6 text-foreground"
-            >
+
+            <Label htmlFor="terms" className="ct-label-2">
               Bằng cách chọn mục này, bạn đồng ý với&nbsp;
-              <Link
-                href="#"
-                className="font-semibold text-primary hover:underline"
-              >
+              <Link href="#" className="ct-link">
                 chính sách quyền riêng tư
               </Link>
               &nbsp;của chúng tôi.
@@ -158,8 +135,8 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className="mt-10">
-          <Button className="w-full" size="lg">
+        <div className="ct-div-10">
+          <Button className="ct-button" size="lg">
             Gửi
           </Button>
         </div>
