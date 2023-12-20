@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   icons: "/logo.png",
 };
 
-export const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return <main className="min-h-screen flex justify-center">{children}</main>;
 };
+
+export default AuthLayout;

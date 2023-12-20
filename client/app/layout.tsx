@@ -3,7 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { viVN } from "@clerk/localizations";
 import "@/styles/globals.css";
 
-export const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClerkProvider localization={viVN}>
       <html lang="en" suppressHydrationWarning>
@@ -21,3 +21,5 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
     </ClerkProvider>
   );
 };
+
+export default RootLayout;
