@@ -42,7 +42,7 @@ const UserMenu = async () => {
           <DropdownMenuSeparator />
 
           <DropdownMenuGroup>
-            <Link href="/profile">
+            <Link href="/auth/profile">
               <DropdownMenuItem>
                 Hồ sơ
                 <DropdownMenuShortcut>
@@ -88,7 +88,7 @@ const UserMenu = async () => {
 
         <SignedOut>
           <DropdownMenuGroup>
-            <Link href="/sign-in">
+            <Link href="/auth/sign-in">
               <DropdownMenuItem>
                 Đăng nhập
                 <DropdownMenuShortcut>
@@ -97,7 +97,7 @@ const UserMenu = async () => {
               </DropdownMenuItem>
             </Link>
 
-            <Link href="/sign-up">
+            <Link href="/auth/sign-up">
               <DropdownMenuItem>
                 Đăng ký
                 <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
