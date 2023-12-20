@@ -42,7 +42,7 @@ const UserMenu = async () => {
           <DropdownMenuSeparator />
 
           <DropdownMenuGroup>
-            <Link href="/auth/profile">
+            <Link href="/auth">
               <DropdownMenuItem>
                 Hồ sơ
                 <DropdownMenuShortcut>
