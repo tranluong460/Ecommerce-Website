@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   icons: "/logo.png",
 };
 
-export default function UnauthorizedLayout({
+export const UnauthorizedLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) => {
   return <main className="min-h-screen">{children}</main>;
-}
+};

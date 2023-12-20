@@ -9,11 +9,7 @@ export const metadata: Metadata = {
   icons: "/logo.png",
 };
 
-export default function ClientLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Toaster />
@@ -22,4 +18,4 @@ export default function ClientLayout({
       <Footer />
     </>
   );
-}
+};

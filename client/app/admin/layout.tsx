@@ -6,10 +6,6 @@ export const metadata: Metadata = {
   icons: "/logo.png",
 };
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return <main className="min-h-screen">{children}</main>;
-}
+};
