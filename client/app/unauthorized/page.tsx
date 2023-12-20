@@ -2,27 +2,20 @@ import Link from "next/link";
 
 const UnauthorizedPage = () => {
   return (
-    <section className="w-full h-screen flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0">
-      <div className="w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center">
-        <p className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-foreground">
-          401
-        </p>
+    <section className="udp-section">
+      <div className="udp-div-1">
+        <p className="udp-p-1">401</p>
 
-        <p className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-foreground mt-2">
-          Truy cập bị từ chối
-        </p>
+        <p className="udp-p-2">Truy cập bị từ chối</p>
 
-        <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground my-12">
+        <p className="udp-p-3">
           Xin lỗi, bạn không có quyền truy cập vào trang này.
         </p>
 
-        <Link
-          href="/"
-          className="flex items-center space-x-2 bg-primary hover:opacity-80 text-muted px-4 py-2 rounded transition duration-150"
-        >
+        <Link href="/" className="udp-link">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="udp-svg-1"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -36,9 +29,9 @@ const UnauthorizedPage = () => {
         </Link>
       </div>
 
-      <div className="w-1/2 lg:h-full flex lg:items-end justify-center p-4">
+      <div className="udp-div-2">
         <svg
-          className="w-full text-primary"
+          className="udp-svg-2"
           xmlns="http://www.w3.org/2000/svg"
           data-name="Layer 1"
           viewBox="0 0 1120.59226 777.91584"

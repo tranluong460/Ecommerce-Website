@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import "@/styles/client/unauthorized.css";
 
 export const metadata: Metadata = {
   title: "Truy cập bị từ chối",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const UnauthorizedLayout = ({ children }: { children: React.ReactNode }) => {
-  return <main className="min-h-screen">{children}</main>;
+  return <main className="udl-main">{children}</main>;
 };
 
 export default UnauthorizedLayout;

@@ -8,22 +8,22 @@ const RegisterPage = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="max-w-screen-xl m-0 sm:m-3 sm:rounded-lg flex justify-center flex-1 bg-background border dark:border-secondary">
-      <div className="lg:w-1/2 xl:w-5/12 p-6 sm:px-12 flex items-center pt-5">
+    <section className="sup-section">
+      <div className="sup-div-1">
         <SignUp
           appearance={{ baseTheme: theme === "dark" ? dark : undefined }}
         />
       </div>
 
-      <div className="flex-1 text-center hidden lg:flex">
+      <div className="sup-div-2">
         <div
-          className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+          className="sup-div-3"
           style={{
             backgroundImage: "url('/background.svg')",
           }}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

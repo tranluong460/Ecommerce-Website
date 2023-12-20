@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/client/auth.css";
 
 export const metadata: Metadata = {
   title: "SEINE",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
-  return <main className="min-h-screen flex justify-center">{children}</main>;
+  return <main className="al-main">{children}</main>;
 };
 
 export default AuthLayout;

@@ -8,7 +8,7 @@ const ProfilePage = () => {
   const { theme } = useTheme();
 
   return (
-    <section className="flex justify-center items-center py-8 sm:py-16">
+    <section className="pep-section">
       <UserProfile
         appearance={{ baseTheme: theme === "dark" ? dark : undefined }}
       />
