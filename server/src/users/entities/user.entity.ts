@@ -4,6 +4,11 @@ import { Comment } from '../../comments/entities/comment.entity';
 
 export type UserDocument = HydratedDocument<User>;
 
+enum UserRole {
+  Admin = 'Admin',
+  User = 'User',
+}
+
 @Schema({ timestamps: true, versionKey: false })
 export class User {
   @Prop({ required: true, unique: true })
@@ -29,6 +34,9 @@ export class User {
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   })
   id_comments: Comment[];
+
+  @Prop({ default: UserRole.User, enum: UserRole })
+  role: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
