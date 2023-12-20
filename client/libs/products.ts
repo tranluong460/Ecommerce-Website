@@ -7,9 +7,7 @@ export const getAllProducts = async () => {
 };
 
 export const getOneProduct = async (id: string) => {
-  const response = await fetch(`https://seines.vercel.app/products/${id}`, {
-    cache: "force-cache",
-  });
+  const response = await fetch(`https://seines.vercel.app/products/${id}`);
 
   return response.json();
 };
