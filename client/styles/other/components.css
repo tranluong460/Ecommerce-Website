@@ -1,0 +1,15 @@
+/* Container */
+.cr-div {
+  @apply px-5 max-w-[1280px] mx-auto;
+}
+/* End Container */
+
+/* Logo */
+.lo-div {
+  @apply font-semibold text-2xl text-foreground;
+}
+
+.lo-image {
+  @apply w-20 h-14;
+}
+/* End Logo */
