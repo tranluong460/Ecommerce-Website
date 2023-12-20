@@ -1,10 +1,10 @@
 import Logo from "@/components/Logo";
+import Container from "@/components/Container";
 import Navigation from "./Navigation";
 import NavigationMobile from "./NavigationMobile";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
-import Container from "@/components/Container";
 import "@/styles/other/header.css";
 
 const Header = () => {
