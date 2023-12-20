@@ -1,0 +1,113 @@
+/* Cart Drawn */
+.cd-div-1 {
+  @apply -m-2 flex items-center p-2 cursor-pointer;
+}
+
+.cd-svg {
+  @apply h-7 w-7 flex-shrink-0 text-muted-foreground;
+}
+
+.cd-link-1 {
+  @apply hover:text-primary hover:underline;
+}
+
+.cd-sr {
+  @apply mt-2;
+}
+
+.cd-sa {
+  @apply h-[70vh] w-full;
+}
+
+.cd-div-2 {
+  @apply divide-y;
+}
+
+.cd-div-3 {
+  @apply flex py-5 mr-3;
+}
+
+.cd-div-4 {
+  @apply h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border dark:border-secondary;
+}
+
+.cd-image {
+  @apply h-full w-full object-cover object-center;
+}
+
+.cd-div-5 {
+  @apply ml-4 flex flex-1 flex-col;
+}
+
+.cd-div-6 {
+  @apply flex flex-col;
+}
+
+.cd-div-7 {
+  @apply gap-1 justify-between;
+}
+
+.cd-label-1 {
+  @apply text-sm font-medium cursor-pointer;
+}
+
+.cd-label-2 {
+  @apply text-sm font-medium;
+}
+
+.cd-div-8 {
+  @apply flex text-sm items-center mt-1;
+}
+
+.cd-span-1 {
+  @apply h-3 w-3 border dark:border-secondary;
+}
+
+.cd-p-1 {
+  @apply ml-4 border-l dark:border-secondary pl-4 text-muted-foreground;
+}
+
+.cd-div-9 {
+  @apply flex flex-1 justify-between text-sm;
+}
+
+.cd-label-3 {
+  @apply text-muted-foreground font-normal mt-2;
+}
+
+.cd-div-10 {
+  @apply flex;
+}
+
+.cd-icon {
+  @apply w-5 h-5;
+}
+
+.cd-div-11 {
+  @apply flex items-center justify-center;
+}
+
+.cd-span-2 {
+  @apply text-lg py-5 text-muted-foreground;
+}
+
+.cd-div-12 {
+  @apply border-t dark:border-secondary py-6;
+}
+
+.cd-div-13 {
+  @apply flex justify-between text-base font-medium text-foreground;
+}
+
+.cd-p-2 {
+  @apply mt-0.5 text-sm text-muted-foreground;
+}
+
+.cd-div-14 {
+  @apply mt-6;
+}
+
+.cd-button {
+  @apply w-full;
+}
+/* End Cart Drawn */

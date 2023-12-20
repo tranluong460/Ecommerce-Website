@@ -20,9 +20,9 @@ const CartDrawn = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <div className="group -m-2 flex items-center p-2 cursor-pointer">
+        <div className="cd-div-1 group">
           <svg
-            className="h-7 w-7 flex-shrink-0 text-muted-foreground group-hover:text-primary"
+            className="cd-svg group-hover:text-primary"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
@@ -41,15 +41,15 @@ const CartDrawn = () => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <Link className="hover:text-primary hover:underline" href="/cart">
+            <Link className="cd-link-1" href="/cart">
               Giỏ hàng
             </Link>
-            <Separator className="mt-2" />
+            <Separator className="cd-sr" />
           </SheetTitle>
         </SheetHeader>
 
-        <ScrollArea className="h-[70vh] w-full">
-          <div className="divide-y">
+        <ScrollArea className="cd-sa">
+          <div className="cd-div-2">
             {carts && carts.products ? (
               carts.products.map((product) => {
                 const images = product.product.attributes.find(
@@ -59,58 +59,56 @@ const CartDrawn = () => {
                 return (
                   <div
                     key={`${product.product._id}-${product.color}-${product.size}`}
-                    className="flex py-5 mr-3"
+                    className="cd-div-3"
                   >
-                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border dark:border-secondary">
+                    <div className="cd-div-4">
                       {images && (
                         <Image
                           width={100}
                           height={100}
                           src={images.color_images[0].url}
                           alt={images.color_images[0].url}
-                          className="h-full w-full object-cover object-center"
+                          className="cd-image"
                         />
                       )}
                     </div>
 
-                    <div className="ml-4 flex flex-1 flex-col">
-                      <div className="flex flex-col">
-                        <div className="flex flex-col gap-1 justify-between">
+                    <div className="cd-div-5">
+                      <div className="cd-div-6">
+                        <div className="cd-div-6 cd-div-7">
                           <Link
                             href={`/products/${product.product._id}`}
                             className="group"
                           >
-                            <Label className="group-hover:text-primary text-sm font-medium cursor-pointer">
+                            <Label className="cd-label-1 group-hover:text-primary">
                               {product.product.name}
                             </Label>
                           </Link>
 
-                          <Label className="text-sm font-medium">
+                          <Label className="cd-label-2">
                             {priceFormatted(product.product.price)}
                           </Label>
                         </div>
 
-                        <div className="flex text-sm items-center mt-1">
+                        <div className="cd-div-8">
                           <span
                             aria-hidden="true"
-                            className="h-3 w-3 border dark:border-secondary"
+                            className="cd-span-1"
                             style={{ backgroundColor: `#${product.color}` }}
                           />
 
-                          <p className="ml-4 border-l dark:border-secondary pl-4 text-muted-foreground">
-                            {product.size}
-                          </p>
+                          <p className="cd-p-1">{product.size}</p>
                         </div>
                       </div>
 
-                      <div className="flex flex-1 justify-between text-sm">
-                        <Label className="text-muted-foreground font-normal mt-2">
+                      <div className="cd-div-9">
+                        <Label className="cd-label-3">
                           Số lượng: {product.quantity}
                         </Label>
 
-                        <div className="flex group">
+                        <div className="cd-div-10 group">
                           <Button variant="link">
-                            <TrashIcon className="w-5 h-5 group-hover:text-primary/80" />
+                            <TrashIcon className="cd-icon group-hover:text-primary/80" />
                           </Button>
                         </div>
                       </div>
@@ -119,8 +117,8 @@ const CartDrawn = () => {
                 );
               })
             ) : (
-              <div className="flex items-center justify-center">
-                <span className="text-lg py-5 text-muted-foreground">
+              <div className="cd-div-11">
+                <span className="cd-span-2">
                   Không có sản phẩm trong giỏ hàng
                 </span>
               </div>
@@ -128,18 +126,16 @@ const CartDrawn = () => {
           </div>
         </ScrollArea>
 
-        <div className="border-t dark:border-secondary py-6">
-          <div className="flex justify-between text-base font-medium text-foreground">
+        <div className="cd-div-12">
+          <div className="cd-div-13">
             <p>Tổng phụ</p>
             <p>{calculateCartTotalPrice(carts)}</p>
           </div>
 
-          <p className="mt-0.5 text-sm text-muted-foreground">
-            Đã bao gồm phí vận chuyển và thuế
-          </p>
+          <p className="cd-p-2">Đã bao gồm phí vận chuyển và thuế</p>
 
-          <div className="mt-6">
-            <Button className="w-full" size="lg">
+          <div className="cd-div-14">
+            <Button className="cd-button" size="lg">
               Thanh toán
             </Button>
           </div>
