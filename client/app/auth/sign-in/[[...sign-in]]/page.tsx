@@ -3,6 +3,7 @@
 import { SignIn } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { useTheme } from "next-themes";
+import "@/styles/auth/sign-in.css";
 
 const LoginPage = () => {
   const { theme } = useTheme();

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/styles/client/auth.css";
+import "@/styles/auth/base.css";
 
 export const metadata: Metadata = {
   title: "SEINE",

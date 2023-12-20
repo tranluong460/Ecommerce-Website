@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import "@/styles/client/not-found.css";
+import "@/styles/other/not-found.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

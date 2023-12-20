@@ -3,6 +3,7 @@
 import { UserProfile } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { useTheme } from "next-themes";
+import "@/styles/auth/profile.css";
 
 const ProfilePage = () => {
   const { theme } = useTheme();

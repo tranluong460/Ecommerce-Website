@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import "@/styles/client/unauthorized.css";
+import "@/styles/other/unauthorized.css";
 
 export const metadata: Metadata = {
   title: "Truy cập bị từ chối",
