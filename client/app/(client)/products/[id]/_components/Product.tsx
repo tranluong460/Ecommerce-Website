@@ -10,7 +10,7 @@ import {
   MinusIcon,
   PlusIcon,
 } from "@radix-ui/react-icons";
-import { IProduct } from "@/interface/products";
+import { ICommentProduct, IProduct } from "@/interface/products";
 import { priceFormatted } from "@/libs/formatted";
 import { calculateAverageRating } from "@/libs/calculate";
 
@@ -39,8 +39,8 @@ const Product = ({ product }: DetailProps) => {
 
   const sizeFind = attributes?.sizes.find((item) => item.name === select.size);
 
-  const renderStars = () => {
-    const averageRating = calculateAverageRating(product?.id_comments);
+  const renderStars = (comments: ICommentProduct[]) => {
+    const averageRating = calculateAverageRating(comments);
     const stars = [];
 
     for (let i = 1; i <= 5; i++) {
@@ -141,7 +141,7 @@ const Product = ({ product }: DetailProps) => {
               <div className="flex items-center">
                 <div className="flex items-center">
                   {/* <StarFilledIcon className="text-gray-500 cursor-pointer peer peer-hover:text-yellow-400 hover:text-yellow-400 duration-100 w-6 h-6" /> */}
-                  {renderStars()}
+                  {renderStars(product.id_comments)}
                 </div>
 
                 <span className="ml-3 text-sm font-medium text-primary hover:text-primary/80">
