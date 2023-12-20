@@ -1,4 +1,4 @@
-import Logo from "../Logo";
+import Logo from "@/components/Logo";
 import Navigation from "./Navigation";
 import NavigationMobile from "./NavigationMobile";
 import UserMenu from "./UserMenu";
