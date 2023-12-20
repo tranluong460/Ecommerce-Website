@@ -9,6 +9,10 @@ export const getAllProducts = async () => {
 };
 
 export const getOneProduct = async (id: string) => {
-  const response = await fetch(`http://localhost:8080/products/${id}`);
+  const response = await fetch(
+    process.env.NEXT_ENV === "deployment"
+      ? `http://localhost:8080/products/${id}`
+      : `https://seines.vercel.app/products/${id}`
+  );
   return response.json();
 };
