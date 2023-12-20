@@ -14,6 +14,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = await getOneProduct(params.id);
 
+  if (!product) {
+    return {
+      title: "Không tìm thấy sản phẩm",
+      description:
+        "Xin lỗi, chúng tôi không thể tìm thấy thông tin cho sản phẩm này.",
+    };
+  }
+
   return {
     title: product?.name,
     description: product?.short_description,

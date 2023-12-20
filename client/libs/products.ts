@@ -1,3 +1,5 @@
+const statusCode = [404, 500];
+
 export const getAllProducts = async () => {
   const response = await fetch(
     process.env.NEXT_ENV === "deployment"
@@ -6,7 +8,9 @@ export const getAllProducts = async () => {
     { cache: "no-cache" }
   );
 
-  return response.json();
+  const data = await response.json();
+
+  return statusCode.includes(data.statusCode) ? null : data;
 };
 
 export const getOneProduct = async (id: string) => {
@@ -17,5 +21,7 @@ export const getOneProduct = async (id: string) => {
     { cache: "no-cache" }
   );
 
-  return response.json();
+  const data = await response.json();
+
+  return statusCode.includes(data.statusCode) ? null : data;
 };
