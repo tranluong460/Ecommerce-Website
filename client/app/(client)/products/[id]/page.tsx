@@ -7,11 +7,14 @@ import ProductsList from "../_components/ProductsList";
 import ProductsSkeleton from "../_components/ProductsSkeleton";
 import { getOneProduct } from "@/libs/products";
 
-export async function generateMetadata({
-  params,
-}: {
+type ParamsProps = {
   params: { id: string };
-}): Promise<Metadata> {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export const generateMetadata = async ({
+  params,
+}: ParamsProps): Promise<Metadata> => {
   const product = await getOneProduct(params.id);
 
   if (!product) {
@@ -26,9 +29,9 @@ export async function generateMetadata({
     title: product?.name,
     description: product?.short_description,
   };
-}
+};
 
-const ProductDetailPage = ({ params }: { params: { id: string } }) => {
+const ProductDetailPage = ({ params, searchParams }: ParamsProps) => {
   return (
     <section className="bg-background">
       <Container>
