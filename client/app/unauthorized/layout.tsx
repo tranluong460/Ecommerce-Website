@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Unauthorized",
-  description: "Unauthorized",
+  title: "Truy cập bị từ chối",
+  description: "Xin lỗi, bạn không có quyền truy cập vào trang này.",
   icons: "/logo.png",
 };
 
