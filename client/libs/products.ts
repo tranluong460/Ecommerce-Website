@@ -16,5 +16,6 @@ export const getOneProduct = async (id: string) => {
       : `https://seines.vercel.app/products/${id}`,
     { cache: "no-cache" }
   );
+
   return response.json();
 };

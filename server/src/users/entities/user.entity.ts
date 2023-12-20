@@ -5,7 +5,7 @@ import { Comment } from '../../comments/entities/comment.entity';
 export type UserDocument = HydratedDocument<User>;
 
 enum UserRole {
-  Admin = 'Admin',
+  Administrator = 'Administrator',
   User = 'User',
 }
 

@@ -30,7 +30,7 @@ export class UsersService {
   }
 
   async findOne(id: string): Promise<User> {
-    const oneUser = await this.userModel.findById(id).exec();
+    const oneUser = await this.userModel.findOne({ clerkId: id }).exec();
 
     if (!oneUser) {
       throw new NotFoundException('Không có thông tin người dùng!');
