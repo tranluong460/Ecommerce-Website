@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { SignOutButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
+import { SignOutButton, SignedIn, SignedOut, currentUser } from "@clerk/nextjs";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,8 +18,8 @@ import {
   GearIcon,
 } from "@radix-ui/react-icons";
 
-const UserMenu = () => {
-  const { user } = useUser();
+const UserMenu = async () => {
+  const user = await currentUser();
 
   return (
     <DropdownMenu>
@@ -29,9 +27,9 @@ const UserMenu = () => {
         <Avatar>
           <AvatarImage
             src={user?.imageUrl || "/user.jpg"}
-            alt={user?.primaryEmailAddress?.emailAddress || "User"}
+            alt={user?.imageUrl || "User"}
           />
-          <AvatarFallback>{user?.fullName || "User"}</AvatarFallback>
+          <AvatarFallback>User</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
 
