@@ -1,20 +1,18 @@
-"use client";
-
-import { SignIn } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import { useTheme } from "next-themes";
+import { Metadata } from "next";
+import SignInForm from "../_components/SignInForm";
 import "@/styles/auth/sign-in.css";
 
-const LoginPage = () => {
-  const { theme } = useTheme();
+export const generateMetadata = async (): Promise<Metadata> => {
+  return {
+    title: "Đăng nhập",
+    description: "Đăng nhập",
+  };
+};
 
+const SignInPage = () => {
   return (
     <section className="sip-section">
-      <div className="sip-div-1">
-        <SignIn
-          appearance={{ baseTheme: theme === "dark" ? dark : undefined }}
-        />
-      </div>
+      <SignInForm />
 
       <div className="sip-div-2">
         <div
@@ -28,4 +26,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignInPage;
