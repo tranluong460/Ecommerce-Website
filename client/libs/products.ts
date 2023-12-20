@@ -1,8 +1,6 @@
-"use server";
-
 export const getAllProducts = async () => {
   const response = await fetch("https://seines.vercel.app/products", {
-    cache: "force-cache",
+    cache: "no-cache",
   });
 
   return response.json();

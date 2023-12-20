@@ -1,12 +1,11 @@
+import { Suspense } from "react";
 import Container from "@/components/Container";
 import ProductsTop from "./_components/ProductsTop";
 import ProductsFilter from "./_components/ProductsFilter";
 import ProductsList from "./_components/ProductsList";
-import { getAllProducts } from "@/actions/products";
+import ProductsSkeleton from "./_components/ProductsSkeleton";
 
-const ProductsPage = async () => {
-  const products = await getAllProducts();
-
+const ProductsPage = () => {
   return (
     <section className="py-10">
       <Container>
@@ -18,7 +17,9 @@ const ProductsPage = async () => {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             <ProductsFilter />
 
-            <ProductsList products={products} />
+            <Suspense fallback={<ProductsSkeleton />}>
+              <ProductsList />
+            </Suspense>
           </div>
         </div>
       </Container>

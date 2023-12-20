@@ -32,7 +32,10 @@ export class ProductsService {
   }
 
   async findOne(id: string): Promise<Product> {
-    const oneProduct = await this.productModel.findById(id).exec();
+    const oneProduct = await this.productModel
+      .findById(id)
+      .populate('id_comments')
+      .exec();
 
     if (!oneProduct) {
       throw new NotFoundException('Không có thông tin sản phẩm!');
