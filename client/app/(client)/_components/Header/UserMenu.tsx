@@ -15,11 +15,14 @@ import {
   PersonIcon,
   EnterIcon,
   ExitIcon,
-  GearIcon,
+  DragHandleDots1Icon,
+  InfoCircledIcon,
 } from "@radix-ui/react-icons";
+import { getUserByClerkId } from "@/libs/users";
 
 const UserMenu = async () => {
   const user = await currentUser();
+  const { role } = await getUserByClerkId(user?.id || "");
 
   return (
     <DropdownMenu>
@@ -48,14 +51,30 @@ const UserMenu = async () => {
               </DropdownMenuItem>
             </Link>
 
-            <DropdownMenuItem>
-              Cài đặt
-              <DropdownMenuShortcut>
-                <GearIcon />
-              </DropdownMenuShortcut>
-            </DropdownMenuItem>
+            <Link href="#">
+              <DropdownMenuItem>
+                Đơn hàng
+                <DropdownMenuShortcut>
+                  <DragHandleDots1Icon />
+                </DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
+
+          {role === "Administrator" && (
+            <>
+              <Link href="/admin">
+                <DropdownMenuItem>
+                  Trang quản trị
+                  <DropdownMenuShortcut>
+                    <InfoCircledIcon />
+                  </DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </Link>
+              <DropdownMenuSeparator />
+            </>
+          )}
 
           <SignOutButton>
             <DropdownMenuItem>
