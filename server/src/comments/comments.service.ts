@@ -1,5 +1,10 @@
-import { Model } from 'mongoose';
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Model, isValidObjectId } from 'mongoose';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
@@ -21,7 +26,7 @@ export class CommentsService {
     });
 
     if (!user) {
-      throw new NotFoundException('Không tìm thấy người dùng!');
+      throw new NotFoundException('Người dùng không tồn tại!');
     }
 
     const product = await this.productModel.findOne({
@@ -29,7 +34,7 @@ export class CommentsService {
     });
 
     if (!product) {
-      throw new NotFoundException('Không tìm thấy sản phẩm!');
+      throw new NotFoundException('Sản phẩm không tồn tại!');
     }
 
     const createComment = new this.commentModel({
@@ -59,18 +64,22 @@ export class CommentsService {
   async findAll(): Promise<Comment[]> {
     const allComments = await this.commentModel.find().exec();
 
-    if (allComments.length === 0) {
-      throw new NotFoundException('Không có danh sách bình luận!');
+    if (!allComments || allComments.length === 0) {
+      throw new NotFoundException('Không có bình luận nào được tìm thấy!');
     }
 
     return allComments;
   }
 
   async findOne(id: string): Promise<Comment> {
+    if (!isValidObjectId(id)) {
+      throw new BadRequestException('ID không hợp lệ!');
+    }
+
     const oneComment = await this.commentModel.findById(id).exec();
 
     if (!oneComment) {
-      throw new NotFoundException('Không có thông tin bình luận!');
+      throw new NotFoundException('Bình luận không tồn tại!');
     }
 
     return oneComment;
@@ -80,6 +89,32 @@ export class CommentsService {
     id: string,
     updateCommentDto: UpdateCommentDto,
   ): Promise<Comment> {
+    if (!isValidObjectId(id)) {
+      throw new BadRequestException('ID không hợp lệ!');
+    }
+
+    const user = await this.userModel
+      .findOne({
+        clerkId: updateCommentDto.clerkId,
+      })
+      .exec();
+
+    if (!user) {
+      throw new NotFoundException('Người dùng không tồn tại!');
+    }
+
+    const comment = await this.commentModel.findById(id).exec();
+
+    if (!comment) {
+      throw new NotFoundException('Bình luận không tồn tại!');
+    }
+
+    if (comment.clerkId !== user.clerkId) {
+      throw new ForbiddenException(
+        'Bạn không có quyền cập nhật bình luận này!',
+      );
+    }
+
     const updateComment = await this.commentModel
       .findByIdAndUpdate(id, { $set: updateCommentDto }, { new: true })
       .exec();
@@ -89,23 +124,5 @@ export class CommentsService {
     }
 
     return updateComment;
-  }
-
-  async remove(id: string) {
-    const removeComment = await this.commentModel.findByIdAndDelete(id).exec();
-
-    if (!removeComment) {
-      throw new NotFoundException('Xóa bình luận thất bại!');
-    }
-
-    await this.productModel
-      .updateMany({ id_comments: id }, { $pull: { id_comments: id } })
-      .exec();
-
-    await this.userModel
-      .updateMany({ id_comments: id }, { $pull: { id_comments: id } })
-      .exec();
-
-    return removeComment;
   }
 }

@@ -23,7 +23,7 @@ export class UsersService {
     const oneUser = await this.userModel.findOne({ clerkId }).exec();
 
     if (!oneUser) {
-      throw new NotFoundException('Không có thông tin người dùng!');
+      throw new NotFoundException('Người dùng không tồn tại!');
     }
 
     return oneUser;

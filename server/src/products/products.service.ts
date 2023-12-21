@@ -1,5 +1,9 @@
-import { Model } from 'mongoose';
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Model, isValidObjectId } from 'mongoose';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
@@ -25,20 +29,24 @@ export class ProductsService {
     const allProducts = await this.productModel.find().exec();
 
     if (allProducts.length === 0) {
-      throw new NotFoundException('Không có danh sách sản phẩm!');
+      throw new NotFoundException('Không có sản phẩm nào được tìm thấy!');
     }
 
     return allProducts;
   }
 
   async findOne(id: string): Promise<Product> {
+    if (!isValidObjectId(id)) {
+      throw new BadRequestException('ID không hợp lệ');
+    }
+
     const oneProduct = await this.productModel
       .findById(id)
       .populate('id_comments')
       .exec();
 
     if (!oneProduct) {
-      throw new NotFoundException('Không có thông tin sản phẩm!');
+      throw new NotFoundException('Sản phẩm không tồn tại!');
     }
 
     return oneProduct;
@@ -48,6 +56,10 @@ export class ProductsService {
     id: string,
     updateProductDto: UpdateProductDto,
   ): Promise<Product> {
+    if (!isValidObjectId(id)) {
+      throw new BadRequestException('ID không hợp lệ');
+    }
+
     const updateProduct = await this.productModel
       .findByIdAndUpdate(id, { $set: updateProductDto }, { new: true })
       .exec();
@@ -60,6 +72,10 @@ export class ProductsService {
   }
 
   async remove(id: string) {
+    if (!isValidObjectId(id)) {
+      throw new BadRequestException('ID không hợp lệ');
+    }
+
     const removeProduct = await this.productModel.findByIdAndDelete(id).exec();
 
     if (!removeProduct) {
