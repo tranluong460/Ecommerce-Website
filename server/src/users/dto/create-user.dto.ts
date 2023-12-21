@@ -37,6 +37,8 @@ export class CreateUserDto {
 
   username?: string;
 
+  primary_email_address_id?: string;
+
   photo?: string;
 
   banned?: boolean;

@@ -34,6 +34,9 @@ export class User {
   @Prop({ required: false })
   photo: string;
 
+  @Prop({ required: false })
+  primary_email_address_id: string;
+
   @Prop({
     required: false,
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],

@@ -63,6 +63,7 @@ export async function POST(req: Request) {
       photo: payload.data.image_url,
       first_name: payload.data.first_name,
       last_name: payload.data.last_name,
+      primary_email_address_id: payload.data.primary_email_address_id,
       banned: payload.data.banned,
     };
 
@@ -86,6 +87,7 @@ export async function POST(req: Request) {
       photo: payload.data.image_url,
       first_name: payload.data.first_name,
       last_name: payload.data.last_name,
+      primary_email_address_id: payload.data.primary_email_address_id,
       banned: payload.data.banned,
     };
 
