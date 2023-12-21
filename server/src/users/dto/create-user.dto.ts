@@ -25,6 +25,10 @@ export class CreateUserDto {
   @IsString({ message: 'Clerk ID phải là chuỗi!' })
   clerkId: string;
 
+  @IsNotEmpty({ message: 'Tên người dùng không được để trống!' })
+  @IsString({ message: 'Tên người dùng phải là chuỗi!' })
+  username: string;
+
   @IsArray({ message: 'Danh sách email phải là mảng!' })
   @ArrayNotEmpty({ message: 'Danh sách email không được để trống!' })
   @ArrayMinSize(1, { message: 'Danh sách email ít nhất phải có một phần tử!' })
@@ -35,15 +39,15 @@ export class CreateUserDto {
   @Type(() => EmailAddresses)
   email_addresses: EmailAddresses[];
 
+  @IsNotEmpty({ message: 'ID email chính không được để trống!' })
+  @IsString({ message: 'ID email chính phải là chuỗi!' })
+  primary_email_address_id: string;
+
   first_name?: string;
 
   last_name?: string;
 
-  username?: string;
-
-  primary_email_address_id?: string;
+  banned?: boolean;
 
   photo?: string;
-
-  banned?: boolean;
 }
