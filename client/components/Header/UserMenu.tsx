@@ -36,7 +36,7 @@ const UserMenu = async () => {
         </Avatar>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="um-dmc">
+      <DropdownMenuContent className="w-56">
         <SignedIn>
           <DropdownMenuLabel>Thông tin cá nhân</DropdownMenuLabel>
           <DropdownMenuSeparator />

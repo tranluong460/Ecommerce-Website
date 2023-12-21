@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import "@/styles/other/components.css";
 
 const Logo = () => {
   return (
-    <div className="lo-div">
+    <div className="font-semibold text-2xl text-foreground">
       <Link href="/">
         <Image
           width={1000}
           height={1000}
           src="/logo.png"
           alt="Logo"
-          className="lo-image"
+          className="w-20 h-14"
           priority
         />
       </Link>

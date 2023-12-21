@@ -7,32 +7,33 @@ import {
   InstagramLogoIcon,
 } from "@radix-ui/react-icons";
 import { footer__links } from "@/data/links";
-import "@/styles/other/footer.css";
 
 const Footer = () => {
   return (
     <>
       {/* Aside */}
-      <aside className="fr-ae-aside">
-        <div className="fr-ae-div-1">
-          <h2 className="fr-ae-h2">Đăng ký nhận thông tin của chúng tôi</h2>
+      <aside className="py-10 sm:py-16 lg:py-20 border-t border-b dark:border-secondary">
+        <div className="px-4 mx-auto max-w-7xl">
+          <h2 className="mb-4 text-2xl md:text-3xl font-bold tracking-tight md:font-extrabold lg:leading-none text-foreground md:text-center lg:mb-7">
+            Đăng ký nhận thông tin của chúng tôi
+          </h2>
 
-          <p className="fr-ae-p-1">
+          <p className="mb-4 text-base text-muted-foreground md:mb-6 md:text-center md:text-base lg:px-20 xl:px-56">
             Bạn có muốn nhận thông báo khi có sản phẩm mới không? Đăng ký nhận
             thông tin của chúng tôi và bạn sẽ là một trong những người đầu tiên.
           </p>
 
-          <div className="fr-ae-div-2">
-            <div className="fr-ae-div-3">
-              <div className="fr-ae-div-4">
-                <label htmlFor="member_email" className="fr-ae-label">
+          <div className="mb-4">
+            <div className="flex max-w-xl md:mx-auto">
+              <div className="w-full">
+                <label htmlFor="member_email" className="hidden">
                   Địa chỉ email
                 </label>
 
-                <div className="fr-ae-div-5">
-                  <div className="fr-ae-div-6">
+                <div className="relative h-full">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                     <svg
-                      className="fr-ae-svg"
+                      className="w-4 h-4 text-muted-foreground"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -47,7 +48,7 @@ const Footer = () => {
                     id="member_email"
                     type="email"
                     name="email_address"
-                    className="fr-ae-input-1"
+                    className="block w-full px-3 py-4 pl-11 text-base text-accent-foreground bg-background border dark:border-secondary rounded-l-xl focus:bg-background focus:outline-none"
                     placeholder="Nhập email của bạn"
                     required
                   />
@@ -58,20 +59,26 @@ const Footer = () => {
                 <input
                   type="submit"
                   id="member_submit"
-                  className="fr-ae-input-2"
+                  className="w-full px-4 py-4 text-base font-medium text-center text-background dark:text-accent-foreground bg-primary hover:bg-primary/90 border dark:border-secondary cursor-pointer rounded-r-xl focus:outline-none"
                   value="Đăng ký"
                 />
               </div>
             </div>
           </div>
 
-          <p className="fr-ae-p-2">
+          <p className="text-sm text-muted-foreground md:text-center font-normal">
             Bằng cách đăng ký, bạn đồng ý với &nbsp;
-            <Link className="fr-ae-link" href="#">
+            <Link
+              className="border-b border-gray-500 border-dotted hover:text-primary hover:border-primary"
+              href="#"
+            >
               Điều khoản dịch vụ
             </Link>
             &nbsp;và
-            <Link className="fr-ae-link" href="#">
+            <Link
+              className="border-b border-gray-500 border-dotted hover:text-primary hover:border-primary"
+              href="#"
+            >
               &nbsp;Chính sách bảo mật
             </Link>
             &nbsp;của SEINE.
@@ -81,16 +88,16 @@ const Footer = () => {
       {/* End Aside */}
 
       {/* Footer */}
-      <footer className="fr-fr-footer">
-        <div className="fr-fr-div-1">
-          <div className="fr-fr-div-2">
-            <div className="fr-fr-div-3">
-              <span className="fr-fr-span-1">
-                <span className="fr-fr-span-2" />
+      <footer className="justify-self-end pt-16 pb-8 lg:pt-24 lg:pb-10">
+        <div className="px-4 mx-auto lg:px-4">
+          <div className="grid gap-12 lg:grid-cols-6 lg:gap-16">
+            <div className="col-span-2">
+              <span className="box-border inline-block overflow-hidden w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 relative max-w-full">
+                <span className="box-border block w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 max-w-full" />
                 <Logo />
               </span>
 
-              <p className="fr-fr-p">
+              <p className="text-muted-foreground">
                 SEINE đang tạo ra những bộ trang phục sản xuất trong nước hoàn
                 toàn có thể sánh ngang với các thương hiệu thời trang nam đến từ
                 nước ngoài về kiểu dáng, chất lượng lẫn phong cách thời trang.
@@ -99,12 +106,17 @@ const Footer = () => {
 
             {footer__links.map((link) => (
               <div key={link.name}>
-                <h3 className="fr-fr-h3">{link.name}</h3>
+                <h3 className="mb-6 text-sm font-semibold text-foreground uppercase">
+                  {link.name}
+                </h3>
 
                 <ul>
                   {link.nav.map((item) => (
-                    <li className="fr-fr-li" key={item.name}>
-                      <Link href={item.url} className="fr-fr-link-1">
+                    <li className="mb-4" key={item.name}>
+                      <Link
+                        href={item.url}
+                        className="font-medium text-muted-foreground hover:text-primary hover:underline"
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -114,21 +126,24 @@ const Footer = () => {
             ))}
           </div>
 
-          <hr className="fr-fr-hr" />
+          <hr className="my-8 border dark:border-secondary lg:my-12" />
 
-          <div className="fr-fr-div-4">
-            <span className="fr-fr-span-3">
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <span className="text-sm text-muted-foreground sm:text-center">
               © 2023&nbsp;
-              <Link href="/" className="fr-fr-link-2">
+              <Link href="/" className="hover:underline">
                 SEINE™
               </Link>
               .&nbsp;All Rights Reserved.
             </span>
 
-            <div className="fr-fr-div-5">
-              <Link href="#" className="fr-fr-link-3">
+            <div className="flex mt-4 sm:justify-center sm:mt-0">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary"
+              >
                 <svg
-                  className="fr-fr-svg"
+                  className="w-4 h-4"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -141,20 +156,32 @@ const Footer = () => {
                 </svg>
               </Link>
 
-              <Link href="#" className="fr-fr-link-3 fr-fr-link-4">
-                <DiscordLogoIcon className="fr-fr-svg" />
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary ms-5"
+              >
+                <DiscordLogoIcon className="w-4 h-4" />
               </Link>
 
-              <Link href="#" className="fr-fr-link-3 fr-fr-link-4">
-                <TwitterLogoIcon className="fr-fr-svg" />
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary ms-5"
+              >
+                <TwitterLogoIcon className="w-4 h-4" />
               </Link>
 
-              <Link href="#" className="fr-fr-link-3 fr-fr-link-4">
-                <GitHubLogoIcon className="fr-fr-svg" />
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary ms-5"
+              >
+                <GitHubLogoIcon className="w-4 h-4" />
               </Link>
 
-              <Link href="#" className="fr-fr-link-3 fr-fr-link-4">
-                <InstagramLogoIcon className="fr-fr-svg" />
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary ms-5"
+              >
+                <InstagramLogoIcon className="w-4 h-4" />
               </Link>
             </div>
           </div>

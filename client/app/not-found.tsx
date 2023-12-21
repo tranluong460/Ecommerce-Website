@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import "@/styles/other/not-found.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -13,9 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const NotFoundPage = () => {
   return (
     <main>
-      <section className="nfp-section">
+      <section className="w-full h-screen flex flex-col items-center justify-center">
         <svg
-          className="nfp-svg-1"
+          className="w-1/2 md:w-1/3 lg:w-1/4 text-primary"
           xmlns="http://www.w3.org/2000/svg"
           data-name="Layer 1"
           viewBox="0 0 860.13137 571.14799"
@@ -167,17 +166,22 @@ const NotFoundPage = () => {
           />
         </svg>
 
-        <div className="nfp-div">
-          <p className="nfp-p-1">Không tìm thấy trang</p>
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-3xl md:text-4xl lg:text-5xl text-foreground mt-12">
+            Không tìm thấy trang
+          </p>
 
-          <p className="nfp-p-2">
+          <p className="md:text-lg lg:text-xl text-muted-foreground mt-8">
             Xin lỗi, trang này không tồn tại hoặc đã bị xóa.
           </p>
 
-          <Link href="/" className="nfp-link">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 bg-primary hover:opacity-80 text-muted px-4 py-2 mt-12 rounded transition duration-150"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="nfp-svg-2"
+              className="h-5 w-5"
               viewBox="0 0 20 20"
               fill="currentColor"
             >

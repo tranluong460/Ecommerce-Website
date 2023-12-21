@@ -5,7 +5,6 @@ import NavigationMobile from "./NavigationMobile";
 import UserMenu from "./UserMenu";
 import CartDrawn from "./CartDrawn";
 import ChangeTheme from "./ChangeTheme";
-import "@/styles/other/header.css";
 
 const Header = () => {
   return (
