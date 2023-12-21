@@ -9,13 +9,18 @@ enum UserRole {
   User = 'User',
 }
 
+class EmailAddresses {
+  @Prop({ required: true })
+  email_address: string;
+}
+
 @Schema({ timestamps: true, versionKey: false })
 export class User {
   @Prop({ required: true, unique: true })
   clerkId: string;
 
-  @Prop({ required: true, unique: true })
-  email: string;
+  @Prop({ required: true, type: [EmailAddresses] })
+  email_addresses: EmailAddresses[];
 
   @Prop({ required: false })
   first_name: string;

@@ -54,7 +54,11 @@ export async function POST(req: Request) {
   if (eventType === "user.created") {
     const user = {
       clerkId: payload.data.id,
-      email: payload.data.email_addresses[0].email_address,
+      email_addresses: payload.data.email_addresses.map(
+        (item: { email_address: string }) => ({
+          email_address: item.email_address,
+        })
+      ),
       username: payload.data.username,
       photo: payload.data.image_url,
       first_name: payload.data.first_name,
@@ -74,6 +78,11 @@ export async function POST(req: Request) {
   if (eventType === "user.updated") {
     const user = {
       username: payload.data.username,
+      email_addresses: payload.data.email_addresses.map(
+        (item: { email_address: string }) => ({
+          email_address: item.email_address,
+        })
+      ),
       photo: payload.data.image_url,
       first_name: payload.data.first_name,
       last_name: payload.data.last_name,
