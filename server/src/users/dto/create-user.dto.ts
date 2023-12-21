@@ -14,6 +14,10 @@ class EmailAddresses {
   @IsNotEmpty({ message: 'Email không được để trống!' })
   @IsString({ message: 'Email phải là chuỗi!' })
   email_address: string;
+
+  @IsNotEmpty({ message: 'ID email không được để trống!' })
+  @IsString({ message: 'ID email phải là chuỗi!' })
+  email_address_id: string;
 }
 
 export class CreateUserDto {

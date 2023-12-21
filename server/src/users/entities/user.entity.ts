@@ -12,6 +12,7 @@ enum UserRole {
 class EmailAddresses {
   @Prop({ required: true })
   email_address: string;
+  email_address_id: string;
 }
 
 @Schema({ timestamps: true, versionKey: false })

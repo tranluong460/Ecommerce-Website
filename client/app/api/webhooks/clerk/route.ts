@@ -55,7 +55,8 @@ export async function POST(req: Request) {
     const user = {
       clerkId: payload.data.id,
       email_addresses: payload.data.email_addresses.map(
-        (item: { email_address: string }) => ({
+        (item: { id: string; email_address: string }) => ({
+          email_address_id: item.id,
           email_address: item.email_address,
         })
       ),
@@ -80,7 +81,8 @@ export async function POST(req: Request) {
     const user = {
       username: payload.data.username,
       email_addresses: payload.data.email_addresses.map(
-        (item: { email_address: string }) => ({
+        (item: { id: string; email_address: string }) => ({
+          email_address_id: item.id,
           email_address: item.email_address,
         })
       ),
