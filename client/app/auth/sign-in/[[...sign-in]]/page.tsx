@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import SignInForm from "../_components/SignInForm";
-import "@/styles/auth/sign-in.css";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   return {
@@ -11,12 +10,12 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const SignInPage = () => {
   return (
-    <section className="sip-section">
+    <section className="max-w-screen-xl m-0 sm:m-6 sm:rounded-lg flex justify-center flex-1 bg-background border dark:border-secondary">
       <SignInForm />
 
-      <div className="sip-div-2">
+      <div className="flex-1 text-center hidden lg:flex">
         <div
-          className="sip-div-3"
+          className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/background.svg')",
           }}

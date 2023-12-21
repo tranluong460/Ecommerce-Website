@@ -8,7 +8,7 @@ const SignInForm = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="sip-div-1">
+    <div className="lg:w-1/2 xl:w-5/12 p-6 sm:px-12 flex items-center pt-5">
       <SignIn appearance={{ baseTheme: theme === "dark" ? dark : undefined }} />
     </div>
   );
