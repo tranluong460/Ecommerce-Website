@@ -29,8 +29,8 @@ export class UsersService {
     return allUsers;
   }
 
-  async findOne(id: string): Promise<User> {
-    const oneUser = await this.userModel.findOne({ clerkId: id }).exec();
+  async getUserByClerkId(clerkId: string): Promise<User> {
+    const oneUser = await this.userModel.findOne({ clerkId }).exec();
 
     if (!oneUser) {
       throw new NotFoundException('Không có thông tin người dùng!');
@@ -39,9 +39,12 @@ export class UsersService {
     return oneUser;
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+  async updateUserByClerkId(
+    clerkId: string,
+    updateUserDto: UpdateUserDto,
+  ): Promise<User> {
     const updateUser = await this.userModel
-      .findByIdAndUpdate(id, { $set: updateUserDto }, { new: true })
+      .findOneAndUpdate({ clerkId }, { $set: updateUserDto }, { new: true })
       .exec();
 
     if (!updateUser) {
@@ -51,8 +54,10 @@ export class UsersService {
     return updateUser;
   }
 
-  async remove(id: string) {
-    const removeUser = await this.userModel.findByIdAndDelete(id).exec();
+  async removeUserByClerkId(clerkId: string) {
+    const removeUser = await this.userModel
+      .findOneAndDelete({ clerkId })
+      .exec();
 
     if (!removeUser) {
       throw new NotFoundException('Xóa người dùng thất bại!');
