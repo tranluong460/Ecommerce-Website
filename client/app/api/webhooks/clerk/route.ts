@@ -59,6 +59,7 @@ export async function POST(req: Request) {
       photo: payload.data.image_url,
       first_name: payload.data.first_name,
       last_name: payload.data.last_name,
+      banned: payload.data.banned,
     };
 
     await fetch("https://seines.vercel.app/users", {
