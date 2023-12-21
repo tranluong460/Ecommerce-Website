@@ -9,7 +9,7 @@ import { User } from './entities/user.entity';
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  async create(createUserDto: CreateUserDto): Promise<User> {
+  async createUserByClerk(createUserDto: CreateUserDto): Promise<User> {
     const createUser = new this.userModel(createUserDto);
 
     if (!createUser) {
@@ -17,16 +17,6 @@ export class UsersService {
     }
 
     return createUser.save();
-  }
-
-  async findAll(): Promise<User[]> {
-    const allUsers = await this.userModel.find().exec();
-
-    if (allUsers.length === 0) {
-      throw new NotFoundException('Không có danh sách người dùng!');
-    }
-
-    return allUsers;
   }
 
   async getUserByClerkId(clerkId: string): Promise<User> {
