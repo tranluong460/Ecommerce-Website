@@ -57,6 +57,8 @@ export async function POST(req: Request) {
       email: payload.data.email_addresses[0].email_address,
       username: payload.data.username,
       photo: payload.data.image_url,
+      first_name: payload.data.first_name,
+      last_name: payload.data.last_name,
     };
 
     await fetch("https://seines.vercel.app/users", {
@@ -72,6 +74,9 @@ export async function POST(req: Request) {
     const user = {
       username: payload.data.username,
       photo: payload.data.image_url,
+      first_name: payload.data.first_name,
+      last_name: payload.data.last_name,
+      banned: payload.data.banned,
     };
 
     await fetch(`https://seines.vercel.app/users/${payload.data.id}`, {

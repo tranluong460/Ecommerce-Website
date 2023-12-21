@@ -10,11 +10,13 @@ export class CreateUserDto {
   @IsString({ message: 'Email phải là chuỗi!' })
   email: string;
 
-  firstName?: string;
+  first_name?: string;
 
-  lastName?: string;
+  last_name?: string;
 
   username?: string;
 
   photo?: string;
+
+  banned?: boolean;
 }

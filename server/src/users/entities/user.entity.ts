@@ -18,10 +18,10 @@ export class User {
   email: string;
 
   @Prop({ required: false })
-  firstName: string;
+  first_name: string;
 
   @Prop({ required: false })
-  lastName: string;
+  last_name: string;
 
   @Prop({ required: false, unique: true })
   username: string;
@@ -34,6 +34,9 @@ export class User {
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   })
   id_comments: Comment[];
+
+  @Prop({ required: false })
+  banned: boolean;
 
   @Prop({ default: UserRole.User, enum: UserRole })
   role: string;
