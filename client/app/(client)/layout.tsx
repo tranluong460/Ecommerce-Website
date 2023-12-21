@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "@/styles/client/base.css";
 
 export const metadata: Metadata = {
   title: "SEINE",
@@ -15,7 +14,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Toaster />
       <Header />
-      <main className="cl-main">{children}</main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </>
   );
